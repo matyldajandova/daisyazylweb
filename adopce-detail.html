@@ -1,9 +1,5 @@
 ---
 currentPage: adopce-detail
-pagination:
-data: animals.animalsEnriched
-size: 1
-alias: animal
 ---
 <!DOCTYPE html>
 <html>
@@ -96,147 +92,147 @@ alias: animal
                     <div data-w-tab="zakladni-udaje" class="layout507_tab-pane w-tab-pane w--tab-active">
                       <div class="layout507_card _3-rows">
                         <div class="card-row">
-                          <div class="card-item"><img loading="lazy" src="images/hashtag.svg" alt="" class="card-icon">
+                          {% if animal.evidenceNumber %}<div class="card-item"><img loading="lazy" src="images/hashtag.svg" alt="" class="card-icon">
                             <div class="card-text-wrap">
                               <div class="text-style-tagline-no-uderline">Evidenční číslo:</div>
-                              <div class="card-p">1240</div>
+                              <div class="card-p">{{ animal.evidenceNumber }}</div>
                             </div>
-                          </div>
-                          <div class="card-item"><img loading="lazy" src="images/baloon.svg" alt="" class="card-icon">
+                          </div>{% endif %}
+                          {% if animal.birthDate %}<div class="card-item"><img loading="lazy" src="images/baloon.svg" alt="" class="card-icon">
                             <div class="card-text-wrap">
                               <div class="text-style-tagline-no-uderline">Datum narození:</div>
-                              <div class="card-p">1.12.2024</div>
+                              <div class="card-p">{{ animal.birthDate }}</div>
                             </div>
-                          </div>
-                          <div class="card-item"><img loading="lazy" src="images/age.svg" alt="" class="card-icon">
+                          </div>{% endif %}
+                          {% if animal.ageCategory %}<div class="card-item"><img loading="lazy" src="images/age.svg" alt="" class="card-icon">
                             <div class="card-text-wrap">
                               <div class="text-style-tagline-no-uderline">Věková kategorie:</div>
-                              <div class="card-p">Dospělý</div>
+                              <div class="card-p">{{ animal.ageCategory }}</div>
                             </div>
-                          </div>
+                          </div>{% endif %}
                         </div>
                         <div class="card-row">
-                          <div class="card-item"><img loading="lazy" src="images/boy.svg" alt="" class="card-icon">
+                          {% if animal.gender %}<div class="card-item"><img loading="lazy" src="images/boy.svg" alt="" class="card-icon">
                             <div class="card-text-wrap">
                               <div class="text-style-tagline-no-uderline">Pohlaví:</div>
-                              <div class="card-p">kocour</div>
+                              <div class="card-p">{{ animal.gender }}</div>
                             </div>
-                          </div>
-                          <div class="card-item"><img loading="lazy" src="images/rasa.svg" alt="" class="card-icon">
+                          </div>{% endif %}
+                          {% if animal.breed %}<div class="card-item"><img loading="lazy" src="images/rasa.svg" alt="" class="card-icon">
                             <div class="card-text-wrap">
                               <div class="text-style-tagline-no-uderline">Rasa:</div>
-                              <div class="card-p">evropská</div>
+                              <div class="card-p">{{ animal.breed }}</div>
                             </div>
-                          </div>
-                          <div class="card-item"><img loading="lazy" src="images/color.svg" alt="" class="card-icon">
+                          </div>{% endif %}
+                          {% if animal.color %}<div class="card-item"><img loading="lazy" src="images/color.svg" alt="" class="card-icon">
                             <div class="card-text-wrap">
                               <div class="text-style-tagline-no-uderline">Zbarvení:</div>
-                              <div class="card-p">černá</div>
+                              <div class="card-p">{{ animal.color }}</div>
                             </div>
-                          </div>
+                          </div>{% endif %}
                         </div>
                         <div class="card-row">
-                          <div class="card-item"><img loading="lazy" src="images/heart.svg" alt="" class="card-icon">
+                          {% if animal.guardian %}<div class="card-item"><img loading="lazy" src="images/heart.svg" alt="" class="card-icon">
                             <div class="card-text-wrap">
                               <div class="text-style-tagline-no-uderline">Opatrovník:</div>
-                              <div class="card-p">Libuška (Plzeň)</div>
+                              <div class="card-p">{{ animal.guardian }}</div>
                             </div>
-                          </div>
-                          <div class="card-item"><img loading="lazy" src="images/cal.svg" alt="" class="card-icon">
+                          </div>{% endif %}
+                          {% if animal.foundDate %}<div class="card-item"><img loading="lazy" src="images/cal.svg" alt="" class="card-icon">
                             <div class="card-text-wrap">
                               <div class="text-style-tagline-no-uderline">Datum nálezu:</div>
-                              <div class="card-p">22.11.2025</div>
+                              <div class="card-p">{{ animal.foundDate }}</div>
                             </div>
-                          </div>
-                          <div class="card-item"><img loading="lazy" src="images/question-mark.svg" alt=""
+                          </div>{% endif %}
+                          {% if animal.origin %}<div class="card-item"><img loading="lazy" src="images/question-mark.svg" alt=""
                               class="card-icon">
                             <div class="card-text-wrap">
                               <div class="text-style-tagline-no-uderline">Původ příjmu:</div>
-                              <div class="card-p gift-p">Darovací smlouva od původního majitele</div>
+                              <div class="card-p gift-p">{{ animal.origin }}</div>
                             </div>
-                          </div>
+                          </div>{% endif %}
                         </div>
                       </div>
                     </div>
                     <div data-w-tab="povahove-rysy" class="layout507_tab-pane w-tab-pane">
                       <div class="layout507_card _2-rows">
                         <div class="card-row">
-                          <div class="card-item-questions">
+                          {% if animal.suitableOutdoor is defined %}<div class="card-item-questions">
                             <div class="card-question">Vhodný do domácnosti s přístupem ven?</div>
                             <div class="card-icon-wrap">
-                              <div>Ne</div><img loading="lazy" src="images/red-cross.svg" alt="">
+                              <div>{{ "Ano" if animal.suitableOutdoor else "Ne" }}</div><img loading="lazy" src="images/{{ 'green-checkmark' if animal.suitableOutdoor else 'red-cross' }}.svg" alt="">
                             </div>
-                          </div>
-                          <div class="card-item-questions">
+                          </div>{% endif %}
+                          {% if animal.suitableWithCats is defined %}<div class="card-item-questions">
                             <div class="card-question">Vhodný k dalším kočkám?</div>
                             <div class="card-icon-wrap">
-                              <div>Ano</div><img loading="lazy" src="images/green-checkmark.svg" alt="">
+                              <div>{{ "Ano" if animal.suitableWithCats else "Ne" }}</div><img loading="lazy" src="images/{{ 'green-checkmark' if animal.suitableWithCats else 'red-cross' }}.svg" alt="">
                             </div>
-                          </div>
-                          <div class="card-item-questions">
+                          </div>{% endif %}
+                          {% if animal.suitableWithDogs is defined %}<div class="card-item-questions">
                             <div class="card-question">Vhodný k psům?</div>
                             <div class="card-icon-wrap">
-                              <div>Ne</div><img loading="lazy" src="images/red-cross.svg" alt="">
+                              <div>{{ "Ano" if animal.suitableWithDogs else "Ne" }}</div><img loading="lazy" src="images/{{ 'green-checkmark' if animal.suitableWithDogs else 'red-cross' }}.svg" alt="">
                             </div>
-                          </div>
+                          </div>{% endif %}
                         </div>
                         <div class="card-row">
-                          <div class="card-item-questions">
+                          {% if animal.suitableWithChildren is defined %}<div class="card-item-questions">
                             <div class="card-question">Vhodný k dětem?</div>
                             <div class="card-icon-wrap">
-                              <div>Ano</div><img loading="lazy" src="images/green-checkmark.svg" alt="">
+                              <div>{{ "Ano" if animal.suitableWithChildren else "Ne" }}</div><img loading="lazy" src="images/{{ 'green-checkmark' if animal.suitableWithChildren else 'red-cross' }}.svg" alt="">
                             </div>
-                          </div>
-                          <div class="card-item-questions">
+                          </div>{% endif %}
+                          {% if animal.suitableWithOlderChildren is defined %}<div class="card-item-questions">
                             <div class="card-question">Vhodný k odrostlejším dětem?</div>
                             <div class="card-icon-wrap">
-                              <div>Ano</div><img loading="lazy" src="images/green-checkmark.svg" alt="">
+                              <div>{{ "Ano" if animal.suitableWithOlderChildren else "Ne" }}</div><img loading="lazy" src="images/{{ 'green-checkmark' if animal.suitableWithOlderChildren else 'red-cross' }}.svg" alt="">
                             </div>
-                          </div>
+                          </div>{% endif %}
                         </div>
                       </div>
                     </div>
                     <div data-w-tab="zdravotní-karta" class="layout507_tab-pane w-tab-pane">
                       <div class="layout507_card _2-rows">
                         <div class="card-row">
-                          <div class="card-item-questions">
+                          {% if animal.panleukopeniaTest %}<div class="card-item-questions">
                             <div class="card-question">Test na panleukopenii:</div>
                             <div class="card-icon-wrap">
-                              <div>Negativní</div><img loading="lazy" src="images/green-checkmark.svg" alt="">
+                              <div>{{ animal.panleukopeniaTest }}</div><img loading="lazy" src="images/{{ 'green-checkmark' if animal.panleukopeniaTest == 'Negativní' else 'red-cross' }}.svg" alt="">
                             </div>
-                          </div>
-                          <div class="card-item-questions">
+                          </div>{% endif %}
+                          {% if animal.felvTest %}<div class="card-item-questions">
                             <div class="card-question">Test na FeLV:</div>
                             <div class="card-icon-wrap">
-                              <div>Negativní</div><img loading="lazy" src="images/green-checkmark.svg" alt="">
+                              <div>{{ animal.felvTest }}</div><img loading="lazy" src="images/{{ 'green-checkmark' if animal.felvTest == 'Negativní' else 'red-cross' }}.svg" alt="">
                             </div>
-                          </div>
-                          <div class="card-item-questions">
+                          </div>{% endif %}
+                          {% if animal.fivTest %}<div class="card-item-questions">
                             <div class="card-question">Test na FIV:</div>
                             <div class="card-icon-wrap">
-                              <div>Negativní</div><img loading="lazy" src="images/green-checkmark.svg" alt="">
+                              <div>{{ animal.fivTest }}</div><img loading="lazy" src="images/{{ 'green-checkmark' if animal.fivTest == 'Negativní' else 'red-cross' }}.svg" alt="">
                             </div>
-                          </div>
+                          </div>{% endif %}
                         </div>
                         <div class="card-row">
-                          <div class="card-item-questions">
+                          {% if animal.neutered is defined %}<div class="card-item-questions">
                             <div class="card-question">Kastrovaný:</div>
                             <div class="card-icon-wrap">
-                              <div>Ano</div><img loading="lazy" src="images/green-checkmark.svg" alt="">
+                              <div>{{ "Ano" if animal.neutered else "Ne" }}</div><img loading="lazy" src="images/{{ 'green-checkmark' if animal.neutered else 'red-cross' }}.svg" alt="">
                             </div>
-                          </div>
-                          <div class="card-item-questions">
+                          </div>{% endif %}
+                          {% if animal.firstVaccination is defined %}<div class="card-item-questions">
                             <div class="card-question">První vakcinace:</div>
                             <div class="card-icon-wrap">
-                              <div>Ano</div><img loading="lazy" src="images/green-checkmark.svg" alt="">
+                              <div>{{ "Ano" if animal.firstVaccination else "Ne" }}</div><img loading="lazy" src="images/{{ 'green-checkmark' if animal.firstVaccination else 'red-cross' }}.svg" alt="">
                             </div>
-                          </div>
-                          <div class="card-item-questions">
+                          </div>{% endif %}
+                          {% if animal.secondVaccination is defined %}<div class="card-item-questions">
                             <div class="card-question">Druhá vakcinace:</div>
                             <div class="card-icon-wrap">
-                              <div>Ano</div><img loading="lazy" src="images/green-checkmark.svg" alt="">
+                              <div>{{ "Ano" if animal.secondVaccination else "Ne" }}</div><img loading="lazy" src="images/{{ 'green-checkmark' if animal.secondVaccination else 'red-cross' }}.svg" alt="">
                             </div>
-                          </div>
+                          </div>{% endif %}
                         </div>
                       </div>
                     </div>

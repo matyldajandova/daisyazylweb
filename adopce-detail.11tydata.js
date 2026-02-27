@@ -1,4 +1,9 @@
 module.exports = {
+  pagination: {
+    data: "animals.animalsEnriched",
+    size: 1,
+    alias: "animal",
+  },
   eleventyComputed: {
     permalink(data) {
       const items = data.pagination && data.pagination.items;
