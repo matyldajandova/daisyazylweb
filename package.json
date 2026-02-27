@@ -3,6 +3,8 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
+    "build": "eleventy && cp -r public/css _site/ && cp -r public/js _site/ && cp -r public/images _site/ && cp -r public/fonts _site/",
+    "serve": "npm run build && eleventy --serve --port=8080",
     "format": "prettier \"**/*.{html,css,js,json,md}\" --write",
     "format:check": "prettier \"**/*.{html,css,js,json,md}\" --check",
     "lint:js": "eslint \"**/*.js\"",
@@ -11,12 +13,12 @@
     "lint:fix": "npm run lint:js -- --fix && npm run lint:css -- --fix"
   },
   "devDependencies": {
+    "@11ty/eleventy": "^3.1.2",
     "eslint": "^9.0.0",
     "eslint-config-prettier": "^9.0.0",
     "eslint-plugin-import": "^2.29.0",
     "prettier": "^3.2.0",
     "stylelint": "^16.1.0",
-    "stylelint-config-prettier": "^9.0.0",
     "stylelint-config-standard": "^36.0.0"
   }
 }

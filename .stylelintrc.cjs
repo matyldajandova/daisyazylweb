@@ -1,5 +1,5 @@
 /** @type {import('stylelint').Config} */
 module.exports = {
-  extends: ["stylelint-config-standard", "stylelint-config-prettier"],
+  extends: ["stylelint-config-standard"],
   rules: {}
 };

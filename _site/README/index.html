@@ -1,0 +1,63 @@
+<h2>Daisy Azyl – build &amp; content editing</h2>
+<h3>Build pipeline</h3>
+<ul>
+<li><strong>Install dependencies</strong>:</li>
+</ul>
+<pre><code class="language-bash">npm install --legacy-peer-deps
+</code></pre>
+<ul>
+<li><strong>Build static site with Eleventy</strong> (outputs to <code>_site/</code>):</li>
+</ul>
+<pre><code class="language-bash">npm run build
+</code></pre>
+<ul>
+<li><strong>Local preview</strong>:</li>
+</ul>
+<pre><code class="language-bash">npm run serve
+</code></pre>
+<p>Then open <code>http://localhost:8080</code>.</p>
+<h3>Minimal templating structure</h3>
+<ul>
+<li>Shared pieces:
+<ul>
+<li><code>/_includes/partials/global-styles.njk</code> – Webflow global style embeds.</li>
+<li><code>/_includes/partials/navbar.njk</code> – main navigation (uses <code>currentPage</code> from front‑matter).</li>
+<li><code>/_includes/partials/footer.njk</code> – footer (also uses <code>currentPage</code>).</li>
+</ul>
+</li>
+<li>Pages are still regular <code>.html</code> files (<code>index.html</code>, <code>adopce.html</code>, <code>adopce-detail.html</code>, …) with very small Liquid tags for includes and loops.</li>
+</ul>
+<h3>Animal data</h3>
+<ul>
+<li>Adoption listings are driven from:</li>
+</ul>
+<pre><code class="language-text">/_data/animals.json
+</code></pre>
+<ul>
+<li><code>adopce.html</code> loops over the <code>animals</code> array from this file to render cards.</li>
+<li>When <code>animals</code> is empty, the original “Momentálně nemáme žádné pejsky a kočičky k adopci.” message is shown automatically.</li>
+</ul>
+<h3>Minimal content editor (Decap CMS)</h3>
+<ul>
+<li>A lightweight Git‑based editor is available at:</li>
+</ul>
+<pre><code class="language-text">/admin/
+</code></pre>
+<ul>
+<li>Config file:</li>
+</ul>
+<pre><code class="language-text">/admin/config.yml
+</code></pre>
+<ul>
+<li>The <code>animals</code> collection in Decap CMS edits the <code>_data/animals.json</code> file:
+<ul>
+<li>Add / edit / remove animals.</li>
+<li>Fields match what the templates expect (<code>id</code>, <code>name</code>, <code>tags</code>, <code>image</code>, <code>shortDescription</code>, <code>detailUrl</code>, <code>adoptionStatus</code>, …).</li>
+</ul>
+</li>
+</ul>
+<h3>Hosting notes</h3>
+<ul>
+<li>Deploy the contents of <code>_site/</code> to any static host (Netlify, Vercel, GitHub Pages, etc.).</li>
+<li>For Decap CMS to work you will need to configure the <code>backend</code> section in <code>admin/config.yml</code> to match your Git provider or use Netlify Identity/git‑gateway.</li>
+</ul>

@@ -1,0 +1,16 @@
+[
+  {
+    "id": "betuska",
+    "name": "Bětuška",
+    "species": "kočka",
+    "ageText": "cca 8 let",
+    "image": "images/Snímek-obrazovky-2026-01-13-v-11.13.47.jpg",
+    "imageSrcset": "images/Snímek-obrazovky-2026-01-13-v-11.13.47-p-500.jpg 500w, images/Snímek-obrazovky-2026-01-13-v-11.13.47-p-800.jpg 800w, images/Snímek-obrazovky-2026-01-13-v-11.13.47.jpg 895w",
+    "imageSizes": "100vw",
+    "tags": ["Vhodná do bytu", "Mazlivá"],
+    "shortDescription": "Bětuška byla nalezena v prosinci 2025 na samotě u obce Vápno, kde byla s největší pravděpodobností úmyslně...",
+    "detailUrl": "adopce-detail.html",
+    "adoptionStatus": "available"
+  }
+]
+

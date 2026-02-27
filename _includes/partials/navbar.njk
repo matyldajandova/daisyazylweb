@@ -1,0 +1,58 @@
+{% assign current = currentPage | default: "" %}
+<div
+  data-collapse="medium"
+  data-animation="default"
+  data-duration="400"
+  data-w-id="6e9062d5-75dd-4378-1beb-ebce66c57360"
+  data-easing="ease"
+  data-easing2="ease"
+  role="banner"
+  class="navbar14_component w-nav"
+>
+  <div class="navbar14_container">
+    <a
+      href="index.html"
+      class="navbar14_logo-link w-nav-brand{% if current == 'home' %} w--current{% endif %}"
+      {% if current == 'home' %}aria-current="page"{% endif %}
+      ><img loading="lazy" src="images/logo-daisy.svg" alt="logo" class="navbar14_logo"
+    /></a>
+    <nav
+      role="navigation"
+      id="w-node-_6e9062d5-75dd-4378-1beb-ebce66c57364-66c57360"
+      class="navbar14_menu w-nav-menu"
+    >
+      <div class="navbar14_menu-link-wrapper">
+        <div class="navbar14_menu-links">
+          <a
+            href="https://daisy-azyl-187ec6.webflow.io//#o-nas"
+            class="navbar14_link w-nav-link"
+            >O nás</a
+          >
+          <a href="#podpora" class="navbar14_link w-nav-link">Podpořte nás</a>
+          <a href="#contact" class="navbar14_link w-nav-link">Tým</a>
+          <a
+            href="adopce.html"
+            class="navbar14_link w-nav-link{% if current == 'adopce' or current == 'adopce-detail' %} w--current{% endif %}"
+            {% if current == 'adopce' or current == 'adopce-detail' %}aria-current="page"{% endif %}
+            >Adopce</a>
+        </div>
+        <div
+          id="w-node-_6e9062d5-75dd-4378-1beb-ebce66c57379-66c57360"
+          class="navbar14_button-wrapper"
+        >
+          <a href="#contact" class="button w-button">Kontakt</a>
+        </div>
+      </div>
+    </nav>
+    <div class="navbar14_menu-button w-nav-button">
+      <div class="menu-icon2">
+        <div class="menu-icon2_line-top"></div>
+        <div class="menu-icon2_line-middle">
+          <div class="menu-icon1_line-middle-inner"></div>
+        </div>
+        <div class="menu-icon2_line-bottom"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
