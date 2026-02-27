@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "build": "eleventy && cp -r public/css _site/ && cp -r public/js _site/ && cp -r public/images _site/ && cp -r public/fonts _site/",
+    "build": "eleventy",
     "serve": "npm run build && eleventy --serve --port=8080",
     "format": "prettier \"**/*.{html,css,js,json,md}\" --write",
     "format:check": "prettier \"**/*.{html,css,js,json,md}\" --check",
