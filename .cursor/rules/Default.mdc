@@ -27,6 +27,7 @@ alwaysApply: true
 - Diff behavior between main and your changes when relevant
 - Ask yourself: "Would a staff engineer approve this?"
 - Run tests, check logs, demonstrate correctness
+ - For any user-facing or frontend change: exercise the affected flow in a real browser session (using the browser MCP tools for this project) before considering the work done.
 
 ### 5. Demand Elegance (Balanced)
 - For non-trivial changes: pause and ask "is there a more elegant way?"

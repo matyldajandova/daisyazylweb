@@ -39,7 +39,7 @@ collections:
               - label: "URL detailu"
                 name: "detailUrl"
                 widget: "string"
-                default: "adopce-detail.html"
+                default: "/adopce/detail/"
               - label: "Stav adopce"
                 name: "adoptionStatus"
                 widget: "select"
