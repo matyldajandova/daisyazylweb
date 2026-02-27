@@ -25,6 +25,7 @@ Then open `http://localhost:8080`.
 ### Minimal templating structure
 
 - Shared pieces:
+  - `/_includes/partials/head.njk` – document `<head>` (title, description, og/twitter; uses `title`/`description`/`ogImage` from front matter, or `animal` on adopce-detail).
   - `/_includes/partials/global-styles.njk` – Webflow global style embeds.
   - `/_includes/partials/navbar.njk` – main navigation (uses `currentPage` from front‑matter).
   - `/_includes/partials/footer.njk` – footer (also uses `currentPage`).
@@ -32,14 +33,16 @@ Then open `http://localhost:8080`.
 
 ### Animal data
 
-- Adoption listings are driven from:
+- Adoption listings and detail pages are driven from:
 
 ```text
-/_data/animals.json
+cms/animals.json      (edited by Decap CMS)
+_data/animals.js      (reads cms/animals.json, adds URL slugs, exposes global "animals")
 ```
 
-- `adopce.html` loops over the `animals` array from this file to render cards.
-- When `animals` is empty, the original “Momentálně nemáme žádné pejsky a kočičky k adopci.” message is shown automatically.
+- **Listing** (`adopce.html`): Loops over `animals.animalsEnriched` to render cards and links to each animal’s detail at `/adopce/<slug>/` (e.g. `/adopce/kocka-betuska/`).
+- **Detail** (`adopce-detail.html`): Uses Eleventy pagination (one page per animal) and binds each animal’s fields (name, tags, shortDescription, image, etc.). URLs are SEO-friendly: `/adopce/<species>-<name>/` (e.g. `/adopce/kocka-betuska/`).
+- When `animals.animals` is empty, no detail pages are generated and the listing shows “Momentálně nemáme žádné pejsky a kočičky k adopci.”
 
 ### Minimal content editor (Decap CMS)
 
@@ -55,9 +58,9 @@ Then open `http://localhost:8080`.
 /admin/config.yml
 ```
 
-- The `animals` collection in Decap CMS edits the `_data/animals.json` file:
+- The `animals` collection in Decap CMS edits the `cms/animals.json` file:
   - Add / edit / remove animals.
-  - Fields match what the templates expect (`id`, `name`, `tags`, `image`, `shortDescription`, `detailUrl`, `adoptionStatus`, …).
+  - Fields match what the templates expect (`id`, `name`, `species`, `tags`, `image`, `shortDescription`, `adoptionStatus`, …). Detail URLs are generated at build time (no `detailUrl` field).
 
 ### Hosting notes
 

@@ -15,7 +15,7 @@ collections:
     files:
       - name: "animals-data"
         label: "Seznam zvířat"
-        file: "_data/animals.json"
+        file: "cms/animals.json"
         fields:
           - label: "Zvířata"
             name: "animals"
@@ -36,10 +36,6 @@ collections:
               - label: "Stručný popis"
                 name: "shortDescription"
                 widget: "text"
-              - label: "URL detailu"
-                name: "detailUrl"
-                widget: "string"
-                default: "/adopce/detail/"
               - label: "Stav adopce"
                 name: "adoptionStatus"
                 widget: "select"

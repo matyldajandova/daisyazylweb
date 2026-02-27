@@ -20,6 +20,7 @@
 <ul>
 <li>Shared pieces:
 <ul>
+<li><code>/_includes/partials/head.njk</code> – document <code>&lt;head&gt;</code> (title, description, og/twitter; uses <code>title</code>/<code>description</code>/<code>ogImage</code> from front matter, or <code>animal</code> on adopce-detail).</li>
 <li><code>/_includes/partials/global-styles.njk</code> – Webflow global style embeds.</li>
 <li><code>/_includes/partials/navbar.njk</code> – main navigation (uses <code>currentPage</code> from front‑matter).</li>
 <li><code>/_includes/partials/footer.njk</code> – footer (also uses <code>currentPage</code>).</li>
@@ -29,13 +30,15 @@
 </ul>
 <h3>Animal data</h3>
 <ul>
-<li>Adoption listings are driven from:</li>
+<li>Adoption listings and detail pages are driven from:</li>
 </ul>
-<pre><code class="language-text">/_data/animals.json
+<pre><code class="language-text">cms/animals.json      (edited by Decap CMS)
+_data/animals.js      (reads cms/animals.json, adds URL slugs, exposes global &quot;animals&quot;)
 </code></pre>
 <ul>
-<li><code>adopce.html</code> loops over the <code>animals</code> array from this file to render cards.</li>
-<li>When <code>animals</code> is empty, the original “Momentálně nemáme žádné pejsky a kočičky k adopci.” message is shown automatically.</li>
+<li><strong>Listing</strong> (<code>adopce.html</code>): Loops over <code>animals.animalsEnriched</code> to render cards and links to each animal’s detail at <code>/adopce/&lt;slug&gt;/</code> (e.g. <code>/adopce/kocka-betuska/</code>).</li>
+<li><strong>Detail</strong> (<code>adopce-detail.html</code>): Uses Eleventy pagination (one page per animal) and binds each animal’s fields (name, tags, shortDescription, image, etc.). URLs are SEO-friendly: <code>/adopce/&lt;species&gt;-&lt;name&gt;/</code> (e.g. <code>/adopce/kocka-betuska/</code>).</li>
+<li>When <code>animals.animals</code> is empty, no detail pages are generated and the listing shows “Momentálně nemáme žádné pejsky a kočičky k adopci.”</li>
 </ul>
 <h3>Minimal content editor (Decap CMS)</h3>
 <ul>
@@ -49,10 +52,10 @@
 <pre><code class="language-text">/admin/config.yml
 </code></pre>
 <ul>
-<li>The <code>animals</code> collection in Decap CMS edits the <code>_data/animals.json</code> file:
+<li>The <code>animals</code> collection in Decap CMS edits the <code>cms/animals.json</code> file:
 <ul>
 <li>Add / edit / remove animals.</li>
-<li>Fields match what the templates expect (<code>id</code>, <code>name</code>, <code>tags</code>, <code>image</code>, <code>shortDescription</code>, <code>detailUrl</code>, <code>adoptionStatus</code>, …).</li>
+<li>Fields match what the templates expect (<code>id</code>, <code>name</code>, <code>species</code>, <code>tags</code>, <code>image</code>, <code>shortDescription</code>, <code>adoptionStatus</code>, …). Detail URLs are generated at build time (no <code>detailUrl</code> field).</li>
 </ul>
 </li>
 </ul>
