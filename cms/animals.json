@@ -1,32 +1,34 @@
-[
-  {
-    "id": "betuska",
-    "name": "Bětuška",
-    "species": "kočka",
-    "ageText": "cca 8 let",
-    "image": "public/images/animals/betuska.png",
-    "tags": ["Vhodná do bytu", "Mazlivá"],
-    "shortDescription": "Bětuška byla nalezena v prosinci 2025 na samotě u obce Vápno, kde byla s největší pravděpodobností úmyslně...",
-    "adoptionStatus": "available",
-    "evidenceNumber": "1240",
-    "birthDate": "1.12.2024",
-    "ageCategory": "Dospělý",
-    "gender": "kočka",
-    "breed": "evropská",
-    "color": "černá",
-    "guardian": "Libuška (Plzeň)",
-    "foundDate": "22.11.2025",
-    "origin": "Darovací smlouva od původního majitele",
-    "suitableOutdoor": false,
-    "suitableWithCats": true,
-    "suitableWithDogs": false,
-    "suitableWithChildren": true,
-    "suitableWithOlderChildren": true,
-    "panleukopeniaTest": "Negativní",
-    "felvTest": "Negativní",
-    "fivTest": "Negativní",
-    "neutered": true,
-    "firstVaccination": true,
-    "secondVaccination": true
-  }
-]
+{
+  "animals": [
+    {
+      "id": "betuska",
+      "name": "Bětuška",
+      "species": "kočka",
+      "ageText": "cca 8 let",
+      "image": "/images/uploads/betuska.png",
+      "tags": ["Vhodná do bytu", "Mazlivá"],
+      "shortDescription": "Bětuška byla nalezena v prosinci 2025 na samotě u obce Vápno, kde byla s největší pravděpodobností úmyslně...",
+      "adoptionStatus": "available",
+      "evidenceNumber": "1240",
+      "birthDate": "1.12.2024",
+      "ageCategory": "Dospělý",
+      "gender": "kočka",
+      "breed": "evropská",
+      "color": "černá",
+      "guardian": "Libuška (Plzeň)",
+      "foundDate": "22.11.2025",
+      "origin": "Darovací smlouva od původního majitele",
+      "suitableOutdoor": false,
+      "suitableWithCats": true,
+      "suitableWithDogs": false,
+      "suitableWithChildren": true,
+      "suitableWithOlderChildren": true,
+      "panleukopeniaTest": "Negativní",
+      "felvTest": "Negativní",
+      "fivTest": "Negativní",
+      "neutered": true,
+      "firstVaccination": true,
+      "secondVaccination": true
+    }
+  ]
+}

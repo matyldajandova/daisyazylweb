@@ -22,6 +22,11 @@ module.exports = function (eleventyConfig) {
     return name ? `${species}-${name}` : species || animal.id || "detail";
   });
 
+  eleventyConfig.addPassthroughCopy("admin/config.yml");
+  eleventyConfig.addPassthroughCopy({ "admin/config.yml": "config.yml" });
+  eleventyConfig.addPassthroughCopy({ public: "." });
+  eleventyConfig.addPassthroughCopy("images");
+
   return {
     dir: {
       input: ".",
