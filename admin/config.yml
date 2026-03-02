@@ -138,4 +138,12 @@ collections:
                 name: "secondVaccination"
                 widget: "boolean"
                 required: false
+              - label: "Galerie"
+                name: "gallery"
+                widget: "list"
+                required: false
+                field:
+                  label: "Obrázek"
+                  name: "image"
+                  widget: "image"
 

@@ -20,6 +20,12 @@
       "foundDate": "22.11.2025",
       "secondVaccination": true,
       "guardian": "Libuška (Plzeň)",
+      "gallery": [
+        {
+          "image": "/images/uploads/betuska.png"
+        },
+        "/images/uploads/uklid-paneloveho-domu_blog-handy-hands.png"
+      ],
       "breed": "evropská",
       "suitableOutdoor": false,
       "firstVaccination": true,

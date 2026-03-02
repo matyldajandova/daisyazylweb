@@ -1,3 +1,6 @@
+const path = require("path");
+const Image = require("@11ty/eleventy-img");
+
 /** Czech-friendly URL slug (e.g. "Bětuška" → "betuska", "kočka" → "kocka"). */
 function slugifyCzech(str) {
   if (str == null || typeof str !== "string") return "";
@@ -13,6 +16,34 @@ function slugifyCzech(str) {
   return s;
 }
 
+async function imageShortcode(src, alt, sizes = "100vw", widths = [400, 800, 1200]) {
+  if (!src) {
+    throw new Error("Image shortcode: `src` is required.");
+  }
+  if (!alt) {
+    throw new Error(`Image shortcode: missing alt text for ${src}`);
+  }
+
+  const projectRoot = __dirname;
+  const inputPath = path.join(projectRoot, src.replace(/^\//, ""));
+
+  const metadata = await Image(inputPath, {
+    widths,
+    formats: ["avif", "webp", "jpeg"],
+    outputDir: path.join(projectRoot, "public", "images", "generated"),
+    urlPath: "/images/generated/",
+  });
+
+  const imageAttributes = {
+    alt,
+    sizes,
+    loading: "lazy",
+    decoding: "async",
+  };
+
+  return Image.generateHTML(metadata, imageAttributes);
+}
+
 module.exports = function (eleventyConfig) {
   eleventyConfig.addFilter("slug", (str) => slugifyCzech(String(str ?? "")));
   eleventyConfig.addFilter("animalSlug", (animal) => {
@@ -21,6 +52,8 @@ module.exports = function (eleventyConfig) {
     const name = slugifyCzech(animal.name ?? animal.id ?? "");
     return name ? `${species}-${name}` : species || animal.id || "detail";
   });
+
+  eleventyConfig.addAsyncShortcode("image", imageShortcode);
 
   eleventyConfig.addPassthroughCopy("admin/config.yml");
   eleventyConfig.addPassthroughCopy({ "admin/config.yml": "config.yml" });

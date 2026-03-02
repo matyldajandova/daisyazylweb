@@ -5,6 +5,7 @@
   "scripts": {
     "build": "eleventy",
     "serve": "npm run build && eleventy --serve --port=8080",
+    "images:webp": "node scripts/convert-to-webp.js",
     "format": "prettier \"**/*.{html,css,js,json,md}\" --write",
     "format:check": "prettier \"**/*.{html,css,js,json,md}\" --check",
     "lint:js": "eslint \"**/*.js\"",
@@ -19,6 +20,7 @@
     "eslint-config-prettier": "^9.0.0",
     "eslint-plugin-import": "^2.29.0",
     "prettier": "^3.2.0",
+    "sharp": "^0.33.3",
     "stylelint": "^16.1.0",
     "stylelint-config-standard": "^36.0.0"
   }
