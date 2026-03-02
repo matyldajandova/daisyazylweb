@@ -4,3 +4,7 @@
 <li>Use the configured browser MCP tools to load the relevant page, exercise the affected behavior, and confirm that the UI behaves as intended.</li>
 <li>Treat &quot;tests passing without a browser check&quot; as insufficient for user-facing work; a browser run-through is required before considering the work done.</li>
 </ul>
+<h2>CMS image preview and dev server</h2>
+<ul>
+<li>The CMS preview uses the same origin as the admin (e.g. <code>http://localhost:8080/images/uploads/…</code>). For that URL to work, the dev server must serve <code>/images/uploads/</code> from the repo. The custom <code>scripts/serve.js</code> does this; do not revert to <code>eleventy --serve</code> for the main serve script or previews will 404 for uploads.</li>
+</ul>
