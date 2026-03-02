@@ -36,6 +36,6 @@ module.exports = function (eleventyConfig) {
     },
     htmlTemplateEngine: "liquid",
     markdownTemplateEngine: "liquid",
-    templateFormats: ["html", "md"],
+    templateFormats: ["html", "md", "liquid"],
   };
 };

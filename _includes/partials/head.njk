@@ -1,8 +1,9 @@
 {% comment %}
-  Document head partial. Uses title/description/og from front matter, or from `animal` on adopce-detail.
+  Document head partial. SEO: canonical, og:url, og:site_name, absolute og:image, twitter:image.
 {% endcomment %}
 {% if animal %}
-  {% assign pageTitle = animal.name | append: " | Adopce" %}
+  {% assign speciesLabel = animal.species | default: "zvíře" %}
+  {% assign pageTitle = animal.name | append: " – " | append: speciesLabel | append: " k adopci | Daisy Azyl" %}
   {% assign pageDesc = animal.shortDescription %}
   {% assign pageOgImage = animal.image %}
 {% else %}
@@ -10,22 +11,47 @@
   {% assign pageDesc = description %}
   {% assign pageOgImage = ogImage | default: "images/og.png" %}
 {% endif %}
+{% assign canonicalPath = permalink | default: page.url | default: "/" %}
+{% if canonicalPath == "" %}{% assign canonicalPath = "/" %}{% endif %}
+{% unless canonicalPath contains "/" %}{% assign canonicalPath = "/" | append: canonicalPath %}{% endunless %}
+{% assign canonicalUrl = site.siteUrl | append: canonicalPath %}
+{% assign ogImagePath = pageOgImage | default: "images/og.png" %}
+{% if ogImagePath contains "http" %}
+  {% assign fullOgImage = ogImagePath %}
+{% else %}
+  {% assign firstChar = ogImagePath | slice: 0, 1 %}
+  {% if firstChar == "/" %}
+    {% assign fullOgImage = site.siteUrl | append: ogImagePath %}
+  {% else %}
+    {% assign fullOgImage = site.siteUrl | append: "/" | append: ogImagePath %}
+  {% endif %}
+{% endif %}
 <meta charset="utf-8">
 <title>{{ pageTitle }}</title>
+<link rel="canonical" href="{{ canonicalUrl }}">
 {% if pageDesc %}
 <meta content="{{ pageDesc }}" name="description">
 <meta content="{{ pageTitle }}" property="og:title">
 <meta content="{{ pageDesc }}" property="og:description">
-<meta content="{{ pageOgImage }}" property="og:image">
+<meta content="{{ fullOgImage }}" property="og:image">
+<meta content="{{ canonicalUrl }}" property="og:url">
+<meta content="{{ site.siteName }}" property="og:site_name">
+<meta content="{{ site.locale }}" property="og:locale">
 <meta content="{{ pageTitle }}" property="twitter:title">
 <meta content="{{ pageDesc }}" property="twitter:description">
+<meta content="{{ fullOgImage }}" property="twitter:image">
 <meta property="og:type" content="website">
 <meta content="summary_large_image" name="twitter:card">
 {% else %}
 <meta content="{{ pageTitle }}" property="og:title">
+<meta content="{{ canonicalUrl }}" property="og:url">
+<meta content="{{ site.siteName }}" property="og:site_name">
 <meta content="{{ pageTitle }}" property="twitter:title">
 {% endif %}
 <meta content="width=device-width, initial-scale=1" name="viewport">
+{% if noindex %}
+<meta name="robots" content="noindex, nofollow">
+{% endif %}
 <base href="/">
 <meta name="relume-color-schemes" content="false" />
 <link href="css/normalize.css" rel="stylesheet" type="text/css">
@@ -46,3 +72,4 @@
     color: #519c61;
   }
 </style>
+{% include "partials/schema.njk" %}
