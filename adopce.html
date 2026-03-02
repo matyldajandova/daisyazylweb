@@ -47,56 +47,8 @@ description: "Kočky a psi k adopci z azylu Daisy Azyl u Městce Králové. Proh
                         {% if animals.animals and animals.animals.size > 0 %}
                 <div class="cards-grid">
                   {% for animal in animals.animalsEnriched %}
-                    <div class="event16_item">
-                    <a href="/adopce/{{ animal.slug }}/" class="event16_item-link w-inline-block">
-                      <div class="event16_image-wrapper">
-                        <img
-                          loading="lazy"
-                          src="{{ animal.image }}"
-                          alt="{{ animal.name }}"
-                          class="event16_image"
-                        />
-                      </div>
-                      <div class="event16_item-content">
-                        <div class="event16_item-content-top">
-                          <div class="margin-bottom margin-xsmall">
-                            <div class="event16_meta-wrapper">
-                              {% for tag in animal.tags %}
-                              <div class="tag">
-                                <div>{{ tag }}</div>
-                              </div>
-                              {% endfor %}
-                            </div>
-                          </div>
-                          <h3 class="heading-style-h5">{{ animal.name }}</h3>
-                          <div class="text-size-regular">
-                            {{ animal.shortDescription }}
-                          </div>
-                        </div>
-                        <div class="margin-top margin-small">
-                          <div class="button-group">
-                            <div class="button-3 is-link is-icon">
-                              <div>Více informací</div>
-                              <div class="icon-embed-xxsmall w-embed">
-                                <svg
-                                  width="16"
-                                  height="16"
-                                  viewBox="0 0 16 16"
-                                  fill="none"
-                                  xmlns="http://www.w3.org/2000/svg"
-                                >
-                                  <path
-                                    d="M6 3L11 8L6 13"
-                                    stroke="CurrentColor"
-                                    stroke-width="1.5"
-                                  ></path>
-                                </svg>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </a>
+                  <div class="event16_item">
+                    {% include "partials/animal-card.njk" %}
                   </div>
                   {% endfor %}
                 </div>
