@@ -26,3 +26,35 @@
 - **`llms.txt.liquid`** (new) – outputs `/llms.txt` for LLM/AI discovery
 - `index.html`, `adopce.html`, `adopce-detail.html`, `404.html`, `401.html` (lang, copy, H1, alts)
 - `.eleventy.cjs` (templateFormats: added liquid)
+
+# Image performance – baseline & inventory
+
+## Baseline (pre-optimization, static analysis)
+
+- **Home (`/`)**
+  - Hero image grid uses mostly AVIF (`images/1.avif`, `6.avif`, `5.avif`, `3.avif`, `7.avif`, `4.avif`, `8.avif`) plus one legacy PNG: `images/2.png` (hero cat photo).
+  - Decorative/UI assets are SVGs (paw, bone, arrow, etc.).
+- **Listing (`/adopce/`)**
+  - Animal cards use dynamic `animal.image` / `animal.imageSrcset` (formats determined by upstream pipeline, not hard-coded here).
+  - Hidden sample cards use AVIF (`images/5.avif`) only.
+- **Detail (`/adopce/:slug/`)**
+  - Main hero image uses dynamic `animal.image` / `animal.imageSrcset` (already wired with `srcset` + `sizes`, `loading=\"eager\"`).
+  - Gallery slider uses three hard-coded JPEGs: `images/Snímek-obrazovky-2026-01-13-v-11.13.47-p-500.jpg`, `…-p-800.jpg`, and `…11.13.47.jpg`.
+- **Meta/social images**
+  - Default OG/Twitter image and organization image in schema use `images/og.png`.
+  - Apple touch icon uses `images/webclip.png`.
+
+## Bitmap inventory under `images/` (from templates)
+
+- **Hero/content photos**
+  - `images/2.png` – Home hero grid (likely LCP candidate).
+  - `images/Snímek-obrazovky-2026-01-13-v-11.13.47.jpg` (+ `-p-500.jpg`, `-p-800.jpg`) – Detail page gallery slider.
+- **Meta / app icons**
+  - `images/og.png` – Default OG/Twitter image and schema.org `image`.
+  - `images/webclip.png` – Apple touch icon.
+
+Classification:
+
+- **Hero (LCP-critical)**: `images/2.png`.
+- **Gallery (secondary but prominent)**: `images/Snímek-obrazovky-2026-01-13-v-11.13.47*.jpg`.
+- **Decorative/UI & meta**: `images/og.png`, `images/webclip.png`.

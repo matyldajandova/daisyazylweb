@@ -54,24 +54,12 @@ currentPage: adopce-detail
                   </div>
                   <div class="blog-post-header4_image-wrapper">
                     {% if animal.imageSrcset %}
-                    <img
-                      sizes="{{ animal.imageSizes | default: '(max-width: 533px) 100vw, 533px' }}"
-                      srcset="{{ animal.imageSrcset }}"
-                      alt="{{ animal.name }}"
-                      src="{{ animal.image }}"
-                      loading="eager"
-                      fetchpriority="high"
-                      class="blog-post-header4_image"
-                    >
+                    <img sizes="{{ animal.imageSizes | default: '(max-width: 533px) 100vw, 533px' }}"
+                      srcset="{{ animal.imageSrcset }}" alt="{{ animal.name }}" src="{{ animal.image }}" loading="eager"
+                      fetchpriority="high" class="blog-post-header4_image">
                     {% else %}
-                    <img
-                      sizes="(max-width: 533px) 100vw, 533px"
-                      alt="{{ animal.name }}"
-                      src="{{ animal.image }}"
-                      loading="eager"
-                      fetchpriority="high"
-                      class="blog-post-header4_image"
-                    >
+                    <img sizes="(max-width: 533px) 100vw, 533px" alt="{{ animal.name }}" src="{{ animal.image }}"
+                      loading="eager" fetchpriority="high" class="blog-post-header4_image">
                     {% endif %}
                   </div>
                 </div>
@@ -267,7 +255,6 @@ currentPage: adopce-detail
           </div>
         </div>
       </section>
-      {% if animal.gallery and animal.gallery.size > 0 %}
       <section class="section_gallery15">
         <div class="padding-global">
           <div class="container-large">
@@ -282,22 +269,16 @@ currentPage: adopce-detail
                     </div>
                   </div>
                 </div>
-                {% assign gallery_alt = animal.name | append: ' – fotografie' %}
                 <div data-delay="4000" data-animation="slide" class="gallery15_slider w-slider" data-autoplay="false"
                   data-easing="ease" data-hide-arrows="true" data-disable-swipe="false" data-autoplay-limit="0"
                   data-nav-spacing="3" data-duration="500" data-infinite="false">
                   <div class="gallery15_mask w-slider-mask">
-                    {% for photo in animal.gallery %}
                     <div class="gallery15_slide w-slide">
-                      <div class="gallery15_image-wrapper">
-                        {% if photo.image %}
-                        {% image photo.image, gallery_alt, "(max-width: 895px) 100vw, 895px" %}
-                        {% else %}
-                        {% image photo, gallery_alt, "(max-width: 895px) 100vw, 895px" %}
-                        {% endif %}
-                      </div>
+                      <div class="gallery15_image-wrapper"><img sizes="(max-width: 895px) 100vw, 895px"
+                          srcset="images/Snímek-obrazovky-2026-01-13-v-11.13.47-p-500.webp 500w, images/Snímek-obrazovky-2026-01-13-v-11.13.47-p-800.webp 800w, images/Snímek-obrazovky-2026-01-13-v-11.13.47.webp 895w"
+                          alt="{{ animal.name }} – fotografie" src="images/Snímek-obrazovky-2026-01-13-v-11.13.47.webp" loading="lazy"
+                          class="gallery15_image"></div>
                     </div>
-                    {% endfor %}
                   </div>
                   <div class="slider-arrow is-centre-previous hide-mobile-landscape w-slider-arrow-left">
                     <div class="slider-arrow-icon_default w-embed"><svg width="100%" height="100%" viewbox="0 0 16 16"
@@ -322,7 +303,6 @@ currentPage: adopce-detail
           </div>
         </div>
       </section>
-      {% endif %}
       {% include "partials/support-section.njk" %}
       {% include "partials/cta-adopt.njk" %}
       {% include "partials/footer.njk" %}

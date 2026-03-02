@@ -1,99 +1,130 @@
-/* Convert bitmap images (PNG/JPEG) in the project to WebP.
- * - Scans the `public` and `images` directories recursively.
- * - For every `.png`, `.jpg`, or `.jpeg` file, creates a `.webp` sibling
- *   next to it if it does not already exist.
- *
- * This is intended to be run via `npm run images:webp`.
- */
+#!/usr/bin/env node
 
 const fs = require("fs");
 const path = require("path");
 const sharp = require("sharp");
 
-const ROOTS = [
-  path.join(__dirname, "..", "public"),
-  path.join(__dirname, "..", "images"),
-];
+const ROOT_DIR = path.join(__dirname, "..");
+const IMAGES_DIR = path.join(ROOT_DIR, "images");
+const PUBLIC_IMAGES_DIR = path.join(ROOT_DIR, "public", "images");
 
-const BITMAP_EXTENSIONS = new Set([".png", ".jpg", ".jpeg"]);
+const SOURCE_EXTENSIONS = new Set([
+  ".jpg",
+  ".jpeg",
+  ".png",
+  ".JPG",
+  ".JPEG",
+  ".PNG",
+]);
 
-async function walk(dir) {
-  const entries = await fs.promises.readdir(dir, { withFileTypes: true });
-  const files = [];
+const force = process.argv.includes("--force");
+
+async function collectSourceFiles(dir) {
+  const results = [];
+  let entries;
+
+  try {
+    entries = await fs.promises.readdir(dir, { withFileTypes: true });
+  } catch (error) {
+    if (error.code === "ENOENT") {
+      return results;
+    }
+    throw error;
+  }
 
   for (const entry of entries) {
     const fullPath = path.join(dir, entry.name);
-
     if (entry.isDirectory()) {
-      // Skip node_modules and build output
-      if (entry.name === "node_modules" || entry.name === "_site") continue;
-      files.push(...(await walk(fullPath)));
+      const nested = await collectSourceFiles(fullPath);
+      results.push(...nested);
     } else if (entry.isFile()) {
-      const ext = path.extname(entry.name).toLowerCase();
-      if (BITMAP_EXTENSIONS.has(ext)) {
-        files.push(fullPath);
+      const ext = path.extname(entry.name);
+      if (SOURCE_EXTENSIONS.has(ext)) {
+        results.push(fullPath);
       }
     }
   }
 
-  return files;
+  return results;
 }
 
-async function convertFile(src) {
-  const ext = path.extname(src);
-  const base = src.slice(0, -ext.length);
-  const dest = `${base}.webp`;
+async function needsConversion(sourcePath, targetPath) {
+  if (force) return true;
 
-  if (fs.existsSync(dest)) {
-    return;
+  try {
+    const [sourceStat, targetStat] = await Promise.all([
+      fs.promises.stat(sourcePath),
+      fs.promises.stat(targetPath),
+    ]);
+
+    return targetStat.mtimeMs < sourceStat.mtimeMs;
+  } catch (error) {
+    if (error.code === "ENOENT") {
+      return true;
+    }
+    throw error;
+  }
+}
+
+async function convertFile(sourcePath) {
+  const ext = path.extname(sourcePath);
+  const base = sourcePath.slice(0, -ext.length);
+  const targetPath = `${base}.webp`;
+
+  if (!(await needsConversion(sourcePath, targetPath))) {
+    return { converted: 0, skipped: 1, failed: 0 };
   }
 
-  await sharp(src)
-    .toFormat("webp", { quality: 80 })
-    .toFile(dest);
+  try {
+    await sharp(sourcePath).toFormat("webp").toFile(targetPath);
+    return { converted: 1, skipped: 0, failed: 0 };
+  } catch (error) {
+    console.error(`Failed to convert ${sourcePath} → ${targetPath}:`, error.message);
+    return { converted: 0, skipped: 0, failed: 1 };
+  }
 }
 
 async function main() {
-  const allFiles = [];
+  console.log(`Scanning "${IMAGES_DIR}" and "${PUBLIC_IMAGES_DIR}" for PNG/JPEG images…`);
 
-  for (const root of ROOTS) {
-    if (!fs.existsSync(root)) continue;
-    const stats = fs.statSync(root);
-    if (!stats.isDirectory()) continue;
+  const collections = await Promise.all([
+    collectSourceFiles(IMAGES_DIR),
+    collectSourceFiles(PUBLIC_IMAGES_DIR),
+  ]);
 
-    // eslint-disable-next-line no-console
-    console.log(`Scanning ${root} for bitmap images...`);
-    const files = await walk(root);
-    allFiles.push(...files);
-  }
+  const files = collections.flat();
 
-  if (!allFiles.length) {
-    // eslint-disable-next-line no-console
-    console.log("No bitmap images found.");
+  if (files.length === 0) {
+    console.log("No PNG/JPEG images found under images/ or public/images/. Nothing to do.");
     return;
   }
 
-  // eslint-disable-next-line no-console
-  console.log(`Found ${allFiles.length} bitmap files. Converting to WebP...`);
+  console.log(
+    `Found ${files.length} source image(s). Starting conversion${force ? " (force mode)" : ""}…`,
+  );
 
-  for (const file of allFiles) {
-    // eslint-disable-next-line no-console
-    console.log(`Converting ${file}`);
-    try {
-      await convertFile(file);
-    } catch (err) {
-      // eslint-disable-next-line no-console
-      console.error(`Failed to convert ${file}:`, err.message);
-    }
+  let totals = { converted: 0, skipped: 0, failed: 0 };
+
+  for (const file of files) {
+    const result = await convertFile(file);
+    totals = {
+      converted: totals.converted + result.converted,
+      skipped: totals.skipped + result.skipped,
+      failed: totals.failed + result.failed,
+    };
   }
 
-  // eslint-disable-next-line no-console
-  console.log("Conversion to WebP finished.");
+  console.log(
+    `Done. Converted: ${totals.converted}, skipped (up-to-date): ${totals.skipped}, failed: ${totals.failed}.`,
+  );
+
+  if (totals.failed > 0) {
+    process.exitCode = 1;
+  }
 }
 
-main().catch((err) => {
-  // eslint-disable-next-line no-console
-  console.error(err);
+main().catch((error) => {
+  console.error("Unexpected error during WebP conversion:", error);
   process.exitCode = 1;
 });
 
