@@ -26,10 +26,12 @@ noindex: true
       <form id="email-form" name="email-form" data-name="Email Form" action="/.wf_auth" method="post" class="utility_form w-password-page" data-wf-page-id="695b9bfe5fed08c9b8008374" data-wf-element-id="60d3fa3a5a19c1169cd58c4100000000000c"><img width="106" src="images/utility-lock.svg" alt="" class="utility_image">
         <h1 class="sr-only">Protected Page</h1>
         <h3>Protected Page</h3>
-        <div class="padding-xxsmall"></div><input class="form_input w-password-page w-input" autofocus="true" maxlength="256" name="pass" data-name="field" placeholder="Enter your password" type="password" id="pass">
+        <div class="padding-xxsmall"></div>
+        <label for="pass" class="sr-only">Password</label>
+        <input class="form_input w-password-page w-input" autofocus="true" maxlength="256" name="pass" data-name="field" placeholder="Enter your password" type="password" id="pass" aria-describedby="password-error">
         <div class="padding-xxsmall"></div><input type="submit" data-wait="Please wait..." class="button w-password-page w-button" value="Submit">
         <div class="form_message-error-wrapper w-password-page w-form-fail">
-          <div class="form_message-error">
+          <div class="form_message-error" role="alert" id="password-error">
             <div>Incorrect password. Please try again.</div>
           </div>
         </div>

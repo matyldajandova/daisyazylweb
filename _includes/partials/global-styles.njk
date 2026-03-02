@@ -31,6 +31,23 @@
         border: 0;
       }
 
+      /* Variant for elements that should become visible when focused (e.g. skip links) */
+      .sr-only-focusable:active,
+      .sr-only-focusable:focus {
+        position: static;
+        width: auto;
+        height: auto;
+        padding: 0.5rem 1rem;
+        margin: 0.5rem;
+        overflow: visible;
+        clip: auto;
+        white-space: normal;
+        border-radius: 0.25rem;
+        background-color: #ffffff;
+        color: #000000;
+        z-index: 1000;
+      }
+
       /* Font smoothing across the site */
       * {
         -webkit-font-smoothing: antialiased;
@@ -39,8 +56,12 @@
       }
 
       /* Focus state style for keyboard navigation for the focusable elements */
-      *[tabindex]:focus-visible,
-      input[type="file"]:focus-visible {
+      a:focus-visible,
+      button:focus-visible,
+      input:focus-visible,
+      textarea:focus-visible,
+      select:focus-visible,
+      *[tabindex]:focus-visible {
         outline: 0.125rem solid #4d65ff;
         outline-offset: 0.125rem;
       }

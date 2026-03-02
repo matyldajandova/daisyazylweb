@@ -14,7 +14,8 @@ description: "Kočky a psi k adopci z azylu Daisy Azyl u Městce Králové. Proh
 <body>
   <div class="page-wrapper navbar-on-page">
     {% include "partials/global-styles.njk" %}
-    <main class="main-wrapper max-width-full">
+    <a href="#main-content" class="skip-link sr-only sr-only-focusable">Přeskočit na hlavní obsah</a>
+    <main id="main-content" class="main-wrapper max-width-full">
       {% include "partials/navbar.njk" %}
       <section id="nalezenci" class="section_grid">
         <div class="padding-global">
@@ -45,9 +46,9 @@ description: "Kočky a psi k adopci z azylu Daisy Azyl u Městce Králové. Proh
                   </div>
                 </div>
                         {% if animals.animals and animals.animals.size > 0 %}
-                <div class="cards-grid">
+                <div class="cards-grid" role="list">
                   {% for animal in animals.animalsEnriched %}
-                  <div class="event16_item">
+                  <div class="event16_item" role="listitem">
                     {% include "partials/animal-card.njk" %}
                   </div>
                   {% endfor %}

@@ -18,6 +18,7 @@
     /></a>
     <nav
       role="navigation"
+      aria-label="Hlavní navigace"
       id="w-node-_6e9062d5-75dd-4378-1beb-ebce66c57364-66c57360"
       class="navbar14_menu w-nav-menu"
     >
@@ -40,7 +41,12 @@
         </div>
       </div>
     </nav>
-    <div class="navbar14_menu-button w-nav-button">
+    <div
+      class="navbar14_menu-button w-nav-button"
+      aria-label="Otevřít hlavní menu"
+      aria-expanded="false"
+      aria-controls="w-node-_6e9062d5-75dd-4378-1beb-ebce66c57364-66c57360"
+    >
       <div class="menu-icon2">
         <div class="menu-icon2_line-top"></div>
         <div class="menu-icon2_line-middle">
@@ -51,4 +57,31 @@
     </div>
   </div>
 </div>
+
+<script>
+  (function () {
+    var menuButton = document.querySelector(
+      ".navbar14_menu-button.w-nav-button",
+    );
+    var navMenu = document.getElementById(
+      "w-node-_6e9062d5-75dd-4378-1beb-ebce66c57364-66c57360",
+    );
+
+    if (!menuButton || !navMenu) return;
+
+    function syncExpanded() {
+      var isOpen =
+        navMenu.classList.contains("w--nav-menu-open") ||
+        menuButton.classList.contains("w--open");
+      menuButton.setAttribute("aria-expanded", isOpen ? "true" : "false");
+    }
+
+    syncExpanded();
+
+    menuButton.addEventListener("click", function () {
+      // Webflow toggles classes after the click handler, so defer update.
+      setTimeout(syncExpanded, 0);
+    });
+  })();
+</script>
 

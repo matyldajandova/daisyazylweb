@@ -13,7 +13,8 @@ description: "Daisy Azyl z.s. – azyl pro staré, týrané a hendikepované ko�
 <body>
   <div class="page-wrapper navbar-on-page">
     {% include "partials/global-styles.njk" %}
-    <main class="main-wrapper max-width-full">
+    <a href="#main-content" class="skip-link sr-only sr-only-focusable">Přeskočit na hlavní obsah</a>
+    <main id="main-content" class="main-wrapper max-width-full">
       {% include "partials/navbar.njk" %}
       <header class="section_header153">
         <div class="header153_component">
@@ -164,9 +165,9 @@ description: "Daisy Azyl z.s. – azyl pro staré, týrané a hendikepované ko�
                     {% endif %}
                   </div>
                 </div>
-                <div class="cards-grid">
+                <div class="cards-grid" role="list">
                   {% for animal in animals.animalsEnriched limit:3 %}
-                  <div class="event16_item">
+                  <div class="event16_item" role="listitem">
                     {% include "partials/animal-card.njk" %}
                   </div>
                   {% endfor %}
