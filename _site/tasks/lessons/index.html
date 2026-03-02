@@ -6,5 +6,5 @@
 </ul>
 <h2>CMS image preview and dev server</h2>
 <ul>
-<li>The CMS preview uses the same origin as the admin (e.g. <code>http://localhost:8080/images/uploads/…</code>). For that URL to work, the dev server must serve <code>/images/uploads/</code> from the repo. The custom <code>scripts/serve.js</code> does this; do not revert to <code>eleventy --serve</code> for the main serve script or previews will 404 for uploads.</li>
+<li>The CMS preview uses the same origin as the admin (e.g. <code>http://localhost:8080/images/uploads/…</code>). For that URL to work, the dev server must serve <code>/images/uploads/</code> from the repo. Use Eleventy’s standard approach: <code>addPassthroughCopy(&quot;images&quot;)</code> plus <code>setServerPassthroughCopyBehavior(&quot;passthrough&quot;)</code> in <code>.eleventy.js</code> so that during <code>eleventy --serve</code> passthrough files are served from source and new CMS uploads appear without a rebuild. Do not remove these or previews will 404.</li>
 </ul>
