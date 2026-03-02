@@ -18,6 +18,26 @@
         font-size: inherit;
       }
 
+      /* Visually hidden but accessible text (for hidden headings, etc.) */
+      .sr-only {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+        border: 0;
+      }
+
+      /* Font smoothing across the site */
+      * {
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        -o-font-smoothing: antialiased;
+      }
+
       /* Focus state style for keyboard navigation for the focusable elements */
       *[tabindex]:focus-visible,
       input[type="file"]:focus-visible {
@@ -210,6 +230,25 @@
 
       .no-scrollbar::-webkit-scrollbar {
         display: none;
+      }
+
+      /* Navbar and footer link color overrides */
+      .navbar14_link.w--current {
+        color: #519c61;
+      }
+
+      /* Footer links: off-white base, yellow hover; nav and cookies use dark (same as nav) */
+      .footer15_component .link {
+        color: var(--_primitives---colors--off-white);
+      }
+      .footer15_component .link:hover {
+        color: var(--_primitives---colors--yellow);
+      }
+      .footer15_link,
+      .footer15_link:hover,
+      .footer15_legal-link,
+      .footer15_legal-link:hover {
+        color: var(--_primitives---colors--dark-green);
       }
     </style>
   </div>

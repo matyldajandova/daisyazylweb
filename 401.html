@@ -6,11 +6,25 @@ noindex: true
 <html lang="cs" data-wf-page="695b9bfe5fed08c9b8008374" data-wf-site="695b9bfd5fed08c9b800830d">
 <head>
   {% include "partials/head.njk" %}
+  <style>
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
+  </style>
 </head>
 <body>
   <div class="utility_component">
     <div class="utility_form-block w-password-page w-form">
       <form id="email-form" name="email-form" data-name="Email Form" action="/.wf_auth" method="post" class="utility_form w-password-page" data-wf-page-id="695b9bfe5fed08c9b8008374" data-wf-element-id="60d3fa3a5a19c1169cd58c4100000000000c"><img width="106" src="images/utility-lock.svg" alt="" class="utility_image">
+        <h1 class="sr-only">Protected Page</h1>
         <h3>Protected Page</h3>
         <div class="padding-xxsmall"></div><input class="form_input w-password-page w-input" autofocus="true" maxlength="256" name="pass" data-name="field" placeholder="Enter your password" type="password" id="pass">
         <div class="padding-xxsmall"></div><input type="submit" data-wait="Please wait..." class="button w-password-page w-button" value="Submit">
