@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "build": "eleventy",
+    "build": "npm run images:webp && eleventy",
     "serve": "npm run build && eleventy --serve --port=8080",
     "images:webp": "node scripts/convert-to-webp.js",
     "format": "prettier \"**/*.{html,css,js,json,md}\" --write",
