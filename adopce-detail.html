@@ -76,6 +76,20 @@ currentPage: adopce-detail
                 <div class="margin-bottom margin-medium">
                   <h2 class="text-style-tagline">Informace o zvířeti</h2>
                 </div>
+                {% assign gender_is_female = false %}
+                {% if animal.gender %}
+                  {% assign g = animal.gender | downcase %}
+                  {% if g == 'samička' or g == 'samicka' or g == 'kočka' or g == 'kocka' %}
+                    {% assign gender_is_female = true %}
+                  {% endif %}
+                {% endif %}
+                {% if gender_is_female %}
+                  {% assign vhodny_word = 'Vhodná' %}
+                  {% assign kastro_word = 'Kastrovaná' %}
+                {% else %}
+                  {% assign vhodny_word = 'Vhodný' %}
+                  {% assign kastro_word = 'Kastrovaný' %}
+                {% endif %}
                 <div data-duration-in="400" data-duration-out="200" data-current="zakladni-udaje" data-easing="ease"
                   class="layout507_tabs w-tabs">
                   <div id="w-node-a3281aab-c3e1-a477-15e5-c0fa168b5f98-fecb6775" class="layout507_tabs-menu w-tab-menu"
@@ -167,37 +181,72 @@ currentPage: adopce-detail
                     <div data-w-tab="povahove-rysy" class="layout507_tab-pane w-tab-pane"
                       role="tabpanel" id="panel-povahove-rysy" aria-labelledby="tab-povahove-rysy">
                       <div class="layout507_card _2-rows">
-                        <div class="card-row">
-                          {% if animal.suitableOutdoor is defined %}<div class="card-item-questions">
-                            <div class="card-question">Vhodný do domácnosti s přístupem ven?</div>
+                      <div class="card-row">
+                          {% if animal.suitableOutdoor != nil %}<div class="card-item-questions">
+                            <div class="card-question">{{ vhodny_word }} do domácnosti s přístupem ven?</div>
                             <div class="card-icon-wrap">
-                              <div>{{ "Ano" if animal.suitableOutdoor else "Ne" }}</div><img loading="lazy" src="images/{{ 'green-checkmark' if animal.suitableOutdoor else 'red-cross' }}.svg" alt="">
+                              <div>
+                                {% if animal.suitableOutdoor %}Ano{% else %}Ne{% endif %}
+                              </div>
+                              <img
+                                loading="lazy"
+                                src="images/{% if animal.suitableOutdoor %}green-checkmark{% else %}red-cross{% endif %}.svg"
+                                alt=""
+                              >
                             </div>
                           </div>{% endif %}
-                          {% if animal.suitableWithCats is defined %}<div class="card-item-questions">
-                            <div class="card-question">Vhodný k dalším kočkám?</div>
+                          {% if animal.suitableWithCats != nil %}<div class="card-item-questions">
+                            <div class="card-question">{{ vhodny_word }} k dalším kočkám?</div>
                             <div class="card-icon-wrap">
-                              <div>{{ "Ano" if animal.suitableWithCats else "Ne" }}</div><img loading="lazy" src="images/{{ 'green-checkmark' if animal.suitableWithCats else 'red-cross' }}.svg" alt="">
+                              <div>
+                                {% if animal.suitableWithCats %}Ano{% else %}Ne{% endif %}
+                              </div>
+                              <img
+                                loading="lazy"
+                                src="images/{% if animal.suitableWithCats %}green-checkmark{% else %}red-cross{% endif %}.svg"
+                                alt=""
+                              >
                             </div>
                           </div>{% endif %}
-                          {% if animal.suitableWithDogs is defined %}<div class="card-item-questions">
-                            <div class="card-question">Vhodný k psům?</div>
+                          {% if animal.suitableWithDogs != nil %}<div class="card-item-questions">
+                            <div class="card-question">{{ vhodny_word }} k psům?</div>
                             <div class="card-icon-wrap">
-                              <div>{{ "Ano" if animal.suitableWithDogs else "Ne" }}</div><img loading="lazy" src="images/{{ 'green-checkmark' if animal.suitableWithDogs else 'red-cross' }}.svg" alt="">
+                              <div>
+                                {% if animal.suitableWithDogs %}Ano{% else %}Ne{% endif %}
+                              </div>
+                              <img
+                                loading="lazy"
+                                src="images/{% if animal.suitableWithDogs %}green-checkmark{% else %}red-cross{% endif %}.svg"
+                                alt=""
+                              >
                             </div>
                           </div>{% endif %}
                         </div>
                         <div class="card-row">
-                          {% if animal.suitableWithChildren is defined %}<div class="card-item-questions">
-                            <div class="card-question">Vhodný k dětem?</div>
+                          {% if animal.suitableWithChildren != nil %}<div class="card-item-questions">
+                            <div class="card-question">{{ vhodny_word }} k dětem?</div>
                             <div class="card-icon-wrap">
-                              <div>{{ "Ano" if animal.suitableWithChildren else "Ne" }}</div><img loading="lazy" src="images/{{ 'green-checkmark' if animal.suitableWithChildren else 'red-cross' }}.svg" alt="">
+                              <div>
+                                {% if animal.suitableWithChildren %}Ano{% else %}Ne{% endif %}
+                              </div>
+                              <img
+                                loading="lazy"
+                                src="images/{% if animal.suitableWithChildren %}green-checkmark{% else %}red-cross{% endif %}.svg"
+                                alt=""
+                              >
                             </div>
                           </div>{% endif %}
-                          {% if animal.suitableWithOlderChildren is defined %}<div class="card-item-questions">
-                            <div class="card-question">Vhodný k odrostlejším dětem?</div>
+                          {% if animal.suitableWithOlderChildren != nil %}<div class="card-item-questions">
+                            <div class="card-question">{{ vhodny_word }} k odrostlejším dětem?</div>
                             <div class="card-icon-wrap">
-                              <div>{{ "Ano" if animal.suitableWithOlderChildren else "Ne" }}</div><img loading="lazy" src="images/{{ 'green-checkmark' if animal.suitableWithOlderChildren else 'red-cross' }}.svg" alt="">
+                              <div>
+                                {% if animal.suitableWithOlderChildren %}Ano{% else %}Ne{% endif %}
+                              </div>
+                              <img
+                                loading="lazy"
+                                src="images/{% if animal.suitableWithOlderChildren %}green-checkmark{% else %}red-cross{% endif %}.svg"
+                                alt=""
+                              >
                             </div>
                           </div>{% endif %}
                         </div>
@@ -210,39 +259,75 @@ currentPage: adopce-detail
                           {% if animal.panleukopeniaTest %}<div class="card-item-questions">
                             <div class="card-question">Test na panleukopenii:</div>
                             <div class="card-icon-wrap">
-                              <div>{{ animal.panleukopeniaTest }}</div><img loading="lazy" src="images/{{ 'green-checkmark' if animal.panleukopeniaTest == 'Negativní' else 'red-cross' }}.svg" alt="">
+                              <div>{{ animal.panleukopeniaTest }}</div>
+                              <img
+                                loading="lazy"
+                                src="images/{% if animal.panleukopeniaTest == 'Negativní' %}green-checkmark{% else %}red-cross{% endif %}.svg"
+                                alt=""
+                              >
                             </div>
                           </div>{% endif %}
                           {% if animal.felvTest %}<div class="card-item-questions">
                             <div class="card-question">Test na FeLV:</div>
                             <div class="card-icon-wrap">
-                              <div>{{ animal.felvTest }}</div><img loading="lazy" src="images/{{ 'green-checkmark' if animal.felvTest == 'Negativní' else 'red-cross' }}.svg" alt="">
+                              <div>{{ animal.felvTest }}</div>
+                              <img
+                                loading="lazy"
+                                src="images/{% if animal.felvTest == 'Negativní' %}green-checkmark{% else %}red-cross{% endif %}.svg"
+                                alt=""
+                              >
                             </div>
                           </div>{% endif %}
                           {% if animal.fivTest %}<div class="card-item-questions">
                             <div class="card-question">Test na FIV:</div>
                             <div class="card-icon-wrap">
-                              <div>{{ animal.fivTest }}</div><img loading="lazy" src="images/{{ 'green-checkmark' if animal.fivTest == 'Negativní' else 'red-cross' }}.svg" alt="">
+                              <div>{{ animal.fivTest }}</div>
+                              <img
+                                loading="lazy"
+                                src="images/{% if animal.fivTest == 'Negativní' %}green-checkmark{% else %}red-cross{% endif %}.svg"
+                                alt=""
+                              >
                             </div>
                           </div>{% endif %}
                         </div>
                         <div class="card-row">
-                          {% if animal.neutered is defined %}<div class="card-item-questions">
-                            <div class="card-question">Kastrovaný:</div>
+                          {% if animal.neutered != nil %}<div class="card-item-questions">
+                            <div class="card-question">{{ kastro_word }}:</div>
                             <div class="card-icon-wrap">
-                              <div>{{ "Ano" if animal.neutered else "Ne" }}</div><img loading="lazy" src="images/{{ 'green-checkmark' if animal.neutered else 'red-cross' }}.svg" alt="">
+                              <div>
+                                {% if animal.neutered %}Ano{% else %}Ne{% endif %}
+                              </div>
+                              <img
+                                loading="lazy"
+                                src="images/{% if animal.neutered %}green-checkmark{% else %}red-cross{% endif %}.svg"
+                                alt=""
+                              >
                             </div>
                           </div>{% endif %}
-                          {% if animal.firstVaccination is defined %}<div class="card-item-questions">
+                          {% if animal.firstVaccination != nil %}<div class="card-item-questions">
                             <div class="card-question">První vakcinace:</div>
                             <div class="card-icon-wrap">
-                              <div>{{ "Ano" if animal.firstVaccination else "Ne" }}</div><img loading="lazy" src="images/{{ 'green-checkmark' if animal.firstVaccination else 'red-cross' }}.svg" alt="">
+                              <div>
+                                {% if animal.firstVaccination %}Ano{% else %}Ne{% endif %}
+                              </div>
+                              <img
+                                loading="lazy"
+                                src="images/{% if animal.firstVaccination %}green-checkmark{% else %}red-cross{% endif %}.svg"
+                                alt=""
+                              >
                             </div>
                           </div>{% endif %}
-                          {% if animal.secondVaccination is defined %}<div class="card-item-questions">
+                          {% if animal.secondVaccination != nil %}<div class="card-item-questions">
                             <div class="card-question">Druhá vakcinace:</div>
                             <div class="card-icon-wrap">
-                              <div>{{ "Ano" if animal.secondVaccination else "Ne" }}</div><img loading="lazy" src="images/{{ 'green-checkmark' if animal.secondVaccination else 'red-cross' }}.svg" alt="">
+                              <div>
+                                {% if animal.secondVaccination %}Ano{% else %}Ne{% endif %}
+                              </div>
+                              <img
+                                loading="lazy"
+                                src="images/{% if animal.secondVaccination %}green-checkmark{% else %}red-cross{% endif %}.svg"
+                                alt=""
+                              >
                             </div>
                           </div>{% endif %}
                         </div>
@@ -255,6 +340,7 @@ currentPage: adopce-detail
           </div>
         </div>
       </section>
+      {% if animal.gallery and animal.gallery.size > 0 %}
       <section class="section_gallery15">
         <div class="padding-global">
           <div class="container-large">
@@ -269,32 +355,53 @@ currentPage: adopce-detail
                     </div>
                   </div>
                 </div>
-                <div data-delay="4000" data-animation="slide" class="gallery15_slider w-slider" data-autoplay="false"
-                  data-easing="ease" data-hide-arrows="true" data-disable-swipe="false" data-autoplay-limit="0"
-                  data-nav-spacing="3" data-duration="500" data-infinite="false">
+                <div
+                  data-delay="4000"
+                  data-animation="slide"
+                  class="gallery15_slider w-slider"
+                  data-autoplay="false"
+                  data-easing="ease"
+                  data-hide-arrows="true"
+                  data-disable-swipe="false"
+                  data-autoplay-limit="0"
+                  data-nav-spacing="3"
+                  data-duration="500"
+                  data-infinite="false"
+                >
                   <div class="gallery15_mask w-slider-mask">
+                    {% for photo in animal.gallery %}
                     <div class="gallery15_slide w-slide">
-                      <div class="gallery15_image-wrapper"><img sizes="(max-width: 895px) 100vw, 895px"
-                          srcset="images/Snímek-obrazovky-2026-01-13-v-11.13.47-p-500.webp 500w, images/Snímek-obrazovky-2026-01-13-v-11.13.47-p-800.webp 800w, images/Snímek-obrazovky-2026-01-13-v-11.13.47.webp 895w"
-                          alt="{{ animal.name }} – fotografie" src="images/Snímek-obrazovky-2026-01-13-v-11.13.47.webp" loading="lazy"
-                          class="gallery15_image"></div>
+                      <div class="gallery15_image-wrapper">
+                        <img
+                          sizes="(max-width: 895px) 100vw, 895px"
+                          src="{{ photo.image }}"
+                          alt="{{ animal.name }} – fotografie"
+                          loading="lazy"
+                          class="gallery15_image"
+                        >
+                      </div>
                     </div>
+                    {% endfor %}
                   </div>
                   <div class="slider-arrow is-centre-previous hide-mobile-landscape w-slider-arrow-left">
-                    <div class="slider-arrow-icon_default w-embed"><svg width="100%" height="100%" viewbox="0 0 16 16"
-                        fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <div class="slider-arrow-icon_default w-embed">
+                      <svg width="100%" height="100%" viewbox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path
                           d="M3.31066 8.75001L9.03033 14.4697L7.96967 15.5303L0.439339 8.00001L7.96967 0.469676L9.03033 1.53034L3.31066 7.25001L15.5 7.25L15.5 8.75L3.31066 8.75001Z"
-                          fill="currentColor"></path>
-                      </svg></div>
+                          fill="currentColor"
+                        ></path>
+                      </svg>
+                    </div>
                   </div>
                   <div class="slider-arrow is-centre-next hide-mobile-landscape w-slider-arrow-right">
-                    <div class="slider-arrow-icon_default w-embed"><svg width="100%" height="100%" viewbox="0 0 16 16"
-                        fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <div class="slider-arrow-icon_default w-embed">
+                      <svg width="100%" height="100%" viewbox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path
                           d="M12.6893 7.25L6.96967 1.53033L8.03033 0.469666L15.5607 8L8.03033 15.5303L6.96967 14.4697L12.6893 8.75H0.5V7.25H12.6893Z"
-                          fill="currentColor"></path>
-                      </svg></div>
+                          fill="currentColor"
+                        ></path>
+                      </svg>
+                    </div>
                   </div>
                   <div class="gallery15_slide-nav hide w-slider-nav w-slider-nav-invert w-round"></div>
                 </div>
@@ -303,6 +410,7 @@ currentPage: adopce-detail
           </div>
         </div>
       </section>
+      {% endif %}
       {% include "partials/support-section.njk" %}
       {% include "partials/cta-adopt.njk" %}
       {% include "partials/footer.njk" %}

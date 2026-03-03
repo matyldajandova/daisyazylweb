@@ -25,6 +25,19 @@ function animalSlug(animal) {
 
 const FALLBACK_IMAGE = "images/cat-illustration.svg";
 
+function normalizeGallery(gallery) {
+  if (!Array.isArray(gallery)) return [];
+  return gallery.map((item) => {
+    if (typeof item === "string") {
+      return { image: item };
+    }
+    if (item && typeof item === "object" && item.image) {
+      return item;
+    }
+    return item;
+  });
+}
+
 async function enrichAnimalImage(animal) {
   if (!animal || !animal.image) {
     return animal;
@@ -104,6 +117,7 @@ module.exports = async function () {
   const animalsWithSlug = data.map((a) => ({
     ...a,
     slug: animalSlug(a) || a.id || "detail",
+    gallery: normalizeGallery(a.gallery),
   }));
 
   const animalsEnriched = await Promise.all(

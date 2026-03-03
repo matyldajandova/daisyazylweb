@@ -8,7 +8,7 @@
       "neutered": true,
       "color": "černá",
       "suitableWithDogs": false,
-      "fivTest": "Negativní",
+      "fivTest": "Pozitivní",
       "suitableWithOlderChildren": true,
       "origin": "Darovací smlouva od původního majitele",
       "suitableWithCats": true,
@@ -24,8 +24,12 @@
         {
           "image": "/images/uploads/betuska.png"
         },
-        "/images/uploads/uklid-paneloveho-domu_blog-handy-hands.png",
-        "/images/uploads/al-ko-1.jpg"
+        {
+          "image": "/images/uploads/uklid-paneloveho-domu_blog-handy-hands.png"
+        },
+        {
+          "image": "/images/uploads/al-ko-1.jpg"
+        }
       ],
       "breed": "evropská",
       "suitableOutdoor": false,
