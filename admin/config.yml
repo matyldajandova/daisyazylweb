@@ -1,6 +1,9 @@
 backend:
-  name: git-gateway
+  name: bitbucket
+  repo: grenadecastle/daisy-azyl-web   # workspace/repo-name
   branch: main
+  auth_type: implicit
+  app_id: uej7WfLn9ev5MtZNRJ
 
 media_folder: "images/uploads"
 public_folder: "/images/uploads"

@@ -58,3 +58,15 @@ Classification:
 - **Hero (LCP-critical)**: `images/2.png`.
 - **Gallery (secondary but prominent)**: `images/Snímek-obrazovky-2026-01-13-v-11.13.47*.jpg`.
 - **Decorative/UI & meta**: `images/og.png`, `images/webclip.png`.
+
+# Website documentation & README
+
+## Plan
+
+- [x] Audit current `README.md` and website structure.
+- [x] Extend `README.md` with full website documentation (pages, data flow, CMS, deployment).
+- [x] Proofread and verify the updated README for maintainers.
+
+## Review
+
+- `README.md` now documents the overall website purpose, main pages/routes, adoption data model, Decap CMS flow, build pipeline, and hosting/SEO-related endpoints.
