@@ -107,29 +107,33 @@ v ČR, podpora zvířat. Nekupujte, adoptujte."
                 <script src="https://unpkg.com/split-type"></script>
                 <script>
                   document.addEventListener('DOMContentLoaded', function () {
+                    gsap.registerPlugin(ScrollTrigger);
                     // Function to check if the viewport width is 767px or less
                     function isMobile() {
                       return window.innerWidth <= 767;
                     }
                     // Split text into individual words
                     const layoutText = new SplitType(".layout484_text", { types: "words" });
-                    const layoutTL = gsap.timeline();
-                    // Define different start and end values for mobile devices
-                    let startValue = isMobile() ? "top 35%" : "top center";
-                    let endValue = isMobile() ? "bottom 90%" : "bottom center";
-                    layoutTL.from(layoutText.words, {
-                      // Initial opacity for each word
-                      opacity: 0.25,
-                      // Stagger animation of each word
-                      stagger: 0.1,
-                      scrollTrigger: {
-                        trigger: ".section_layout484",
-                        // Trigger animation when .section_layout484 reaches certain part of the viewport
-                        start: startValue,
-                        // End animation when .section_layout484 reaches certain part of the viewport
-                        end: endValue,
-                        // Smooth transition based on scroll position
-                        scrub: 2
+                    // Set a subtle initial opacity so text is hinted before animation
+                    gsap.set(layoutText.words, { opacity: 0.25 });
+                    // Timeline controlled by ScrollTrigger hooks
+                    const layoutTL = gsap.timeline({ paused: true });
+                    layoutTL.to(layoutText.words, {
+                      opacity: 1,
+                      duration: 0.15,
+                      stagger: {
+                        each: 0.02
+                      }
+                    });
+                    // Define start value for when the section should begin animating
+                    const startValue = isMobile() ? "top 80%" : "top 80%";
+                    ScrollTrigger.create({
+                      trigger: ".section_layout484",
+                      start: startValue,
+                      onEnter: () => layoutTL.restart(true),
+                      onLeaveBack: () => {
+                        layoutTL.pause(0);
+                        gsap.set(layoutText.words, { opacity: 0.25 });
                       }
                     });
                   });
