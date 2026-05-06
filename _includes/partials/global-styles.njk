@@ -276,6 +276,135 @@
       .footer15_legal-link:hover {
         color: var(--_primitives---colors--dark-green);
       }
+
+      /* Navbar: sticky fixed, hides on scroll-down, slides back on scroll-up */
+      .navbar14_component {
+        transition: transform 0.25s ease;
+        will-change: transform;
+      }
+      .navbar14_component.is-nav-hidden {
+        transform: translateY(-150%);
+      }
+
+      /* Body-level backdrop injected by JS when mobile menu opens.
+         Lives outside the navbar stacking context so it covers the viewport
+         from top: 0 regardless of the navbar's own margin-top. */
+      #nav-menu-backdrop {
+        position: fixed;
+        inset: 0;
+        background-color: var(--_primitives---colors--dark-green);
+        z-index: 999;
+        pointer-events: none;
+      }
+
+      @media screen and (max-width: 991px) {
+        /* Overlay is a sibling of the navbar, placed directly in body so it
+           is not clipped by the navbar's own stacking context */
+        body > .page-wrapper > main > .navbar14_component.w-nav {
+          /* intentionally not changing z-index here — handled below */
+        }
+
+        /* The overlay must escape the navbar's stacking context entirely.
+           We achieve this by giving the navbar a very high z-index, the overlay
+           a z-index that beats page content but is still within the navbar's
+           stacking context, and the pill + button even higher so they float on top. */
+        .navbar14_component {
+          z-index: 1000;
+        }
+
+        /* Overlay covers the full viewport from very top */
+        .navbar14_component .w-nav-overlay {
+          position: fixed !important;
+          top: 0 !important;
+          left: 0 !important;
+          width: 100vw !important;
+          height: 100dvh !important;
+          /* z-index within .navbar14_component's stacking context — beats page (z-index:0) */
+          z-index: 900;
+          background-color: var(--_primitives---colors--dark-green);
+        }
+
+        .navbar14_component .w-nav-overlay [data-nav-menu-open] {
+          height: 100dvh;
+          background-color: var(--_primitives---colors--dark-green);
+        }
+
+        /* Pill row above the overlay */
+        .navbar14_component .navbar14_container {
+          position: relative;
+          z-index: 950;
+        }
+
+        /* Hamburger / close button above everything */
+        .navbar14_component .navbar14_menu-button {
+          display: block;
+          position: relative;
+          z-index: 960;
+        }
+
+        .navbar14_component .navbar14_menu {
+          display: none;
+          position: absolute;
+        }
+
+        .navbar14_component .navbar14_menu.w--nav-menu-open,
+        .navbar14_component .w-nav-overlay [data-nav-menu-open] {
+          display: block !important;
+        }
+
+        .navbar14_component .navbar14_menu-link-wrapper {
+          display: flex;
+          min-height: 100dvh;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          gap: 1.25rem;
+          padding: 6.5rem 1.5rem 1.5rem;
+          background-color: var(--_primitives---colors--dark-green);
+        }
+
+        .navbar14_component .navbar14_menu-links {
+          display: flex;
+          width: 100%;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          gap: 1.25rem;
+        }
+
+        .navbar14_component .navbar14_menu-links .navbar14_link {
+          font-size: clamp(1.9rem, 5vw, 2.4rem);
+          line-height: 1.2;
+        }
+
+        .navbar14_component .navbar14_button-wrapper {
+          margin-top: auto;
+          width: 100%;
+          display: flex;
+          justify-content: center;
+          padding-bottom: 1rem;
+        }
+
+        .navbar14_component .menu-icon2_line-top,
+        .navbar14_component .menu-icon2_line-middle,
+        .navbar14_component .menu-icon2_line-bottom {
+          transition: transform 0.2s ease, opacity 0.2s ease;
+          transform-origin: center;
+        }
+
+        .navbar14_component .navbar14_menu-button.w--open .menu-icon2_line-top {
+          transform: translateY(8px) rotate(45deg);
+        }
+
+        .navbar14_component .navbar14_menu-button.w--open .menu-icon2_line-middle {
+          opacity: 0;
+          transform: scaleX(0.6);
+        }
+
+        .navbar14_component .navbar14_menu-button.w--open .menu-icon2_line-bottom {
+          transform: translateY(-8px) rotate(-45deg);
+        }
+      }
     </style>
   </div>
   <div class="color-schemes w-embed">

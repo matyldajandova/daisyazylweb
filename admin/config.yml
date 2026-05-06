@@ -1,9 +1,6 @@
 backend:
-  name: bitbucket
-  repo: grenadecastle/daisy-azyl-web   # workspace/repo-name
+  name: git-gateway
   branch: main
-  auth_type: implicit
-  app_id: uej7WfLn9ev5MtZNRJ
 
 media_folder: "images/uploads"
 public_folder: "/images/uploads"
@@ -35,7 +32,10 @@ collections:
                 widget: "string"
               - label: "Druh"
                 name: "species"
-                widget: "string"
+                widget: "select"
+                options:
+                  - { label: "Kočka", value: "kočka" }
+                  - { label: "Pes", value: "pes" }
                 default: "kočka"
               - label: "Věk (text)"
                 name: "ageText"
@@ -67,15 +67,26 @@ collections:
                 required: false
               - label: "Datum narození"
                 name: "birthDate"
-                widget: "string"
+                widget: "datetime"
+                format: "DD.MM.YYYY"
+                date_format: "DD.MM.YYYY"
+                time_format: false
                 required: false
               - label: "Věková kategorie"
                 name: "ageCategory"
-                widget: "string"
+                widget: "select"
+                options:
+                  - { label: "Kotě", value: "Kotě" }
+                  - { label: "Mladý", value: "Mladý" }
+                  - { label: "Dospělý", value: "Dospělý" }
+                  - { label: "Senior", value: "Senior" }
                 required: false
               - label: "Pohlaví"
                 name: "gender"
-                widget: "string"
+                widget: "select"
+                options:
+                  - { label: "Samička", value: "samička" }
+                  - { label: "Sameček", value: "sameček" }
                 required: false
               - label: "Plemeno"
                 name: "breed"
@@ -91,7 +102,10 @@ collections:
                 required: false
               - label: "Datum nálezu"
                 name: "foundDate"
-                widget: "string"
+                widget: "datetime"
+                format: "DD.MM.YYYY"
+                date_format: "DD.MM.YYYY"
+                time_format: false
                 required: false
               - label: "Původ příjmu"
                 name: "origin"
@@ -119,15 +133,24 @@ collections:
                 required: false
               - label: "Test na panleukopenii"
                 name: "panleukopeniaTest"
-                widget: "string"
+                widget: "select"
+                options:
+                  - { label: "Negativní", value: "Negativní" }
+                  - { label: "Pozitivní", value: "Pozitivní" }
                 required: false
               - label: "Test na FeLV"
                 name: "felvTest"
-                widget: "string"
+                widget: "select"
+                options:
+                  - { label: "Negativní", value: "Negativní" }
+                  - { label: "Pozitivní", value: "Pozitivní" }
                 required: false
               - label: "Test na FIV"
                 name: "fivTest"
-                widget: "string"
+                widget: "select"
+                options:
+                  - { label: "Negativní", value: "Negativní" }
+                  - { label: "Pozitivní", value: "Pozitivní" }
                 required: false
               - label: "Kastrovaný"
                 name: "neutered"

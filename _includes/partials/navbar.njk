@@ -2,7 +2,7 @@
 <div
   data-collapse="medium"
   data-animation="default"
-  data-duration="400"
+  data-duration="240"
   data-w-id="6e9062d5-75dd-4378-1beb-ebce66c57360"
   data-easing="ease"
   data-easing2="ease"
@@ -60,28 +60,129 @@
 
 <script>
   (function () {
-    var menuButton = document.querySelector(
-      ".navbar14_menu-button.w-nav-button",
-    );
+    var nav = document.querySelector(".navbar14_component.w-nav");
+    var menuButton = document.querySelector(".navbar14_menu-button.w-nav-button");
     var navMenu = document.getElementById(
       "w-node-_6e9062d5-75dd-4378-1beb-ebce66c57364-66c57360",
     );
 
-    if (!menuButton || !navMenu) return;
+    if (!nav || !menuButton || !navMenu) return;
 
-    function syncExpanded() {
-      var isOpen =
-        navMenu.classList.contains("w--nav-menu-open") ||
-        menuButton.classList.contains("w--open");
-      menuButton.setAttribute("aria-expanded", isOpen ? "true" : "false");
+    // ── Scroll lock (position:fixed approach – reliable on all mobile browsers) ──
+    var savedScrollY = 0;
+    var scrollLocked = false;
+
+    function lockScroll() {
+      if (scrollLocked) return;
+      savedScrollY = window.scrollY;
+      document.body.style.position = "fixed";
+      document.body.style.top = "-" + savedScrollY + "px";
+      document.body.style.width = "100%";
+      document.body.style.overflow = "hidden";
+      scrollLocked = true;
     }
 
-    syncExpanded();
+    function unlockScroll() {
+      if (!scrollLocked) return;
+      document.body.style.position = "";
+      document.body.style.top = "";
+      document.body.style.width = "";
+      document.body.style.overflow = "";
+      // Sync lastScrollY before restoring scroll so the scroll event that fires
+      // does not trigger the hide-on-scroll logic (would see a false downward jump)
+      lastScrollY = savedScrollY;
+      window.scrollTo(0, savedScrollY);
+      scrollLocked = false;
+    }
 
-    menuButton.addEventListener("click", function () {
-      // Webflow toggles classes after the click handler, so defer update.
-      setTimeout(syncExpanded, 0);
+    function isMobile() {
+      return window.matchMedia("(max-width: 991px)").matches;
+    }
+
+    // ── Menu state (MutationObserver – reacts to Webflow's own class changes) ──
+    var menuOpen = false;
+    var menuBackdrop = null;
+
+    function onMenuOpen() {
+      menuOpen = true;
+      menuButton.setAttribute("aria-expanded", "true");
+      if (isMobile()) {
+        lockScroll();
+        // Inject a body-level backdrop so the area above the floating navbar
+        // (navbar has margin-top / will-change:transform stacking context) is covered
+        if (!menuBackdrop) {
+          menuBackdrop = document.createElement("div");
+          menuBackdrop.id = "nav-menu-backdrop";
+          document.body.appendChild(menuBackdrop);
+        }
+      }
+    }
+
+    function onMenuClose() {
+      menuOpen = false;
+      menuButton.setAttribute("aria-expanded", "false");
+      unlockScroll();
+      nav.classList.remove("is-nav-hidden");
+      if (menuBackdrop) {
+        menuBackdrop.remove();
+        menuBackdrop = null;
+      }
+    }
+
+    var observer = new MutationObserver(function () {
+      var isOpen = menuButton.classList.contains("w--open");
+      if (isOpen && !menuOpen) {
+        onMenuOpen();
+      } else if (!isOpen && menuOpen) {
+        onMenuClose();
+      }
     });
+
+    observer.observe(menuButton, { attributes: true, attributeFilter: ["class"] });
+
+    // ── Close menu when any nav link is clicked (anchor links stay on same page) ──
+    navMenu.addEventListener("click", function (event) {
+      var link = event.target.closest("a");
+      if (link && menuOpen) {
+        menuButton.click();
+      }
+    });
+
+    // Unlock if resized to desktop while menu is logically open
+    window.addEventListener("resize", function () {
+      if (!isMobile() && scrollLocked) unlockScroll();
+    });
+
+    // ── Hide navbar on scroll-down, show immediately on scroll-up ──
+    var lastScrollY = window.scrollY;
+    var scrollTicking = false;
+    // Only start hiding after scrolling past the navbar height + a small buffer
+    var HIDE_THRESHOLD = (nav.offsetHeight || 80) + 40;
+
+    function onScroll() {
+      if (menuOpen) {
+        lastScrollY = window.scrollY;
+        scrollTicking = false;
+        return;
+      }
+      var current = window.scrollY;
+      if (current > lastScrollY && current > HIDE_THRESHOLD) {
+        // Scrolling down — hide
+        nav.classList.add("is-nav-hidden");
+      } else if (current < lastScrollY) {
+        // Scrolling up — show immediately
+        nav.classList.remove("is-nav-hidden");
+      }
+      lastScrollY = current;
+      scrollTicking = false;
+    }
+
+    window.addEventListener("scroll", function () {
+      if (!scrollTicking) {
+        requestAnimationFrame(onScroll);
+        scrollTicking = true;
+      }
+    }, { passive: true });
   })();
 </script>
 
