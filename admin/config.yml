@@ -55,12 +55,11 @@ collections:
                 name: "adoptionStatus"
                 widget: "select"
                 options:
-                  - label: "K adopci"
-                    value: "available"
-                  - label: "Rezervováno"
-                    value: "reserved"
-                  - label: "Adoptováno"
-                    value: "adopted"
+                  - { label: "Trvalý svěřenec", value: "permanent" }
+                  - { label: "K adopci",        value: "available" }
+                  - { label: "Rezervováno",     value: "reserved" }
+                  - { label: "Adoptováno",      value: "adopted" }
+                default: "available"
               - label: "Evidenční číslo"
                 name: "evidenceNumber"
                 widget: "string"

@@ -13,7 +13,7 @@ module.exports = {
         : (data.pagination && typeof data.pagination.pageNumber === "number"
           ? data.pagination.pageNumber
           : "detail");
-      return "/adopce/" + segment + "/";
+      return "/sverenec/" + segment + "/";
     },
   },
 };

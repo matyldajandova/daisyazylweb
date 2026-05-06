@@ -1,3 +1,14 @@
+{% assign footer_shelter_active = false %}
+{% assign footer_domov_active = false %}
+{% if currentPage == 'nasi-sverenci' %}{% assign footer_shelter_active = true %}{% endif %}
+{% if currentPage == 'nasli-domov' %}{% assign footer_domov_active = true %}{% endif %}
+{% if currentPage == 'sverenec-detail' %}
+  {% if animal.adoptionStatus == 'adopted' %}
+    {% assign footer_domov_active = true %}
+  {% else %}
+    {% assign footer_shelter_active = true %}
+  {% endif %}
+{% endif %}
 <div class="footer-wrapper">
   <div class="dog-wrapper">
     <img src="images/dog_1.svg" loading="lazy" alt="" class="footer-dog" />
@@ -25,14 +36,14 @@
                   <a href="/#podpora" class="footer15_link">Podpořte nás</a>
                   <a href="/#contact" class="footer15_link">Náš tým</a>
                   <a
-                    href="/adopce/"
-                    class="footer15_link{% if currentPage == 'adopce' or currentPage == 'adopce-detail' %} w--current{% endif %}"
-                    {% if currentPage == 'adopce' or currentPage == 'adopce-detail' %}aria-current="page"{% endif %}
+                    href="/nasi-sverenci/"
+                    class="footer15_link{% if footer_shelter_active %} w--current{% endif %}"
+                    {% if footer_shelter_active %}aria-current="page"{% endif %}
                     >Naši svěřenci</a>
                   <a
-                    href="/adopce/"
-                    class="footer15_link{% if currentPage == 'adopce' or currentPage == 'adopce-detail' %} w--current{% endif %}"
-                    {% if currentPage == 'adopce' or currentPage == 'adopce-detail' %}aria-current="page"{% endif %}
+                    href="/nasli-domov/"
+                    class="footer15_link{% if footer_domov_active %} w--current{% endif %}"
+                    {% if footer_domov_active %}aria-current="page"{% endif %}
                     >Našli domov</a>
                   <a
                     href="/aktuality/"

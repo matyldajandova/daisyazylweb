@@ -10,13 +10,18 @@ eleventyExcludeFromCollections: true
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>{{ site.siteUrl }}/adopce/</loc>
+    <loc>{{ site.siteUrl }}/nasi-sverenci/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
+  <url>
+    <loc>{{ site.siteUrl }}/nasli-domov/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
 {% for animal in animals.animalsEnriched %}
   <url>
-    <loc>{{ site.siteUrl }}/adopce/{{ animal.slug }}/</loc>
+    <loc>{{ site.siteUrl }}/sverenec/{{ animal.slug }}/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>

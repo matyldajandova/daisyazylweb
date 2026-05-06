@@ -166,15 +166,15 @@ v ČR, podpora zvířat. Nekupujte, adoptujte."
                         </p>
                       </div>
                     </div>
-                    {% if animals.animalsEnriched and animals.animalsEnriched.size > 3 %}
+                    {% if animals.inShelterEnriched and animals.inShelterEnriched.size > 3 %}
                     <div class="button-group is-right">
-                      <a href="/adopce/" class="button w-button">Podívejte se na další</a>
+                      <a href="/nasi-sverenci/" class="button w-button">Podívejte se na další</a>
                     </div>
                     {% endif %}
                   </div>
                 </div>
                 <div class="cards-grid" role="list">
-                  {% for animal in animals.animalsEnriched limit:3 %}
+                  {% for animal in animals.inShelterEnriched limit:3 %}
                   <div class="event16_item" role="listitem">
                     {% include "partials/animal-card.njk" %}
                   </div>

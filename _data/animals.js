@@ -124,8 +124,19 @@ module.exports = async function () {
     animalsWithSlug.map((animal) => enrichAnimalImage(animal)),
   );
 
+  const IN_SHELTER = new Set(["permanent", "available", "reserved"]);
+
+  const inShelterEnriched = animalsEnriched.filter(
+    (a) => !a.adoptionStatus || IN_SHELTER.has(a.adoptionStatus),
+  );
+  const adoptedEnriched = animalsEnriched.filter(
+    (a) => a.adoptionStatus === "adopted",
+  );
+
   return {
     animals: data,
     animalsEnriched,
+    inShelterEnriched,
+    adoptedEnriched,
   };
 };

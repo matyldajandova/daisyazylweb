@@ -1,5 +1,5 @@
 ---
-currentPage: adopce-detail
+currentPage: sverenec-detail
 ---
 <!DOCTYPE html>
 <html lang="cs">
@@ -14,6 +14,13 @@ currentPage: adopce-detail
     <a href="#main-content" class="skip-link sr-only sr-only-focusable">Přeskočit na hlavní obsah</a>
     <main id="main-content" class="main-wrapper max-width-full">
       {% include "partials/navbar.njk" %}
+      {% if animal.adoptionStatus == "adopted" %}
+        {% assign backHref = "/nasli-domov/" %}
+        {% assign backLabel = "Zpět na adoptované" %}
+      {% else %}
+        {% assign backHref = "/nasi-sverenci/" %}
+        {% assign backLabel = "Zpět na svěřence" %}
+      {% endif %}
       <header class="section_header153"></header>
       <header class="section_blog-post-header4">
         <div class="padding-global">
@@ -24,19 +31,19 @@ currentPage: adopce-detail
                   <div class="blog-post-header4_title-wrapper">
                     <div class="margin-bottom margin-large">
                       <div class="button-group">
-                        <a href="/adopce/" class="button-5 is-link is-icon w-inline-block">
+                        <a href="{{ backHref }}" class="button-5 is-link is-icon w-inline-block">
                           <div class="icon-embed-xxsmall w-embed"><svg width="16" height="16" viewbox="0 0 16 16"
                               fill="none" xmlns="http://www.w3.org/2000/svg">
                               <path d="M11 13L6 8L11 3" stroke="CurrentColor" stroke-width="1.5"></path>
                             </svg></div>
-                          <div>Zpět na adopce</div>
+                          <div>{{ backLabel }}</div>
                         </a>
                       </div>
                     </div>
                     <div class="margin-bottom margin-small">
                       <div class="blog-post-header4_meta-wrapper">
                         {% for tag in animal.tags %}
-                        <a href="/adopce/?tag={{ tag | slug }}" class="tag w-inline-block">
+                        <a href="{{ backHref }}?tag={{ tag | slug }}" class="tag w-inline-block">
                           <div>{{ tag }}</div>
                         </a>
                         {% endfor %}

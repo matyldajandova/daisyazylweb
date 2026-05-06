@@ -1,4 +1,15 @@
 {% assign current = currentPage | default: "" %}
+{% assign is_shelter_active = false %}
+{% assign is_domov_active = false %}
+{% if current == 'nasi-sverenci' %}{% assign is_shelter_active = true %}{% endif %}
+{% if current == 'nasli-domov' %}{% assign is_domov_active = true %}{% endif %}
+{% if current == 'sverenec-detail' %}
+  {% if animal.adoptionStatus == 'adopted' %}
+    {% assign is_domov_active = true %}
+  {% else %}
+    {% assign is_shelter_active = true %}
+  {% endif %}
+{% endif %}
 <div
   data-collapse="medium"
   data-animation="default"
@@ -28,13 +39,14 @@
           <a href="/#podpora" class="navbar14_link w-nav-link">Podpořte nás</a>
           <a href="/#contact" class="navbar14_link w-nav-link">Náš tým</a>
           <a
-            href="/adopce/"
-            class="navbar14_link w-nav-link{% if current == 'adopce' or current == 'adopce-detail' %} w--current{% endif %}"
-            {% if current == 'adopce' or current == 'adopce-detail' %}aria-current="page"{% endif %}
+            href="/nasi-sverenci/"
+            class="navbar14_link w-nav-link{% if is_shelter_active %} w--current{% endif %}"
+            {% if is_shelter_active %}aria-current="page"{% endif %}
             >Naši svěřenci</a>
           <a
-            href="/adopce/"
-            class="navbar14_link w-nav-link"
+            href="/nasli-domov/"
+            class="navbar14_link w-nav-link{% if is_domov_active %} w--current{% endif %}"
+            {% if is_domov_active %}aria-current="page"{% endif %}
             >Našli domov</a>
           <a
             href="/aktuality/"

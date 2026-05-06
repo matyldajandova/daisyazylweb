@@ -1,5 +1,5 @@
 {% comment %}
-  Schema.org JSON-LD: AnimalShelter, WebPage, BreadcrumbList; ItemList on adopce; Thing for animal detail.
+  Schema.org JSON-LD: AnimalShelter, WebPage, BreadcrumbList; ItemList on nasi-sverenci/nasli-domov; Thing for sverenec-detail.
 {% endcomment %}
 {% if noindex %}{% else %}
 {% assign canonicalPath = permalink | default: page.url | default: "/" %}
@@ -8,7 +8,7 @@
 {% assign canonicalUrl = site.siteUrl | append: canonicalPath %}
 {% if animal %}
   {% assign speciesLabel = animal.species | default: "zvíře" %}
-  {% assign pageTitle = animal.name | append: " – " | append: speciesLabel | append: " k adopci | Daisy Azyl" %}
+  {% assign pageTitle = animal.name | append: " – " | append: speciesLabel | append: " | Daisy Azyl" %}
   {% assign pageDesc = animal.shortDescription %}
 {% else %}
   {% assign pageTitle = title | default: "Daisy Azyl" %}
@@ -16,15 +16,29 @@
 {% endif %}
 {% assign breadcrumbUrl = site.siteUrl %}
 {% assign breadcrumbName = "Úvod" %}
-{% if currentPage == "adopce" or currentPage == "adopce-detail" %}
-  {% assign breadcrumbUrl = site.siteUrl | append: "/adopce/" %}
-  {% assign breadcrumbName = "Adopce" %}
+{% if currentPage == "nasi-sverenci" %}
+  {% assign breadcrumbUrl = site.siteUrl | append: "/nasi-sverenci/" %}
+  {% assign breadcrumbName = "Naši svěřenci" %}
+{% endif %}
+{% if currentPage == "nasli-domov" %}
+  {% assign breadcrumbUrl = site.siteUrl | append: "/nasli-domov/" %}
+  {% assign breadcrumbName = "Našli domov" %}
+{% endif %}
+{% if currentPage == "sverenec-detail" %}
+  {% if animal.adoptionStatus == "adopted" %}
+    {% assign breadcrumbUrl = site.siteUrl | append: "/nasli-domov/" %}
+    {% assign breadcrumbName = "Našli domov" %}
+  {% else %}
+    {% assign breadcrumbUrl = site.siteUrl | append: "/nasi-sverenci/" %}
+    {% assign breadcrumbName = "Naši svěřenci" %}
+  {% endif %}
 {% endif %}
 <script type="application/ld+json">
 {"@context":"https://schema.org","@graph":[
 {"@type":"AnimalShelter","@id":"{{ site.siteUrl }}/#organization","name":"{{ site.legalName }}","legalName":"{{ site.legalName }}","url":"{{ site.siteUrl }}","logo":"{{ site.siteUrl }}/images/logo-footer.svg","image":"{{ site.siteUrl }}/images/og.png","description":"Azyl pro staré, týrané, hendikepované, pejsky a kočičky.","address":{"@type":"PostalAddress","streetAddress":"{{ site.address.streetAddress }}","addressLocality":"{{ site.address.addressLocality }}","postalCode":"{{ site.address.postalCode }}","addressCountry":"{{ site.address.addressCountry }}"},"telephone":"{{ site.contact.telephone }}","email":"{{ site.contact.email }}","sameAs":["{{ site.contact.facebook }}"],"areaServed":{"@type":"Country","name":"Česká republika"},"taxID":"{{ site.taxID }}"},
-{"@type":"WebPage","@id":"{{ canonicalUrl }}#webpage","url":"{{ canonicalUrl }}","name":{{ pageTitle | json }},"description":{{ pageDesc | json }},"isPartOf":{"@id":"{{ site.siteUrl }}/#organization"},"breadcrumb":{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"{{ breadcrumbName }}","item":"{{ breadcrumbUrl }}"}{% if currentPage == "adopce-detail" and animal %},{"@type":"ListItem","position":2,"name":{{ animal.name | json }},"item":"{{ canonicalUrl }}"}{% endif %}]}}
-{% if currentPage == "adopce" and animals.animalsEnriched and animals.animalsEnriched.size > 0 %},{"@type":"ItemList","itemListElement":[{% for animal in animals.animalsEnriched %}{"@type":"ListItem","position":{{ forloop.index }},"url":"{{ site.siteUrl }}/adopce/{{ animal.slug }}/","name":{{ animal.name | json }}}{% unless forloop.last %},{% endunless %}{% endfor %}]}{% endif %}
+{"@type":"WebPage","@id":"{{ canonicalUrl }}#webpage","url":"{{ canonicalUrl }}","name":{{ pageTitle | json }},"description":{{ pageDesc | json }},"isPartOf":{"@id":"{{ site.siteUrl }}/#organization"},"breadcrumb":{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"{{ breadcrumbName }}","item":"{{ breadcrumbUrl }}"}{% if currentPage == "sverenec-detail" and animal %},{"@type":"ListItem","position":2,"name":{{ animal.name | json }},"item":"{{ canonicalUrl }}"}{% endif %}]}}
+{% if currentPage == "nasi-sverenci" and animals.inShelterEnriched and animals.inShelterEnriched.size > 0 %},{"@type":"ItemList","itemListElement":[{% for animal in animals.inShelterEnriched %}{"@type":"ListItem","position":{{ forloop.index }},"url":"{{ site.siteUrl }}/sverenec/{{ animal.slug }}/","name":{{ animal.name | json }}}{% unless forloop.last %},{% endunless %}{% endfor %}]}{% endif %}
+{% if currentPage == "nasli-domov" and animals.adoptedEnriched and animals.adoptedEnriched.size > 0 %},{"@type":"ItemList","itemListElement":[{% for animal in animals.adoptedEnriched %}{"@type":"ListItem","position":{{ forloop.index }},"url":"{{ site.siteUrl }}/sverenec/{{ animal.slug }}/","name":{{ animal.name | json }}}{% unless forloop.last %},{% endunless %}{% endfor %}]}{% endif %}
 {% if animal %},{"@type":"Thing","name":{{ animal.name | json }},"description":{{ animal.shortDescription | json }},"image":"{% if animal.image contains 'http' %}{{ animal.image }}{% else %}{{ site.siteUrl }}{% assign imageFirstChar = animal.image | slice: 0, 1 %}{% if imageFirstChar != '/' %}/{% endif %}{{ animal.image }}{% endif %}"}{% endif %}
 ]}
 </script>

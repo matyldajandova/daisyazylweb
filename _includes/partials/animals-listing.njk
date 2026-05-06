@@ -1,0 +1,42 @@
+<section id="nalezenci" class="section_grid">
+  <div class="padding-global">
+    <div class="container-large">
+      <div class="padding-section-large">
+        <div class="event16_component">
+          <div class="margin-bottom margin-xxlarge">
+            <div class="margin-bottom margin-xsmall">
+              <div class="text-style-tagline">{{ listingTagline }}</div>
+            </div>
+            <div class="event16_heading-wrapper">
+              <div class="event16_heading">
+                <div class="max-width-large">
+                  <div class="margin-bottom margin-xsmall">
+                    <h1 class="heading-style-h2">{{ listingHeading }}</h1>
+                  </div>
+                  {% if listingAnimals and listingAnimals.size > 0 %}
+                  <p class="text-size-medium">
+                    {{ listingIntro }}
+                  </p>
+                  {% else %}
+                  <p class="text-size-medium text-color-yellow">
+                    {{ listingEmpty }}
+                  </p>
+                  {% endif %}
+                </div>
+              </div>
+            </div>
+          </div>
+          {% if listingAnimals and listingAnimals.size > 0 %}
+          <div class="cards-grid" role="list">
+            {% for animal in listingAnimals %}
+            <div class="event16_item" role="listitem">
+              {% include "partials/animal-card.njk" %}
+            </div>
+            {% endfor %}
+          </div>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
