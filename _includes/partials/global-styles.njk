@@ -253,6 +253,18 @@
         display: none;
       }
 
+      /* Widen navbar pill to match content container width */
+      .navbar14_container {
+        max-width: 80rem;
+      }
+
+      /* Extra bottom breathing room on the "Co děláme" section – desktop only */
+      @media screen and (min-width: 768px) {
+        .section_layout484 .padding-section-large {
+          padding-bottom: 15rem;
+        }
+      }
+
       /* Navbar and footer link color overrides */
       .navbar14_link.w--current {
         color: #519c61;

@@ -26,12 +26,21 @@
         <div class="navbar14_menu-links">
           <a href="/#o-nas" class="navbar14_link w-nav-link">O nás</a>
           <a href="/#podpora" class="navbar14_link w-nav-link">Podpořte nás</a>
-          <a href="/#contact" class="navbar14_link w-nav-link">Tým</a>
+          <a href="/#contact" class="navbar14_link w-nav-link">Náš tým</a>
           <a
             href="/adopce/"
             class="navbar14_link w-nav-link{% if current == 'adopce' or current == 'adopce-detail' %} w--current{% endif %}"
             {% if current == 'adopce' or current == 'adopce-detail' %}aria-current="page"{% endif %}
-            >Adopce</a>
+            >Naši svěřenci</a>
+          <a
+            href="/adopce/"
+            class="navbar14_link w-nav-link"
+            >Našli domov</a>
+          <a
+            href="/aktuality/"
+            class="navbar14_link w-nav-link{% if current == 'aktuality' %} w--current{% endif %}"
+            {% if current == 'aktuality' %}aria-current="page"{% endif %}
+            >Aktuality</a>
         </div>
         <div
           id="w-node-_6e9062d5-75dd-4378-1beb-ebce66c57379-66c57360"

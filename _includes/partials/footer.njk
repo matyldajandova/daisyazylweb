@@ -22,14 +22,23 @@
               >
                 <div class="footer15_link-list">
                   <a href="/#o-nas" class="footer15_link">O nás</a>
-                  <a href="/#podpora" class="footer15_link">Podpora</a>
-                  <a href="/#contact" class="footer15_link">Tým</a>
+                  <a href="/#podpora" class="footer15_link">Podpořte nás</a>
+                  <a href="/#contact" class="footer15_link">Náš tým</a>
                   <a
                     href="/adopce/"
                     class="footer15_link{% if currentPage == 'adopce' or currentPage == 'adopce-detail' %} w--current{% endif %}"
                     {% if currentPage == 'adopce' or currentPage == 'adopce-detail' %}aria-current="page"{% endif %}
-                    >Adopce</a>
-                  <a href="/#contact" class="footer15_link">Kontakt</a>
+                    >Naši svěřenci</a>
+                  <a
+                    href="/adopce/"
+                    class="footer15_link{% if currentPage == 'adopce' or currentPage == 'adopce-detail' %} w--current{% endif %}"
+                    {% if currentPage == 'adopce' or currentPage == 'adopce-detail' %}aria-current="page"{% endif %}
+                    >Našli domov</a>
+                  <a
+                    href="/aktuality/"
+                    class="footer15_link{% if currentPage == 'aktuality' %} w--current{% endif %}"
+                    {% if currentPage == 'aktuality' %}aria-current="page"{% endif %}
+                    >Aktuality</a>
                 </div>
               </div>
             </div>
