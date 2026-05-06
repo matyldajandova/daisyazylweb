@@ -2032,6 +2032,7 @@ figcaption {
   position: fixed;
   inset: 0% auto 0% 0%;
   overflow: hidden;
+  pointer-events: none;
 }
 
 .header153_images-wrapper-left.delete-this-class {
@@ -2108,6 +2109,7 @@ figcaption {
   position: fixed;
   inset: 0% 0% 0% auto;
   overflow: hidden;
+  pointer-events: none;
 }
 
 .header153_images-wrapper-right.delete-this-class {
