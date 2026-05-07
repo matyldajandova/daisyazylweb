@@ -19,6 +19,13 @@ eleventyExcludeFromCollections: true
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
+{% if site.featureFlags.showAktuality %}
+  <url>
+    <loc>{{ site.siteUrl }}/aktuality/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+{% endif %}
 {% for animal in animals.animalsEnriched %}
   <url>
     <loc>{{ site.siteUrl }}/sverenec/{{ animal.slug }}/</loc>

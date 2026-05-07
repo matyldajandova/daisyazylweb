@@ -45,11 +45,13 @@
                     class="footer15_link{% if footer_domov_active %} w--current{% endif %}"
                     {% if footer_domov_active %}aria-current="page"{% endif %}
                     >Našli domov</a>
-                  <a
-                    href="/aktuality/"
-                    class="footer15_link{% if currentPage == 'aktuality' %} w--current{% endif %}"
-                    {% if currentPage == 'aktuality' %}aria-current="page"{% endif %}
-                    >Aktuality</a>
+                  {% if site.featureFlags.showAktuality %}
+                    <a
+                      href="/aktuality/"
+                      class="footer15_link{% if currentPage == 'aktuality' %} w--current{% endif %}"
+                      {% if currentPage == 'aktuality' %}aria-current="page"{% endif %}
+                      >Aktuality</a>
+                  {% endif %}
                 </div>
               </div>
             </div>

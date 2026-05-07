@@ -3,6 +3,9 @@ module.exports = function () {
   const siteUrl = (process.env.URL || process.env.SITE_URL || "https://daisyazyl.cz").replace(/\/$/, "");
   return {
     siteUrl,
+    featureFlags: {
+      showAktuality: false,
+    },
     siteName: "Daisy Azyl",
     legalName: "Daisy azyl z.s.",
     defaultOgImage: `${siteUrl}/images/og.png`,

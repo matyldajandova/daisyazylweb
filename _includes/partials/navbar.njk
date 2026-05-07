@@ -48,11 +48,13 @@
             class="navbar14_link w-nav-link{% if is_domov_active %} w--current{% endif %}"
             {% if is_domov_active %}aria-current="page"{% endif %}
             >Našli domov</a>
-          <a
-            href="/aktuality/"
-            class="navbar14_link w-nav-link{% if current == 'aktuality' %} w--current{% endif %}"
-            {% if current == 'aktuality' %}aria-current="page"{% endif %}
-            >Aktuality</a>
+          {% if site.featureFlags.showAktuality %}
+            <a
+              href="/aktuality/"
+              class="navbar14_link w-nav-link{% if current == 'aktuality' %} w--current{% endif %}"
+              {% if current == 'aktuality' %}aria-current="page"{% endif %}
+              >Aktuality</a>
+          {% endif %}
         </div>
         <div
           id="w-node-_6e9062d5-75dd-4378-1beb-ebce66c57379-66c57360"
