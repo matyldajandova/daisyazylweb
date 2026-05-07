@@ -841,17 +841,30 @@
         }
       }
 
-      /* Keep animal detail hero columns visually balanced */
-      @media screen and (min-width: 992px) {
+      /* Keep animal detail hero image uncropped but height-constrained.
+         Remove width: 100% from the wrapper so it shrink-wraps the image,
+         letting the wrapper's border-radius actually clip the image corners. */
+      .section_blog-post-header4 .blog-post-header4_image-wrapper {
+        width: auto;
+      }
+
+      .section_blog-post-header4 .blog-post-header4_image {
+        display: block;
+        width: auto;
+        max-width: 100%;
+        height: auto;
+        max-height: min(60vh, 36rem);
+      }
+
+      /* On mobile the image is stacked full-width below the text */
+      @media screen and (max-width: 767px) {
         .section_blog-post-header4 .blog-post-header4_image-wrapper {
-          max-height: min(60vh, 36rem);
+          width: 100%;
         }
 
         .section_blog-post-header4 .blog-post-header4_image {
-          display: block;
           width: 100%;
-          height: 100%;
-          object-fit: cover;
+          max-height: none;
         }
       }
 
