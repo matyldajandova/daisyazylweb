@@ -19,9 +19,10 @@ module.exports = function () {
       addressRegion: "Středočeský kraj",
     },
     contact: {
-      telephone: "+420608377899",
+      telephone: "+420605793896",
       email: "daisyazyl@gmail.com",
       facebook: "https://www.facebook.com/daisyazyl",
+      instagram: "https://www.instagram.com/daisyazylzs/",
     },
     taxID: "21636982", // IČO
   };
