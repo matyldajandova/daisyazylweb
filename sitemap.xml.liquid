@@ -26,6 +26,21 @@ eleventyExcludeFromCollections: true
     <priority>0.7</priority>
   </url>
 {% endif %}
+  <url>
+    <loc>{{ site.siteUrl }}/ochrana-osobnich-udaju/</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.4</priority>
+  </url>
+  <url>
+    <loc>{{ site.siteUrl }}/dokumenty/</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>{{ site.siteUrl }}/vyrocni-zpravy/</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
 {% for animal in animals.animalsEnriched %}
   <url>
     <loc>{{ site.siteUrl }}/sverenec/{{ animal.slug }}/</loc>

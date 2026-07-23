@@ -172,3 +172,30 @@ collections:
                   name: "image"
                   widget: "image"
 
+  - name: "partners"
+    label: "Partneři"
+    label_singular: "Partner"
+    format: "json"
+    editor:
+      preview: false
+    files:
+      - name: "partners-data"
+        label: "Seznam partnerů"
+        file: "cms/partners.json"
+        fields:
+          - label: "Partneři"
+            name: "partners"
+            widget: "list"
+            summary: "{{fields.name}}"
+            fields:
+              - label: "Název"
+                name: "name"
+                widget: "string"
+              - label: "Logo"
+                name: "logo"
+                widget: "image"
+              - label: "URL"
+                name: "url"
+                widget: "string"
+                required: false
+

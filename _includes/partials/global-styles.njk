@@ -690,6 +690,90 @@
         opacity: 1 !important;
       }
 
+      /* Legal / privacy document page */
+      .legal-doc {
+        color: var(--color-scheme-1--text);
+      }
+
+      .legal-doc_header {
+        margin-bottom: 2rem;
+      }
+
+      .legal-doc_header .heading-style-h2 {
+        margin-bottom: 0;
+        color: inherit;
+      }
+
+      .legal-doc_body {
+        font-size: 1.125rem;
+        line-height: 1.65;
+      }
+
+      .legal-doc_body > p {
+        margin-bottom: 1.25rem;
+      }
+
+      .legal-doc_section {
+        margin-top: 2rem;
+      }
+
+      .legal-doc_section .heading-style-h4 {
+        margin-top: 0;
+        margin-bottom: 0.75rem;
+        color: inherit;
+      }
+
+      .legal-doc_address {
+        margin-bottom: 0;
+        padding: 0.85rem 0 0.85rem 1.15rem;
+        border-left: 2px solid var(--color-scheme-1--accent);
+        line-height: 1.8;
+      }
+
+      .legal-doc_defs {
+        margin: 0.85rem 0 0;
+        display: flex;
+        flex-direction: column;
+        gap: 0.75rem;
+      }
+
+      .legal-doc_def {
+        display: grid;
+        grid-template-columns: minmax(9rem, 12.5rem) 1fr;
+        gap: 0.35rem 1.25rem;
+        align-items: baseline;
+      }
+
+      .legal-doc_def dt {
+        margin: 0;
+        font-weight: 600;
+        color: var(--color-scheme-1--accent);
+      }
+
+      .legal-doc_def dd {
+        margin: 0;
+      }
+
+      .legal-doc_rights {
+        margin: 0.65rem 0 0;
+        padding-left: 1.25rem;
+      }
+
+      .legal-doc_rights li {
+        margin-bottom: 0.35rem;
+      }
+
+      .legal-doc_closing {
+        margin-top: 2.25rem;
+      }
+
+      @media screen and (max-width: 767px) {
+        .legal-doc_def {
+          grid-template-columns: 1fr;
+          gap: 0.1rem;
+        }
+      }
+
       .doc-list {
         display: flex;
         flex-direction: column;
@@ -872,9 +956,61 @@
         overflow: visible;
       }
 
+      .footer-partners-list {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 0.75rem 1rem;
+      }
+
+      .footer-partner-link {
+        display: inline-flex;
+        text-decoration: none;
+        transition: opacity 0.2s ease;
+      }
+
+      .footer-partner-link:hover {
+        opacity: 0.85;
+      }
+
+      .footer-partner-logo-container {
+        background: white;
+        border-radius: 8px;
+        padding: 0.5rem 0.75rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .footer-partner-logo {
+        height: 2rem;
+        width: auto;
+        max-width: 7rem;
+        display: block;
+        object-fit: contain;
+      }
+
+      /* Grass must use fixed px offsets — Webflow % tops shift when footer
+         content grows (e.g. partners), leaving the illustration floating. */
       .footer-grass {
         max-height: 140px;
         object-fit: fill;
+        top: -48px;
+        right: 0;
+        bottom: auto;
+        left: 0;
+      }
+
+      @media screen and (max-width: 991px) {
+        .footer-grass {
+          top: -36px;
+        }
+      }
+
+      @media screen and (max-width: 479px) {
+        .footer-grass {
+          top: -24px;
+        }
       }
 
       @media screen and (min-width: 1920px) {

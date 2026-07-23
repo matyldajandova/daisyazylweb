@@ -1,15 +1,19 @@
-# Update Kontakty and Náš tým
+# Legal docs and privacy page
 
 ## Plan
 
-- [x] Update phone to 605 793 896 and add Instagram link in footer Kontakty
-- [x] Replace Náš tým with 5 name+role entries only (no phones/emails)
-- [x] Sync `_data/site.js`, schema.njk, and llms.txt.liquid contact data
-- [x] Build and verify footer contacts/team in browser
+- [x] Copy 3 downloadables into public/documents/ with URL-safe names
+- [x] Rewrite dokumenty.html list to Stanovy, Osvědčení, Adopční smlouva with real hrefs
+- [x] Create ochrana-osobnich-udaju.html from docx content
+- [x] Add privacy as first footer legal link; drop hidden EN stubs
+- [x] Add privacy + dokumenty + vyrocni-zpravy to sitemap
+- [x] Browser-check footer, privacy page, and downloads
 
 ## Review
 
-- **Kontakty:** Phone is `605 793 896`; Messenger + email kept; Instagram link added with `images/instagram.svg` at 16×16 (same as phone/email icons).
-- **Náš tým:** Five members, names + roles only; per-person phone/email/Messenger removed.
-- **SEO:** `site.contact.telephone` → `+420605793896`; Instagram in `site.js`, schema `sameAs`, and `llms.txt`.
-- **Verified in browser:** icon sizes all 16×16; single tel link under Kontakty; full team roster present.
+- **Downloads:** `public/documents/` serves Stanovy PDF, Osvědčení PDF, and Adopční smlouva DOCX (URL-safe filenames; Czech labels on the list).
+- **Dokumenty:** Placeholder Obchodní podmínky / privacy rows removed; three real download links with `download` attribute.
+- **Privacy page:** `/ochrana-osobnich-udaju/` with GDPR prose aligned to the Word source; legal-doc layout (sections, address block, definition rows, rights list).
+- **Footer:** Legal links order is Ochrana osobních údajů → Dokumenty → Výroční zprávy; hidden EN stubs removed.
+- **Sitemap:** Privacy, dokumenty, and výroční zprávy URLs added.
+- **Verified in browser:** privacy page content/formatting, dokumenty list + file hrefs/content-types, footer link order on homepage.

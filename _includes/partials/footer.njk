@@ -176,6 +176,43 @@
               </div>
             </div>
           </div>
+          {% if partners.partners and partners.partners.size > 0 %}
+          <div class="padding-bottom padding-large">
+            <div class="margin-bottom margin-small">
+              <h2>Naši partneři</h2>
+            </div>
+            <div class="footer-partners-list">
+              {% for partner in partners.partners %}
+                {% if partner.url and partner.url != "" %}
+                  <a
+                    href="{{ partner.url }}"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="footer-partner-link"
+                  >
+                    <span class="footer-partner-logo-container">
+                      <img
+                        src="{{ partner.logo }}"
+                        alt="{{ partner.name }}"
+                        loading="lazy"
+                        class="footer-partner-logo"
+                      />
+                    </span>
+                  </a>
+                {% else %}
+                  <span class="footer-partner-logo-container">
+                    <img
+                      src="{{ partner.logo }}"
+                      alt="{{ partner.name }}"
+                      loading="lazy"
+                      class="footer-partner-logo"
+                    />
+                  </span>
+                {% endif %}
+              {% endfor %}
+            </div>
+          </div>
+          {% endif %}
           <div class="divider-horizontal"></div>
           <div class="padding-top padding-medium">
             <div class="footer15_bottom-wrapper">
@@ -183,10 +220,9 @@
                 © 2024 Daisy azyl. Všechna práva vyhrazena.
               </div>
               <div class="w-layout-grid footer15_legal-list">
-                <a href="#" class="footer15_legal-link hide">Privacy Policy</a>
-                <a href="#" class="footer15_legal-link hide">Terms of Service</a>
-                <a href="/dokumenty/" class="footer15_legal-link{% if currentPage == 'dokumenty' %} w--current{% endif %}">Dokumenty</a>
-                <a href="/vyrocni-zpravy/" class="footer15_legal-link{% if currentPage == 'vyrocni-zpravy' %} w--current{% endif %}">Výroční zprávy</a>
+                <a href="/ochrana-osobnich-udaju/" class="footer15_legal-link{% if currentPage == 'ochrana-osobnich-udaju' %} w--current{% endif %}"{% if currentPage == 'ochrana-osobnich-udaju' %} aria-current="page"{% endif %}>Ochrana osobních údajů</a>
+                <a href="/dokumenty/" class="footer15_legal-link{% if currentPage == 'dokumenty' %} w--current{% endif %}"{% if currentPage == 'dokumenty' %} aria-current="page"{% endif %}>Dokumenty</a>
+                <a href="/vyrocni-zpravy/" class="footer15_legal-link{% if currentPage == 'vyrocni-zpravy' %} w--current{% endif %}"{% if currentPage == 'vyrocni-zpravy' %} aria-current="page"{% endif %}>Výroční zprávy</a>
               </div>
             </div>
           </div>
