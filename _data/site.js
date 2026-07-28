@@ -1,6 +1,15 @@
 /** Global site metadata for SEO, canonical URLs, and schema.org. */
 module.exports = function () {
-  const siteUrl = (process.env.URL || process.env.SITE_URL || "https://daisyazyl.cz").replace(/\/$/, "");
+  const siteUrl = (
+    process.env.CMS_BASE_URL ||
+    process.env.URL ||
+    process.env.SITE_URL ||
+    (process.env.VERCEL_PROJECT_PRODUCTION_URL
+      ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
+      : "") ||
+    (process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : "") ||
+    "https://daisyazyl.cz"
+  ).replace(/\/$/, "");
   return {
     siteUrl,
     featureFlags: {

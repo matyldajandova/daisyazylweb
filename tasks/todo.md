@@ -1,13 +1,15 @@
-# Add Vercel Analytics
+# Decap on Vercel (GitHub)
 
 ## Plan
 
-- [x] Add Vercel Analytics HTML snippet to `_includes/partials/head.njk`
-- [x] Build and confirm snippet is in output HTML; browser-check page head
-- [x] Note dashboard enable step in review
+- [x] Point local `origin` to GitHub (`matyldajandova/daisyazylweb`)
+- [x] Add `/api/auth` + `/api/callback` GitHub OAuth proxy
+- [x] Update `admin/config.yml` + `vercel.json` + README
+- [x] Verify remote + build
 
 ## Review
 
-- **Code:** Official Vercel Web Analytics HTML snippet added at the end of `_includes/partials/head.njk` (covers all public pages via that partial; `admin/` untouched).
-- **Verified:** Built `_site/index.html` and `_site/404/index.html` contain `window.va` + deferred `/_vercel/insights/script.js`. Browser at http://localhost:8080/ confirmed both scripts in DOM and `window.va` is a function. Local 404 on the insights script is expected.
-- **Manual (post-deploy):** In Vercel → project → **Analytics** → **Enable** Web Analytics. Redeploy if enabling after the last deploy. In production Network tab, confirm a request to `/_vercel/insights/view` (or similar) on page load.
+- Local `origin` is `git@github.com:matyldajandova/daisyazylweb.git` (Bitbucket removed).
+- Decap backend is `github` / `matyldajandova/daisyazylweb` with build-time `base_url` injection.
+- Vercel serverless OAuth: `api/auth.js`, `api/callback.js`.
+- Still required manually: create GitHub OAuth App + set `GITHUB_CLIENT_ID`, `GITHUB_CLIENT_SECRET`, `CMS_BASE_URL` on Vercel, then redeploy.

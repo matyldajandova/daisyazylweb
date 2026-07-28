@@ -92,29 +92,37 @@ _data/animals.js      (reads cms/animals.json, adds URL slugs, exposes global "a
 
 ### Content editor (Decap CMS)
 
-- A lightweight Git‑based editor is available at:
+- Editor UI: `/admin/`
+- Backend: **GitHub** (`matyldajandova/daisyazylweb`), commits go straight to `main`
+- Production login: **Login with GitHub** (collaborators with write access)
+- Local login: `local_backend: true` + `npx decap-server` (no GitHub OAuth needed on localhost)
 
-```text
-/admin/
-```
+#### Production setup (Vercel + GitHub OAuth)
 
-- Config file:
+1. Create a GitHub OAuth App: [Developer settings → OAuth Apps](https://github.com/settings/developers)
+   - **Homepage URL**: your production site URL (e.g. `https://your-project.vercel.app`)
+   - **Authorization callback URL**: `https://your-project.vercel.app/api/callback`
+2. In the Vercel project → Settings → Environment Variables, add:
+   - `GITHUB_CLIENT_ID` — OAuth App Client ID
+   - `GITHUB_CLIENT_SECRET` — OAuth App Client Secret
+   - `CMS_BASE_URL` — same production origin as above (e.g. `https://your-project.vercel.app`)
+3. Redeploy. Open `/admin/` → **Login with GitHub**.
+4. Invite editors as **collaborators** (write) on [matyldajandova/daisyazylweb](https://github.com/matyldajandova/daisyazylweb).
 
-```text
-/admin/config.yml
-```
+OAuth API routes live in `api/auth.js` and `api/callback.js`. Build injects `base_url` into the served `config.yml` via `scripts/prepare-cms-config.js`.
 
-- The `animals` collection in Decap CMS edits the `cms/animals.json` file:
-  - Add / edit / remove animals.
-  - Fields match what the templates expect (`id`, `name`, `species`, `tags`, `image`, `shortDescription`, `adoptionStatus`, …). Detail URLs are generated at build time (no `detailUrl` field).
+#### Collections
+
+- Config source: `admin/config.yml` (served as `/config.yml` and `/admin/config.yml`)
+- `animals` → `cms/animals.json`
+- `partners` → `cms/partners.json`
+- `vyrocni-zpravy` → `cms/vyrocni-zpravy.json`
 
 ### Hosting notes
 
-- Deploy the contents of `_site/` to any static host (Netlify, Vercel, GitHub Pages, etc.).
-- For Decap CMS to work you will need to configure the `backend` section in `admin/config.yml` to match your Git provider or use Netlify Identity/git‑gateway.
-
-- Make sure your host serves these generated/static endpoints:
-  - `/sitemap.xml` and `/robots.txt` for search engines.
-  - `/llms.txt` for AI/LLM crawlers.
-  - `/admin/` and `/images/uploads/` for the Decap CMS UI and uploaded media.
+- **Vercel**: `vercel.json` builds with `npm run build` and publishes `_site/`. Serverless `/api/*` handles Decap GitHub OAuth.
+- Make sure the host serves:
+  - `/sitemap.xml` and `/robots.txt`
+  - `/llms.txt`
+  - `/admin/`, `/api/auth`, `/api/callback`, and `/images/uploads/`
 

@@ -1,6 +1,10 @@
 backend:
-  name: git-gateway
+  name: github
+  repo: matyldajandova/daisyazylweb
   branch: main
+  # Replaced at build time by scripts/prepare-cms-config.js (CMS_BASE_URL / Vercel URL)
+  base_url: http://localhost:8080
+  auth_endpoint: api/auth
 
 media_folder: "images/uploads"
 public_folder: "/images/uploads"

@@ -6,6 +6,14 @@
 # Build output (Eleventy)
 _site/
 
+# Generated Decap config (base_url injected at build)
+.cms-config/
+
+# Local env (GitHub OAuth secrets, etc.)
+.env
+.env.*
+!.env.example
+
 # Dependencies
 node_modules/
 

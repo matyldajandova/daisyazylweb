@@ -22,8 +22,9 @@ module.exports = function (eleventyConfig) {
     return name ? `${species}-${name}` : species || animal.id || "detail";
   });
 
-  eleventyConfig.addPassthroughCopy("admin/config.yml");
-  eleventyConfig.addPassthroughCopy({ "admin/config.yml": "config.yml" });
+  // Prepared by scripts/prepare-cms-config.js (injects production base_url for GitHub OAuth).
+  // Decap loads /config.yml because admin/index.html sets <base href="/">.
+  eleventyConfig.addPassthroughCopy({ ".cms-config/config.yml": "config.yml" });
   eleventyConfig.addPassthroughCopy({ public: "." });
   eleventyConfig.addPassthroughCopy("images");
 
