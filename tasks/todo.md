@@ -1,15 +1,14 @@
-# Decap on Vercel (GitHub)
+# Fix výroční zpráva PDF download path
 
 ## Plan
 
-- [x] Point local `origin` to GitHub (`matyldajandova/daisyazylweb`)
-- [x] Add `/api/auth` + `/api/callback` GitHub OAuth proxy
-- [x] Update `admin/config.yml` + `vercel.json` + README
-- [x] Verify remote + build
+- [x] Change field media_folder to /public/documents in admin/config.yml
+- [x] Move daisy-logo.pdf from cms/public/documents/ to public/documents/ and remove cms/public/
+- [x] Sync cms/vyrocni-zpravy.json from origin/main with the /documents/ path
+- [x] Browser-verify /vyrocni-zpravy/ download returns a real PDF
 
 ## Review
 
-- Local `origin` is `git@github.com:matyldajandova/daisyazylweb.git` (Bitbucket removed).
-- Decap backend is `github` / `matyldajandova/daisyazylweb` with build-time `base_url` injection.
-- Vercel serverless OAuth: `api/auth.js`, `api/callback.js`.
-- Still required manually: create GitHub OAuth App + set `GITHUB_CLIENT_ID`, `GITHUB_CLIENT_SECRET`, `CMS_BASE_URL` on Vercel, then redeploy.
+- **Cause:** field `media_folder: "public/documents"` (no leading `/`) saved the CMS upload under `cms/public/documents/`, while links used `/documents/…`.
+- **Fix:** `media_folder: "/public/documents"`; moved `daisy-logo.pdf` → `public/documents/`; removed `cms/public/`.
+- **Verified (localhost:8082):** page lists Výroční zpráva 2025 → `/documents/daisy-logo.pdf`; fetch returns `200`, `application/pdf`, magic `%PDF-`.

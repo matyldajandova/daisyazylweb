@@ -225,6 +225,6 @@ collections:
               - label: "Soubor"
                 name: "file"
                 widget: "file"
-                media_folder: "public/documents"
+                media_folder: "/public/documents"
                 public_folder: "/documents"
 
