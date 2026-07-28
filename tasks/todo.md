@@ -1,13 +1,13 @@
-# Update Adopční smlouva
+# Remove 2024 report and Radana/Lilli
 
 ## Plan
 
-- [x] Copy new Adopční smlouva DOCX over public/documents/adopcni-smlouva.docx (no logo in filename)
-- [x] Confirm file size matches source
-- [x] Browser-check /dokumenty/ adoption contract link
+- [x] Delete Výroční zpráva 2024 block + dividers in vyrocni-zpravy.html
+- [x] Delete Radana a Lilli Kyle block from footer.njk
+- [x] Start npm run serve and browser-verify both pages
 
 ## Review
 
-- **Replaced:** `public/documents/adopcni-smlouva.docx` (103,921 bytes) from `Adopční smlouva - zvíře.docx`; byte-identical.
-- **Filename:** published as `adopcni-smlouva.docx` (no “logo” / “Nové logo” in the URL or download name).
-- **Verified in browser:** `/dokumenty/` “Adopční smlouva” → `/documents/adopcni-smlouva.docx`, 200 DOCX, new size.
+- **Removed:** `Výroční zpráva 2024` entry (+ dividers) from `vyrocni-zpravy.html`; only 2025 remains.
+- **Removed:** `Radana a Lilli Kyle` from footer team in `_includes/partials/footer.njk`. Remaining: Tereza, Alžběta, Pavla, Iveta.
+- **Verified:** `npm run serve` at http://localhost:8080 — `/vyrocni-zpravy/` shows only 2025; footer team has no Radana/Lilli. (Copyright © 2024 is unrelated and left as-is.)
