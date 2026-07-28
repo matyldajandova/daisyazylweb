@@ -199,3 +199,28 @@ collections:
                 widget: "string"
                 required: false
 
+  - name: "vyrocni-zpravy"
+    label: "Výroční zprávy"
+    label_singular: "Výroční zpráva"
+    format: "json"
+    editor:
+      preview: false
+    files:
+      - name: "vyrocni-zpravy-data"
+        label: "Seznam výročních zpráv"
+        file: "cms/vyrocni-zpravy.json"
+        fields:
+          - label: "Výroční zprávy"
+            name: "reports"
+            widget: "list"
+            summary: "{{fields.name}}"
+            fields:
+              - label: "Název"
+                name: "name"
+                widget: "string"
+              - label: "Soubor"
+                name: "file"
+                widget: "file"
+                media_folder: "public/documents"
+                public_folder: "/documents"
+

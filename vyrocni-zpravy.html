@@ -26,8 +26,10 @@ description: "Výroční zprávy spolku Daisy Azyl z.s. – přehled hospodařen
                 <div class="margin-bottom margin-medium">
                   <h1 class="heading-style-h2">Výroční zprávy</h1>
                 </div>
+                {% if vyrocniZpravy.reports and vyrocniZpravy.reports.size > 0 %}
                 <div class="doc-list">
-                  <a href="#" class="doc-list_item">
+                  {% for report in vyrocniZpravy.reports %}
+                  <a href="{{ report.file }}" class="doc-list_item" download>
                     <div class="doc-list_icon">
                       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path
@@ -44,7 +46,7 @@ description: "Výroční zprávy spolku Daisy Azyl z.s. – přehled hospodařen
                       </svg>
                     </div>
                     <div class="doc-list_info">
-                      <div class="text-weight-semibold">Výroční zpráva 2025</div>
+                      <div class="text-weight-semibold">{{ report.name }}</div>
                     </div>
                     <div class="doc-list_download">
                       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -58,7 +60,16 @@ description: "Výroční zprávy spolku Daisy Azyl z.s. – přehled hospodařen
                       </svg>
                     </div>
                   </a>
+                  {% unless forloop.last %}
+                  <div class="divider-horizontal"></div>
+                  {% endunless %}
+                  {% endfor %}
                 </div>
+                {% else %}
+                <p class="text-size-medium text-color-yellow">
+                  Zatím nemáme zveřejněnou žádnou výroční zprávu.
+                </p>
+                {% endif %}
               </div>
             </div>
           </div>
