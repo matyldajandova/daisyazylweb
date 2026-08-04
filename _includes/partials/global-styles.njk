@@ -315,6 +315,31 @@
         grid-template-columns: 1fr;
       }
 
+      .cta39_card-content.support-account-content {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1.5rem 2rem;
+        width: 100%;
+      }
+
+      .support-account-text {
+        flex: 1 1 16rem;
+        min-width: 0;
+      }
+
+      .support-qr {
+        flex: 0 0 auto;
+        width: 11rem;
+        height: auto;
+        max-width: 100%;
+        display: block;
+        background-color: #fff;
+        padding: 0.65rem;
+        border-radius: 10px;
+      }
+
       .support-account-link {
         white-space: nowrap;
         display: inline-flex;
@@ -435,6 +460,22 @@
         .support-account-card {
           max-width: 100%;
         }
+
+        .cta39_card-content.support-account-content {
+          flex-direction: column;
+          align-items: flex-start;
+          justify-content: flex-start;
+          gap: 1rem;
+          padding-bottom: 1.5rem !important;
+        }
+
+        .support-account-content .support-account-text {
+          flex: 0 1 auto;
+        }
+
+        .support-qr {
+          width: 10rem;
+        }
       }
 
       @media screen and (max-width: 767px) {
@@ -450,6 +491,10 @@
 
         .support-method-card {
           padding: 1.25rem;
+        }
+
+        .support-qr {
+          width: 9rem;
         }
 
         .cta-illustration {

@@ -1,14 +1,16 @@
-# Fix výroční zpráva PDF download path
+# Add QR code to bank account section
 
 ## Plan
 
-- [x] Change field media_folder to /public/documents in admin/config.yml
-- [x] Move daisy-logo.pdf from cms/public/documents/ to public/documents/ and remove cms/public/
-- [x] Sync cms/vyrocni-zpravy.json from origin/main with the /documents/ path
-- [x] Browser-verify /vyrocni-zpravy/ download returns a real PDF
+- [x] Copy QR PNG to `public/images/qr-platba-daisy-azyl.png`
+- [x] Update `support-section.njk` — QR beside account; remove two-people illustration on this card
+- [x] Add flex / white-pad / responsive styles in `global-styles.njk`
+- [x] Browser-check `/#podpora` desktop + mobile
 
 ## Review
 
-- **Cause:** field `media_folder: "public/documents"` (no leading `/`) saved the CMS upload under `cms/public/documents/`, while links used `/documents/…`.
-- **Fix:** `media_folder: "/public/documents"`; moved `daisy-logo.pdf` → `public/documents/`; removed `cms/public/`.
-- **Verified (localhost:8082):** page lists Výroční zpráva 2025 → `/documents/daisy-logo.pdf`; fetch returns `200`, `application/pdf`, magic `%PDF-`.
+- **Asset:** `public/images/qr-platba-daisy-azyl.png` (526×514 PNG), served at `/images/qr-platba-daisy-azyl.png` (HTTP 200).
+- **UI:** QR sits in the financial support card next to account `267695286/0600`; decorative `two-people.svg` removed from this card only.
+- **Layout:** Desktop row (text left, QR right); ≤991px stacks with QR under the account link. White pad keeps the code scannable.
+- **Verified (localhost:8080/#podpora):** QR loads (`naturalWidth` 526), alt present, side-by-side at 1280px and stacked at 390px.
+- **Stacked gap fix:** `justify-content: flex-start` + `gap: 1rem` (was `space-between`); text `flex: 0 1 auto`. Measured account→QR gap = 16px at 390/900px.
