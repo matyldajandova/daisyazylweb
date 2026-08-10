@@ -14,7 +14,7 @@
       "birthDate": "27.04.2026",
       "gallery": [
         "/images/uploads/whatsapp-image-2026-07-29-at-20.59.23.jpeg",
-        "/images/uploads/whatsapp-image-2026-07-29-at-21.01.54.jpeg",
+        "/images/uploads/whatsapp-image-2026-07-29-at-22.39.13.jpeg",
         "/images/uploads/whatsapp-image-2026-07-29-at-22.39.13.jpeg",
         "/images/uploads/whatsapp-image-2026-08-10-at-17.01.32.jpeg",
         "/images/uploads/whatsapp-image-2026-08-10-at-17.04.05.jpeg",
@@ -23,7 +23,8 @@
       ],
       "breed": "kočka evropská",
       "firstVaccination": true,
-      "image": "/images/uploads/whatsapp-image-2026-07-29-at-22.39.13.jpeg",
+      "id": "01",
+      "image": "/images/uploads/whatsapp-image-2026-07-29-at-21.01.54.jpeg",
       "species": "kočka",
       "ageCategory": "Kotě"
     },
@@ -50,6 +51,7 @@
       ],
       "breed": "kočka evropská",
       "firstVaccination": true,
+      "id": "02",
       "image": "/images/uploads/whatsapp-image-2026-08-10-at-17.03.30.jpeg",
       "species": "kočka",
       "ageCategory": "Kotě"
@@ -74,10 +76,35 @@
       ],
       "breed": "kočka evropská",
       "firstVaccination": true,
+      "id": "03",
       "image": "/images/uploads/whatsapp-image-2026-08-10-at-16.58.05.jpeg",
       "felvTest": "Negativní",
       "species": "kočka",
       "ageCategory": "Mladý"
+    },
+    {
+      "shortDescription": "Příběh malé Bee začal SOS voláním spolku Kočičí oči Kolín. Koťátko zůstalo na světě úplně samo – bez maminky i sourozenců se přitoulala k hodným nálezcům. Ti jí poskytli dočasný azyl a aktivně hledali pomoc. \n\nBee si nás v azylu okamžitě omotala kolem své sametové pacinky. Dlouho jsme nezažily tak neuvěřitelně mazlivé, veselé a zvídavé kotě. Bee je ztělesněním roztomilosti. Je neustále v pohybu, akční, obratná a ze všeho nejraději si hraje na schovávanou nebo šplhá. Jakmile uvidí člověka, okamžitě se promění v uvrněné, láskyplné klubíčko. Je bezprostřední, nebojácná a lidskou společnost zbožňuje.\n\nSrší zdravím a energií a rozdává úsměvy na všechny strany.\n\n\nBee hledá bezpečný domov výhradně uvnitř (v bytě nebo v domě se zasíťovanými okny, balkónem či bezpečnou voliérou). Je to ideální rodinná společnice, která díky své přátelské a hravé povaze skvěle zapadne i k dětem. Pokud hledáte malého, neúnavného mazlíčka a parťáka pro každou kulišárnu, Bee je ta pravá!",
+      "gender": "samička",
+      "color": "mourovatá",
+      "suitableWithDogs": true,
+      "fivTest": "Negativní",
+      "suitableWithOlderChildren": true,
+      "suitableWithCats": true,
+      "adoptionStatus": "available",
+      "name": "Bee",
+      "suitableWithChildren": true,
+      "gallery": [
+        "/images/uploads/whatsapp-image-2026-07-27-at-20.58.50-2-.jpeg",
+        "/images/uploads/whatsapp-image-2026-07-27-at-20.58.50-2-.jpeg",
+        "/images/uploads/whatsapp-image-2026-07-27-at-20.58.50-1-.jpeg"
+      ],
+      "breed": "kočka evropská",
+      "firstVaccination": true,
+      "id": "04",
+      "image": "/images/uploads/whatsapp-image-2026-07-27-at-20.58.50.jpeg",
+      "felvTest": "Negativní",
+      "species": "kočka",
+      "ageCategory": "Kotě"
     }
   ]
 }
