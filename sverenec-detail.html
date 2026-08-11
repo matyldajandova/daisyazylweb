@@ -55,7 +55,7 @@ currentPage: sverenec-detail
                     <h1 class="heading-style-h2">{{ animal.name }}</h1>
                     <div class="margin-top margin-medium">
                       <div class="blog-post-header4_date-wrapper">
-                        <div class="text-size-medium">{{ animal.longDescription | default: animal.shortDescription }}</div>
+                        <div class="text-size-medium text-rich-text w-richtext">{{ animal.longDescription | default: animal.shortDescription | markdown }}</div>
                       </div>
                     </div>
                     <div class="margin-top margin-large">

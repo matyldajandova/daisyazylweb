@@ -1,3 +1,5 @@
+const MarkdownIt = require("markdown-it");
+
 /** Czech-friendly URL slug (e.g. "Bětuška" → "betuska", "kočka" → "kocka"). */
 function slugifyCzech(str) {
   if (str == null || typeof str !== "string") return "";
@@ -13,6 +15,13 @@ function slugifyCzech(str) {
   return s;
 }
 
+const markdown = new MarkdownIt({
+  html: false,
+  linkify: true,
+  // Preserve single newlines from existing CMS text as <br>; blank lines stay paragraphs.
+  breaks: true,
+});
+
 module.exports = function (eleventyConfig) {
   eleventyConfig.addFilter("slug", (str) => slugifyCzech(String(str ?? "")));
   eleventyConfig.addFilter("animalSlug", (animal) => {
@@ -20,6 +29,10 @@ module.exports = function (eleventyConfig) {
     const species = slugifyCzech(animal.species ?? "");
     const name = slugifyCzech(animal.name ?? animal.id ?? "");
     return name ? `${species}-${name}` : species || animal.id || "detail";
+  });
+  eleventyConfig.addFilter("markdown", (value) => {
+    if (value == null || value === "") return "";
+    return markdown.render(String(value));
   });
 
   // Prepared by scripts/prepare-cms-config.js (injects production base_url for GitHub OAuth).
