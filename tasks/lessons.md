@@ -1,3 +1,9 @@
+## Local CMS login: use decap-server, never replicate production OAuth locally
+
+- For local Decap CMS editing, the standard path is `local_backend: true` + `npx decap-server` (`npm run cms:local`), then "Work with Local Repository" on `/admin/`. GitHub OAuth is production-only (Vercel serverless `/api/auth` + `/api/callback`).
+- Do NOT mount the OAuth handlers in `eleventy --serve` middleware. It cascades into hacks: Eleventy live-reload injects a CSP on non-200 HTML that blocks the callback's postMessage script, and GitHub's COOP severs `window.opener`, breaking the popup handshake entirely.
+- When a "fix" needs a second and third workaround, stop and look for the tool's intended workflow instead.
+
 ## Browser-based verification is mandatory
 
 - When working on this project, always validate fixes and changes in a real browser session before marking a task complete.

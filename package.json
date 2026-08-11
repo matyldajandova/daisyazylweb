@@ -6,6 +6,7 @@
     "cms:config": "node scripts/prepare-cms-config.js",
     "build": "npm run cms:config && npm run images:webp && eleventy",
     "serve": "npm run build && eleventy --serve --port=8080",
+    "cms:local": "npx decap-server",
     "images:webp": "node scripts/convert-to-webp.js",
     "format": "prettier \"**/*.{html,css,js,json,md}\" --write",
     "format:check": "prettier \"**/*.{html,css,js,json,md}\" --check",

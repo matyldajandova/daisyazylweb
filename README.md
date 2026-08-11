@@ -95,7 +95,17 @@ _data/animals.js      (reads cms/animals.json, adds URL slugs, exposes global "a
 - Editor UI: `/admin/`
 - Backend: **GitHub** (`matyldajandova/daisyazylweb`), commits go straight to `main`
 - Production login: **Login with GitHub** (collaborators with write access)
-- Local login: `local_backend: true` + `npx decap-server` (no GitHub OAuth needed on localhost)
+- Local login: **local backend** — no GitHub OAuth on localhost (standard Decap workflow)
+
+#### Local editing (standard Decap workflow)
+
+GitHub OAuth is production-only. Locally, Decap talks to a small proxy that edits your working tree directly:
+
+1. Terminal 1: `npm run serve` (site at `http://localhost:8080`)
+2. Terminal 2: `npm run cms:local` (starts `decap-server` on port 8081)
+3. Open `http://localhost:8080/admin/` → click **Work with Local Repository**
+
+Changes made in the CMS are written to the repo working tree (e.g. `cms/animals.json`); review and commit them with git as usual. This is enabled by `local_backend: true` in `admin/config.yml` and only takes effect when `decap-server` is running.
 
 #### Production setup (Vercel + GitHub OAuth)
 
@@ -109,7 +119,7 @@ _data/animals.js      (reads cms/animals.json, adds URL slugs, exposes global "a
 3. Redeploy. Open `/admin/` → **Login with GitHub**.
 4. Invite editors as **collaborators** (write) on [matyldajandova/daisyazylweb](https://github.com/matyldajandova/daisyazylweb).
 
-OAuth API routes live in `api/auth.js` and `api/callback.js`. Build injects `base_url` into the served `config.yml` via `scripts/prepare-cms-config.js`.
+OAuth API routes live in `api/auth.js` and `api/callback.js` (Vercel serverless only). Build injects `base_url` into the served `config.yml` via `scripts/prepare-cms-config.js`.
 
 #### Collections
 
