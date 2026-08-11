@@ -81,13 +81,13 @@ _data/animals.js      (reads cms/animals.json, adds URL slugs, exposes global "a
   - Identification & naming: `id`, `name`, `species`, `evidenceNumber`.
   - Basic info: `ageText`, `ageCategory`, `gender`, `breed`, `color`.
   - Dates & origin: `birthDate`, `foundDate`, `origin`, `guardian`.
-  - Story & presentation: `shortDescription`, `tags` (array of strings), `category` (e.g. `hledaji-domov`, `nove-prijati`).
+  - Story & presentation: `shortDescription` (card + SEO), `longDescription` (detail page), `tags` (array of strings), `category` (e.g. `hledaji-domov`, `nove-prijati`).
   - Suitability flags: `suitableOutdoor`, `suitableWithCats`, `suitableWithDogs`, `suitableWithChildren`, `suitableWithOlderChildren`.
   - Health data: `panleukopeniaTest`, `felvTest`, `fivTest`, `neutered`, `firstVaccination`, `secondVaccination`.
 - Slugs are generated in `_data/animals.js` using a Czech-aware `slugifyCzech` helper so that `/adopce/<slug>/` URLs stay readable (e.g. `/adopce/kocka-betuska/`).
 
 - **Listing** (`adopce.html`): Loops over `animals.animalsEnriched` to render cards and links to each animal’s detail at `/adopce/<slug>/` (e.g. `/adopce/kocka-betuska/`).
-- **Detail** (`adopce-detail.html`): Uses Eleventy pagination (one page per animal) and binds each animal’s fields (name, tags, shortDescription, image, etc.). URLs are SEO-friendly: `/adopce/<species>-<name>/` (e.g. `/adopce/kocka-betuska/`).
+- **Detail** (`sverenec-detail.html`): Uses Eleventy pagination (one page per animal) and binds each animal’s fields (name, tags, longDescription, image, etc.). URLs are SEO-friendly: `/sverenec/<slug>/`.
 - When `animals.animals` is empty, no detail pages are generated and the listing shows “Momentálně nemáme žádné pejsky a kočičky k adopci.”
 
 ### Content editor (Decap CMS)
