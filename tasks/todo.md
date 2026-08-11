@@ -1,16 +1,27 @@
-# Long description as rich text
+# Sverenci design audit fixes
 
 ## Plan
 
-- [x] Switch `longDescription` to markdown (rich text) in Decap CMS
-- [x] Add markdown render filter; use it on detail page with `w-richtext` / `text-rich-text`
-- [x] Ensure existing newline paragraphs convert/render correctly
-- [x] Regenerate CMS config; browser-verify paragraph breaks on detail
+- [x] Restyle hub cards + filter bar with site design tokens in global-styles.njk
+- [x] Hub: visitor copy, hide empty categories, clean empty-species state
+- [x] Filter: remove Rozcestník link, hide zero-count options
+- [x] Human per-category intros in `_data/animals.js`
+- [x] Browser-verify desktop + mobile
 
 ## Review
 
-- CMS: `longDescription` widget → `markdown` (Decap rich text)
-- Build: `markdown` Liquid filter via `markdown-it` (`breaks: true` so single newlines become `<br>`, blank lines → `<p>`)
-- Detail: `text-rich-text w-richtext` + `{{ … | markdown }}`
-- Content: normalized existing longDescriptions (trim / collapse 3+ newlines)
-- Verified Arya detail: 3 `<p>` paragraphs; CMS editor shows multi-paragraph Podrobný popis
+### Design
+- Hub cards use `--_primitives---colors--green` + site radius (same language as `event16_item`).
+- Badges match `.tag` (yellow token, 3px radius, dark text).
+- Filter is an unboxed dark-green toolbar (no light panel).
+
+### UX
+- Visitor intro on hub; empty categories hidden; Psi empty card has no dead links/button.
+- Filter: no “← Rozcestník”; category select only lists non-empty options (+ current).
+- Category intros e.g. “Tyto kočičky právě hledají svůj nový domov.”
+
+### Verified
+- `/nasi-sverenci/`: green cards, only “Hledají domov (5)” under Kočky, Psi empty note only.
+- `/nasi-sverenci/kocky/hledaji-domov/`: human intro; filter options = Všechny + Hledají domov (5).
+- `/nasi-sverenci/psi/`: empty message; detail `/sverenec/kocka-arya/` still has “Zpět: Hledají domov”.
+- Mobile a11y tree for hub confirms stacked single-column structure.

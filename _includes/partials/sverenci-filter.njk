@@ -22,14 +22,15 @@
         Všechny kategorie
       </option>
       {% for category in listing.filterCategories %}
+      {% if category.count > 0 or listing.categorySlug == category.slug %}
       <option
         value="{{ category.href }}"
         {% if listing.categorySlug == category.slug %}selected{% endif %}
-      >{{ category.label }} ({{ category.count }})</option>
+      >{{ category.label }}{% if category.count > 0 %} ({{ category.count }}){% endif %}</option>
+      {% endif %}
       {% endfor %}
     </select>
   </div>
-  <a href="/nasi-sverenci/" class="sverenci-filter_hub-link">← Rozcestník</a>
 </nav>
 <script>
   (function () {

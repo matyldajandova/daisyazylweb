@@ -91,6 +91,45 @@ const ADOPTION_STATUS_TO_CATEGORY = {
 
 const OUT_OF_SHELTER = new Set(["nasli-domov", "v-nasich-srdcich"]);
 
+/** Visitor-facing listing intros (cat / dog variants). */
+const CATEGORY_INTROS = {
+  "nove-prijati": {
+    kočka: "Nedávno k nám přišly a zvykají si na azyl.",
+    pes: "Nedávno k nám přišli a zvykají si na azyl.",
+  },
+  "hledaji-domov": {
+    kočka: "Tyto kočičky právě hledají svůj nový domov.",
+    pes: "Tito pejsci právě hledají svůj nový domov.",
+  },
+  "trvali-obyvatele": {
+    kočka: "Zůstávají v naší péči natrvalo – můžete je podpořit virtuální adopcí.",
+    pes: "Zůstávají v naší péči natrvalo – můžete je podpořit virtuální adopcí.",
+  },
+  felv: {
+    kočka: "Kočičky s FeLV, které potřebují speciální domov.",
+    pes: "Kočičky s FeLV, které potřebují speciální domov.",
+  },
+  "nasli-domov": {
+    kočka: "Šťastné konce – tyto kočičky už domov našly.",
+    pes: "Šťastné konce – tito pejsci už domov našli.",
+  },
+  "v-nasich-srdcich": {
+    kočka: "Vzpomínáme na svěřence, kteří už nejsou mezi námi.",
+    pes: "Vzpomínáme na svěřence, kteří už nejsou mezi námi.",
+  },
+};
+
+function listingIntroFor(speciesKey, categorySlug) {
+  if (!categorySlug) {
+    return speciesKey === "kočka"
+      ? "Podívejte se na kočičky, které momentálně máme v péči."
+      : "Podívejte se na pejsky, které momentálně máme v péči.";
+  }
+  const bySpecies = CATEGORY_INTROS[categorySlug];
+  if (bySpecies && bySpecies[speciesKey]) return bySpecies[speciesKey];
+  return bySpecies?.kočka || "";
+}
+
 function normalizeGallery(gallery) {
   if (!Array.isArray(gallery)) return [];
   return gallery.map((item) => {
@@ -208,7 +247,7 @@ function buildListingPages(animalsEnriched) {
       description: `${species.label} v péči azylu Daisy Azyl.`,
       listingHeading: species.label,
       listingTagline: "Naši svěřenci",
-      listingIntro: `Podívejte se na ${species.key === "kočka" ? "kočičky" : "pejsky"}, které momentálně máme v péči.`,
+      listingIntro: listingIntroFor(species.key, null),
       listingEmpty: `Momentálně tu nejsou žádní ${species.key === "kočka" ? "kočičí" : "psí"} svěřenci.`,
       animals: speciesAnimals,
       filterCategories: speciesCategories.map((c) => ({
@@ -234,7 +273,7 @@ function buildListingPages(animalsEnriched) {
         description: `${label}: ${species.label.toLowerCase()} v azylu Daisy Azyl.`,
         listingHeading: label,
         listingTagline: species.label,
-        listingIntro: `${species.label}: ${label.toLowerCase()}.`,
+        listingIntro: listingIntroFor(species.key, category.slug),
         listingEmpty: `V kategorii „${label}“ momentálně nejsou žádní ${species.key === "kočka" ? "kočičí" : "psí"} svěřenci.`,
         animals,
         filterCategories: speciesCategories.map((c) => ({
