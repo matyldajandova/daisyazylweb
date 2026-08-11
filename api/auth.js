@@ -2,12 +2,7 @@
  * Decap CMS → GitHub OAuth: start authorization.
  * Env: GITHUB_CLIENT_ID
  */
-function publicOrigin(req) {
-  const host = req.headers["x-forwarded-host"] || req.headers.host;
-  const proto = req.headers["x-forwarded-proto"] || "https";
-  if (!host) return null;
-  return `${proto}://${host}`.replace(/\/$/, "");
-}
+const { publicOrigin } = require("./_lib/public-origin");
 
 module.exports = function handler(req, res) {
   const clientId = process.env.GITHUB_CLIENT_ID;

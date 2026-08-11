@@ -2,11 +2,7 @@
 currentPage: nasi-sverenci
 permalink: "/nasi-sverenci/"
 title: Naši svěřenci | Daisy Azyl
-description: "Pejsci a kočičky aktuálně v péči azylu Daisy Azyl – k adopci, rezervovaní a trvalí svěřenci."
-listingHeading: "Naši svěřenci"
-listingTagline: "Adopce"
-listingIntro: "Podívejte se, jaké kočičky a pejsky momentálně máme v péči."
-listingEmpty: "Momentálně u nás nejsou žádní svěřenci."
+description: "Pejsci a kočičky v péči azylu Daisy Azyl – rozcestník podle druhu a kategorie."
 ---
 <!DOCTYPE html>
 <html lang="cs" data-wf-page="696621387a57026b3d2c8087" data-wf-site="695b9bfd5fed08c9b800830d">
@@ -21,8 +17,76 @@ listingEmpty: "Momentálně u nás nejsou žádní svěřenci."
     <a href="#main-content" class="skip-link sr-only sr-only-focusable">Přeskočit na hlavní obsah</a>
     <main id="main-content" class="main-wrapper max-width-full">
       {% include "partials/navbar.njk" %}
-      {% assign listingAnimals = animals.inShelterEnriched %}
-      {% include "partials/animals-listing.njk" %}
+      <section id="nalezenci" class="section_grid">
+        <div class="padding-global">
+          <div class="container-large">
+            <div class="padding-section-large">
+              <div class="event16_component">
+                <div class="margin-bottom margin-xxlarge">
+                  <div class="margin-bottom margin-xsmall">
+                    <div class="text-style-tagline">Adopce</div>
+                  </div>
+                  <div class="event16_heading-wrapper">
+                    <div class="event16_heading">
+                      <div class="max-width-large">
+                        <div class="margin-bottom margin-xsmall">
+                          <h1 class="heading-style-h2">Naši svěřenci</h1>
+                        </div>
+                        <p class="text-size-medium">
+                          Vyberte druh a kategorii. Zvířata můžete průběžně přeřazovat (např. z Nově přijatých do Hledají domov).
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="sverenci-hub" role="navigation" aria-label="Rozcestník svěřenců">
+                  {% for species in animals.hub %}
+                  <article class="sverenci-hub_card">
+                    <div class="sverenci-hub_card-head">
+                      <h2 class="heading-style-h4">
+                        <a href="{{ species.href }}" class="sverenci-hub_species-link">{{ species.label }}</a>
+                      </h2>
+                      <p class="text-size-regular sverenci-hub_count">
+                        {% if species.count == 0 %}
+                          Zatím žádní svěřenci
+                        {% elsif species.count == 1 %}
+                          1 svěřenec
+                        {% elsif species.count >= 2 and species.count <= 4 %}
+                          {{ species.count }} svěřenci
+                        {% else %}
+                          {{ species.count }} svěřenců
+                        {% endif %}
+                      </p>
+                    </div>
+                    <ul class="sverenci-hub_categories">
+                      {% for category in species.categories %}
+                      <li>
+                        <a href="{{ category.href }}" class="sverenci-hub_category-link">
+                          <span>{{ category.label }}</span>
+                          <span class="sverenci-hub_badge">{{ category.count }}</span>
+                        </a>
+                      </li>
+                      {% endfor %}
+                    </ul>
+                    <div class="margin-top margin-small">
+                      <a href="{{ species.href }}" class="button-3 is-link is-icon w-inline-block">
+                        <div>Zobrazit všechny</div>
+                        <div class="icon-embed-xxsmall w-embed">
+                          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M6 3L11 8L6 13" stroke="CurrentColor" stroke-width="1.5"></path>
+                          </svg>
+                        </div>
+                      </a>
+                    </div>
+                  </article>
+                  {% endfor %}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
       {% include "partials/support-section.njk" %}
       {% include "partials/footer.njk" %}
     </main>

@@ -7,7 +7,6 @@
       "suitableWithDogs": true,
       "suitableWithOlderChildren": true,
       "suitableWithCats": true,
-      "adoptionStatus": "available",
       "name": "Arya",
       "suitableWithChildren": true,
       "ageText": "Narozena 27. 4. 2026",
@@ -25,7 +24,8 @@
       "id": "01",
       "image": "/images/uploads/arya-ě.jpeg",
       "species": "kočka",
-      "ageCategory": "Kotě"
+      "ageCategory": "Kotě",
+      "category": "hledaji-domov"
     },
     {
       "shortDescription": "Kiara je další z koťátek maminky Noemi. Má černo-bílý kožíšek a pozornost poutá svým neodolatelným vzhledem – má rozkošně špičatý čumáček, který jí dává šibalský a rošťácký kukuč.\n\nA jak jí z očí kouká rošťárna, taková je i ve skutečnosti! Kiara je zvídavá, hravá a živá holčička, přesně jak se na správné kotě sluší a patří. Žádná kotěcí hra, šplhání nebo divočení se sourozenci se neobejde bez její přítomnosti.\n\nJe to také velká mazlivka: Postupem času čím dál více vyhledává lidskou společnost a projevuje svou něžnou stránku.\n\nJak se jí daří nyní? V dočasné péči roste do krásy i do vymazlenosti. Když zrovna neprohání své kočičí kamarády a nevymýšlí nové lumpárny, nejraději vyhledává teplo lidské náruče.\n\nRáda se přitiskne těsně k člověku, slastně vrní a spokojeně usne. Z rošťácké kuličky se tak stává dokonalá společnice, která je připravená přinést do nového domova spoustu radosti, smíchu i lásky.",
@@ -34,7 +34,6 @@
       "suitableWithDogs": true,
       "suitableWithOlderChildren": true,
       "suitableWithCats": true,
-      "adoptionStatus": "available",
       "name": "Kiara",
       "suitableWithChildren": true,
       "ageText": "Narozena 27.4. 2026",
@@ -53,7 +52,8 @@
       "id": "02",
       "image": "/images/uploads/whatsapp-image-2026-08-10-at-17.03.30.jpeg",
       "species": "kočka",
-      "ageCategory": "Kotě"
+      "ageCategory": "Kotě",
+      "category": "hledaji-domov"
     },
     {
       "shortDescription": "Noemi k nám přišla jako toulavá, březí kočička z Hlízova u Kutné Hory. I když byla sama ještě téměř odrostlé kotě, přivedla na svět hned čtyři nádherná, zdravá černo-bílá koťátka. Role maminky se zhostila na sto procent. O svá čtyřčata se vzorně starala, kojila je a poskytla jim ten nejlepší start do života.\n\nNoeminka je extrémně hodná, nenáročná, tichá, klidná a něžná kočička. Ze všeho nejraději má dvě věci – hlazení na hlavičce a dobré jídlo! Představuje absolutního přeborníka v loudění dobrot. Jakmile se někde mihne jídlo (pro kočky, ale i to lidské) Noemi je během vteřiny na místě a nasazuje svůj neodolatelný hypnotizující pohled.\n\nZ droboučké toulavé maminky je dnes úžasná, mazlivá dáma, která je připravená psát další kapitolu svého života a vyhlíží adoptivní rodinu.",
@@ -63,7 +63,6 @@
       "fivTest": "Negativní",
       "suitableWithOlderChildren": true,
       "suitableWithCats": true,
-      "adoptionStatus": "available",
       "name": "Noemi ",
       "suitableWithChildren": false,
       "ageText": "cca 1 rok ",
@@ -79,7 +78,8 @@
       "image": "/images/uploads/whatsapp-image-2026-08-10-at-16.58.05.jpeg",
       "felvTest": "Negativní",
       "species": "kočka",
-      "ageCategory": "Mladý"
+      "ageCategory": "Mladý",
+      "category": "hledaji-domov"
     },
     {
       "shortDescription": "Příběh malé Bee začal SOS voláním spolku Kočičí oči Kolín. Koťátko zůstalo na světě úplně samo – bez maminky i sourozenců se přitoulala k hodným nálezcům. Ti jí poskytli dočasný azyl a aktivně hledali pomoc. \n\nBee si nás v azylu okamžitě omotala kolem své sametové pacinky. Dlouho jsme nezažily tak neuvěřitelně mazlivé, veselé a zvídavé kotě. Bee je ztělesněním roztomilosti. Je neustále v pohybu, akční, obratná a ze všeho nejraději si hraje na schovávanou nebo šplhá. Jakmile uvidí člověka, okamžitě se promění v uvrněné, láskyplné klubíčko. Je bezprostřední, nebojácná a lidskou společnost zbožňuje.\n\nSrší zdravím a energií a rozdává úsměvy na všechny strany.\n\n\nBee hledá bezpečný domov výhradně uvnitř (v bytě nebo v domě se zasíťovanými okny, balkónem či bezpečnou voliérou). Je to ideální rodinná společnice, která díky své přátelské a hravé povaze skvěle zapadne i k dětem. Pokud hledáte malého, neúnavného mazlíčka a parťáka pro každou kulišárnu, Bee je ta pravá!",
@@ -89,7 +89,6 @@
       "fivTest": "Negativní",
       "suitableWithOlderChildren": true,
       "suitableWithCats": true,
-      "adoptionStatus": "available",
       "name": "Bee",
       "suitableWithChildren": true,
       "gallery": [
@@ -102,7 +101,8 @@
       "image": "/images/uploads/whatsapp-image-2026-07-27-at-20.58.50.jpeg",
       "felvTest": "Negativní",
       "species": "kočka",
-      "ageCategory": "Kotě"
+      "ageCategory": "Kotě",
+      "category": "hledaji-domov"
     },
     {
       "shortDescription": "Enýsek si prošel doslova peklem. Žil na ulici v obci Encovany, kde ho srazilo auto. Enýska převzal do péče spolek SozLit (Spolek na ochranu zvířat Litoměřicko) a následně náš azyl Daisy, protože naše Terka má bohaté zkušenosti s ošetřováním těžce hendikepovaných zvířat a Enýska bylo potřeba manuálně vyprazdňovat. \n\nEnýsek trpěl obrovskými bolestmi a bránil se ošetřování zuby nehty. Kromě zlomené pánve měl odumřelý ocásek a hluboké rány na zádech, kde tkáň také nekrotizovala. Absolvoval náročnou amputaci ocásku a rozsáhlou revizi tkání.\n\nPo operaci čelil dalším komplikacím – dalšímu šíření agresivní nekrózy a prasklému hlubokému abscesu. \n\nEnýsek však předvedl neuvěřitelnou vůli žít! Rána na zádech se krásně zahojila, stejně tak pahýlek po ocásku a zlomenina pánve. A co je neméně důležité - vyměšování se už v průběhu rekonvalescence upravilo do normálu a Enýsek tak může žít (kromě toho, že nemá ocásek) plnohodnotný život jako každá jiná kočička. \n\nZ  maroda se stal krásný miloučký kocourek, který vyhlíží nový domov. ",
@@ -112,7 +112,6 @@
       "fivTest": "Negativní",
       "suitableWithOlderChildren": true,
       "suitableWithCats": true,
-      "adoptionStatus": "available",
       "name": "Enýsek ",
       "gallery": [
         "/images/uploads/whatsapp-image-2026-08-10-at-21.45.28-1-.jpeg",
@@ -126,7 +125,8 @@
       "image": "/images/uploads/whatsapp-image-2026-08-10-at-21.45.29-1-.jpeg",
       "felvTest": "Negativní",
       "species": "kočka",
-      "ageCategory": "Mladý"
+      "ageCategory": "Mladý",
+      "category": "hledaji-domov"
     }
   ]
 }

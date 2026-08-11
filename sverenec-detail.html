@@ -14,11 +14,14 @@ currentPage: sverenec-detail
     <a href="#main-content" class="skip-link sr-only sr-only-focusable">Přeskočit na hlavní obsah</a>
     <main id="main-content" class="main-wrapper max-width-full">
       {% include "partials/navbar.njk" %}
-      {% if animal.adoptionStatus == "adopted" %}
-        {% assign backHref = "/nasli-domov/" %}
-        {% assign backLabel = "Zpět na adoptované" %}
+      {% if animal.listingHref %}
+        {% assign backHref = animal.listingHref %}
       {% else %}
         {% assign backHref = "/nasi-sverenci/" %}
+      {% endif %}
+      {% if animal.categoryLabel %}
+        {% assign backLabel = "Zpět: " | append: animal.categoryLabel %}
+      {% else %}
         {% assign backLabel = "Zpět na svěřence" %}
       {% endif %}
       <header class="section_header153"></header>

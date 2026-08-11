@@ -14,11 +14,13 @@ eleventyExcludeFromCollections: true
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
+{% for listing in animals.listingPages %}
   <url>
-    <loc>{{ site.siteUrl }}/nasli-domov/</loc>
+    <loc>{{ site.siteUrl }}{{ listing.permalink }}</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
+{% endfor %}
 {% if site.featureFlags.showAktuality %}
   <url>
     <loc>{{ site.siteUrl }}/aktuality/</loc>

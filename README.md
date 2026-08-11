@@ -81,7 +81,7 @@ _data/animals.js      (reads cms/animals.json, adds URL slugs, exposes global "a
   - Identification & naming: `id`, `name`, `species`, `evidenceNumber`.
   - Basic info: `ageText`, `ageCategory`, `gender`, `breed`, `color`.
   - Dates & origin: `birthDate`, `foundDate`, `origin`, `guardian`.
-  - Story & presentation: `shortDescription`, `tags` (array of strings), `adoptionStatus`.
+  - Story & presentation: `shortDescription`, `tags` (array of strings), `category` (e.g. `hledaji-domov`, `nove-prijati`).
   - Suitability flags: `suitableOutdoor`, `suitableWithCats`, `suitableWithDogs`, `suitableWithChildren`, `suitableWithOlderChildren`.
   - Health data: `panleukopeniaTest`, `felvTest`, `fivTest`, `neutered`, `firstVaccination`, `secondVaccination`.
 - Slugs are generated in `_data/animals.js` using a Czech-aware `slugifyCzech` helper so that `/adopce/<slug>/` URLs stay readable (e.g. `/adopce/kocka-betuska/`).

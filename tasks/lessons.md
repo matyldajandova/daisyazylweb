@@ -18,3 +18,10 @@
 
 - Never position `.footer-grass` with `%` of `.footer15_component` height (`top` / `inset`). When footer content grows (partners, team, etc.), those percentages pull the grass up and it floats above the green footer.
 - Use fixed `px` tops (and keep `max-height: 140px`) so the horizon stays anchored to the footer top edge regardless of content length.
+
+## eleventy-img must write into `_site`, not `public/`
+
+- Eleventy 3 runs passthrough copy (`public/` → `_site/`) **in parallel** with template generation (`Promise.all` in `TemplateWriter.write()`).
+- Global data (e.g. `_data/animals.js`) runs during template generation. If `@11ty/eleventy-img` writes into `public/images/animals/`, files created after the copier passes never reach `_site/` → intermittent 404s on main images (desktop vs mobile can differ because they pick different `srcset` widths).
+- Always set `outputDir: "./_site/images/animals/"` (with matching `urlPath: "/images/animals/"`). Do not commit generated WebPs under `public/images/animals/`.
+- After builds, verify every `/images/animals/*.webp` referenced in HTML exists on disk under `_site/`.

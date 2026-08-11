@@ -1,0 +1,69 @@
+{% comment %}
+  E-shop-style filters: changing a select navigates to a prebuilt SEO URL.
+  Expects `listing` from sverenci-listing pagination.
+{% endcomment %}
+{% if listing %}
+<nav class="sverenci-filter" aria-label="Filtr svěřenců">
+  <div class="sverenci-filter_group">
+    <label class="sverenci-filter_label" for="sverenci-filter-species">Druh</label>
+    <select id="sverenci-filter-species" class="sverenci-filter_select" data-sverenci-filter="species">
+      {% for species in animals.species %}
+      <option
+        value="{{ species.slug }}"
+        {% if listing.speciesSlug == species.slug %}selected{% endif %}
+      >{{ species.label }}</option>
+      {% endfor %}
+    </select>
+  </div>
+  <div class="sverenci-filter_group">
+    <label class="sverenci-filter_label" for="sverenci-filter-category">Kategorie</label>
+    <select id="sverenci-filter-category" class="sverenci-filter_select" data-sverenci-filter="category">
+      <option value="/nasi-sverenci/{{ listing.speciesSlug }}/" {% unless listing.categorySlug %}selected{% endunless %}>
+        Všechny kategorie
+      </option>
+      {% for category in listing.filterCategories %}
+      <option
+        value="{{ category.href }}"
+        {% if listing.categorySlug == category.slug %}selected{% endif %}
+      >{{ category.label }} ({{ category.count }})</option>
+      {% endfor %}
+    </select>
+  </div>
+  <a href="/nasi-sverenci/" class="sverenci-filter_hub-link">← Rozcestník</a>
+</nav>
+<script>
+  (function () {
+    var speciesSelect = document.querySelector('[data-sverenci-filter="species"]');
+    var categorySelect = document.querySelector('[data-sverenci-filter="category"]');
+    if (!speciesSelect || !categorySelect) return;
+
+    var currentCategory = {% if listing.categorySlug %}"{{ listing.categorySlug }}"{% else %}null{% endif %};
+
+    function go(url) {
+      if (url && url !== window.location.pathname) {
+        window.location.href = url;
+      }
+    }
+
+    speciesSelect.addEventListener("change", function () {
+      var speciesSlug = speciesSelect.value;
+      if (!speciesSlug) return;
+      var allHref = "/nasi-sverenci/" + speciesSlug + "/";
+      if (currentCategory) {
+        // FeLV+ is cats-only; fall back to species root for dogs.
+        if (currentCategory === "felv" && speciesSlug === "psi") {
+          go(allHref);
+          return;
+        }
+        go("/nasi-sverenci/" + speciesSlug + "/" + currentCategory + "/");
+        return;
+      }
+      go(allHref);
+    });
+
+    categorySelect.addEventListener("change", function () {
+      go(categorySelect.value);
+    });
+  })();
+</script>
+{% endif %}

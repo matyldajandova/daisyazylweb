@@ -1,13 +1,7 @@
 {% assign footer_shelter_active = false %}
-{% assign footer_domov_active = false %}
 {% if currentPage == 'nasi-sverenci' %}{% assign footer_shelter_active = true %}{% endif %}
-{% if currentPage == 'nasli-domov' %}{% assign footer_domov_active = true %}{% endif %}
 {% if currentPage == 'sverenec-detail' %}
-  {% if animal.adoptionStatus == 'adopted' %}
-    {% assign footer_domov_active = true %}
-  {% else %}
-    {% assign footer_shelter_active = true %}
-  {% endif %}
+  {% assign footer_shelter_active = true %}
 {% endif %}
 <div class="footer-wrapper">
   <div class="dog-wrapper">
@@ -40,11 +34,6 @@
                     class="footer15_link{% if footer_shelter_active %} w--current{% endif %}"
                     {% if footer_shelter_active %}aria-current="page"{% endif %}
                     >Naši svěřenci</a>
-                  <a
-                    href="/nasli-domov/"
-                    class="footer15_link{% if footer_domov_active %} w--current{% endif %}"
-                    {% if footer_domov_active %}aria-current="page"{% endif %}
-                    >Našli domov</a>
                   {% if site.featureFlags.showAktuality %}
                     <a
                       href="/aktuality/"

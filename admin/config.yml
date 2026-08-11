@@ -55,15 +55,17 @@ collections:
               - label: "Stručný popis"
                 name: "shortDescription"
                 widget: "text"
-              - label: "Stav adopce"
-                name: "adoptionStatus"
+              - label: "Kategorie"
+                name: "category"
                 widget: "select"
                 options:
-                  - { label: "Trvalý svěřenec", value: "permanent" }
-                  - { label: "K adopci",        value: "available" }
-                  - { label: "Rezervováno",     value: "reserved" }
-                  - { label: "Adoptováno",      value: "adopted" }
-                default: "available"
+                  - { label: "Nově přijatí", value: "nove-prijati" }
+                  - { label: "Hledají domov", value: "hledaji-domov" }
+                  - { label: "Trvalí obyvatelé azylu (možnost virtuální adopce)", value: "trvali-obyvatele" }
+                  - { label: "FeLV+", value: "felv" }
+                  - { label: "Našli domov", value: "nasli-domov" }
+                  - { label: "V našich srdcích", value: "v-nasich-srdcich" }
+                default: "nove-prijati"
               - label: "Evidenční číslo"
                 name: "evidenceNumber"
                 widget: "string"

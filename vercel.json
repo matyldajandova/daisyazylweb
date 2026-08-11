@@ -2,6 +2,18 @@
   "buildCommand": "npm run build",
   "outputDirectory": "_site",
   "framework": null,
+  "redirects": [
+    {
+      "source": "/nasli-domov",
+      "destination": "/nasi-sverenci/",
+      "permanent": true
+    },
+    {
+      "source": "/nasli-domov/",
+      "destination": "/nasi-sverenci/",
+      "permanent": true
+    }
+  ],
   "rewrites": [
     { "source": "/api/(.*)", "destination": "/api/$1" }
   ]

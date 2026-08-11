@@ -26,6 +26,7 @@
               </div>
             </div>
           </div>
+          {% include "partials/sverenci-filter.njk" %}
           {% if listingAnimals and listingAnimals.size > 0 %}
           <div class="cards-grid" role="list">
             {% for animal in listingAnimals %}

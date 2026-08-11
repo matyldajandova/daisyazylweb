@@ -2,12 +2,7 @@
  * Decap CMS → GitHub OAuth: exchange code and hand token to the Decap popup.
  * Env: GITHUB_CLIENT_ID, GITHUB_CLIENT_SECRET
  */
-function publicOrigin(req) {
-  const host = req.headers["x-forwarded-host"] || req.headers.host;
-  const proto = req.headers["x-forwarded-proto"] || "https";
-  if (!host) return null;
-  return `${proto}://${host}`.replace(/\/$/, "");
-}
+const { publicOrigin } = require("./_lib/public-origin");
 
 function htmlPage(bodyScript) {
   return `<!DOCTYPE html>

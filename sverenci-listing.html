@@ -1,12 +1,5 @@
 ---
-currentPage: nasli-domov
-permalink: "/nasli-domov/"
-title: Našli domov | Daisy Azyl
-description: "Pejsci a kočičky, kterým azyl Daisy Azyl pomohl najít nový domov."
-listingHeading: "Našli domov"
-listingTagline: "Úspěšné adopce"
-listingIntro: "Tito pejsci a kočičky už našli svůj nový domov. Děkujeme všem adoptivním rodinám!"
-listingEmpty: "Zatím u nás žádné zvíře nenašlo nový domov."
+currentPage: nasi-sverenci
 ---
 <!DOCTYPE html>
 <html lang="cs" data-wf-page="696621387a57026b3d2c8087" data-wf-site="695b9bfd5fed08c9b800830d">
@@ -21,7 +14,7 @@ listingEmpty: "Zatím u nás žádné zvíře nenašlo nový domov."
     <a href="#main-content" class="skip-link sr-only sr-only-focusable">Přeskočit na hlavní obsah</a>
     <main id="main-content" class="main-wrapper max-width-full">
       {% include "partials/navbar.njk" %}
-      {% assign listingAnimals = animals.adoptedEnriched %}
+      {% assign listingAnimals = listing.animals %}
       {% include "partials/animals-listing.njk" %}
       {% include "partials/support-section.njk" %}
       {% include "partials/footer.njk" %}
