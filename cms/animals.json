@@ -127,6 +127,28 @@
       "felvTest": "Negativní",
       "species": "kočka",
       "ageCategory": "Mladý"
+    },
+    {
+      "panleukopeniaTest": "Negativní",
+      "shortDescription": "Adámek byl toulavý kocour v Úvalech, kde ho několik měsíců krmila nálezkyně, od které jsme ho převzaly. Byl velmi plachý, ale zvykl si na pravidelný režim a kolem poledne, přesně jako hodinky, se obezřetně plížil pro svou porci masíčka a kapsičky. Nálezkyně se snažila získat jeho důvěru. Když ji Adámek konečně pustil na vzdálenost pár metrů, naskytl se jí smutný pohled –  vypadal zbědovaně a bylo znát, že každé sousto přijímá s velkou námahou. Poté, co neúspěšně žádala o pomoc několik institucí, obrátila se na nás. Stačilo vidět fotografii a neváhaly jsme ani vteřinu.\n\nDen, kdy jsme se domluvily na odchytu, přinesl něco naprosto nečekaného. Adámek chodil na krmení vždy jen v čase oběda. Tentokrát se ale objevil podruhé, zcela mimo svůj harmonogram. Jako by vycítil, že pomoc je na cestě a on už chce být konečně v bezpečí.\n\nA tak se k nám Adámek dostal. A všechny tyto podrobnosti víme proto, že nálezkyní byla Pavla, která je nyní součástí našeho týmu :) Naše osudy se díky Adámkovi protnuly.\n\nAdámkův stav byl po přijetí kritický. Ačkoliv je to konstitucí robustní kocour (naše paní doktorka Eliška v něm vidí geny mainské mývalí kočky), byl strašlivě vyhublý. Diagnózy se na nás sypaly jedna za druhou: zánět slinivky a močového měchýře, tlamička plná vyhnilých zubů, silná rýma, ušní svrab a bolavá, rudá kůže na olysalém krku a uších. Nejvíc šokující byl ale tento nález: O špičáky přišel pravděpodobně úrazem, který odpovídal brutálnímu nakopnutí člověkem.\n\nByl to běh na velmi dlouhou trať, ale Adámek byl od začátku úžasný. Přes svůj drsný vzhled se nám po odchytu úplně poddal. Během dlouhého léčení se neuvěřitelně upnul na naši Terku. Ta mu s láskou přezdívala „klíšťák“ pro jeho přítulnost a „krocan“ kvůli jeho zarudlému krku. Všechny jeho zdravotní neduhy jsou nyní pod kontrolou. Podstoupil extrakci zubů. Zůstává trvale na speciální dietě citlivé vůči močovému ústrojí kočiček. Olysalé místo na krku mu již nezarostlo, ale jinak je to krásný extrémně mazlivý macíček. Je hodný k lidem i ostatním kočičkám v azylu. Prostě Adámka nelze než milovat :)",
+      "gender": "sameček",
+      "neutered": true,
+      "color": "bílo-hnědý",
+      "fivTest": "Negativní",
+      "adoptionStatus": "permanent",
+      "name": "Adámek",
+      "secondVaccination": true,
+      "gallery": [
+        "/images/uploads/adámek-2.jpeg",
+        "/images/uploads/adámek-3.jpeg",
+        "/images/uploads/adámek.jpeg"
+      ],
+      "breed": "kočka evropská",
+      "firstVaccination": true,
+      "id": "06",
+      "image": "/images/uploads/adámek-4.jpeg",
+      "felvTest": "Negativní",
+      "species": "kočka"
     }
   ]
 }
