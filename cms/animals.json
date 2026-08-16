@@ -175,6 +175,19 @@
       "species": "pes",
       "ageCategory": "Dospělý",
       "category": "trvali-obyvatele"
+    },
+    {
+      "shortDescription": "Pejsek, po kterém je pojmenovaný náš azyl ...",
+      "longDescription": "Daisy je obrovská fenka rhodéského ridgebacka, která je s námi úplně od začátku fungování azylu a dokonce je po ní celý azyl pojmenován. Je to tedy takové naše srdce a duše. \n\nDaisynka je neuvěřitelně přátelské zvíře a taková naše zvířecí „chůva“. Má v sobě ale i něco navíc – funguje jako dokonalý radar na lidi. Když se jí někdo líbí, víme, že je to fajn člověk. Takže teď už víte, koho především si u nás musíte předcházet. Přijímá naštěstí úplatky ve formě psích pamlsků :)\n\nDaisyin zdravotní stav byl dlouho relativně dobrý, i když ji v průběhu let trápily drobné nádory na nohách, které si vyžádaly několik operací. Momentálně už se ale začíná projevovat její vyšší věk. Kvůli inkontinenci jí na noc dáváme psí plenku. Pomáhá to hlavně její psychice – není ve stresu z toho, že by měla nehodu, a je díky tomu mnohem klidnější. Nedávno jí bylo diagnostikováno onemocnění štítné žlázy, takže teď bere pravidelně léky.\n\nI přes tyto zdravotní neduhy je to ale pořád naše milovaná Daisy a postaráme se o to, aby si u nás užila krásný a dlouhý psí důchod.",
+      "gender": "samička",
+      "color": "hnědé",
+      "name": "Daisy",
+      "breed": "rhodéský ridgeback",
+      "id": "08",
+      "image": "/images/uploads/daisy-foto.jpg",
+      "species": "pes",
+      "ageCategory": "Dospělý",
+      "category": "trvali-obyvatele"
     }
   ]
 }
