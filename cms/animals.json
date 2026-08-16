@@ -162,6 +162,19 @@
       "felvTest": "Negativní",
       "species": "kočka",
       "category": "trvali-obyvatele"
+    },
+    {
+      "shortDescription": "Náš hyperaktivní hendikepáček",
+      "longDescription": "Dafík je kříženec Welsh korgiho. \n\nJeho životní příběh je mrazivý. Dafíka jeho původní majitel přivezl jednoho dne na veterinu a požadoval jeho utracení, protože najednou přestal chodit. Veterinář to naštěstí odmítl. Až později vyšla najevo otřesná pravda o tom, proč Dafík ochrnul. Bývalý majitel ho zbil tak surově, že mu přerazil páteř :(\n\nDafík poté rok a půl vůbec nechodil. I když byly prognózy špatné, on se nevzdal a díky své neuvěřitelné houževnatosti se časem sám rozchodil pomocí tzv. spinální chůze. Spinální chůze je fascinující schopnost těla, kdy zvíře dokáže koordinovaně hýbat zadníma nohama a v podstatě chodit, i když je jeho spojení mezi mozkem a míchou přerušeno. Pohyb není vědomý. Spouští se mechanicky – například tím, že se tlapka dotkne země nebo se protáhne sval na stehně. Tělo na tento podnět odpoví automatickým „krokem“. Zvíře tedy „chodí“, ale necítí nohy ani povrch, po kterém jde. I přes tyto limity zvířatům spinální chůze umožňuje vést relativně aktivní život i po vážném ochrnutí.\n\nNo a to je přesně případ našeho Dafíka! Dnes je z něj neřízená střela – říkáme mu „ADHD pes“, protože chvilku neposedí. Lítá jako drak... u jídla, u venčení, zkrátka u všeho.\n\nVzhledem k těžkému zranění páteře má Dafík specifické potřeby. Je inkontinentní, neovládá močový měchýř, takže je potřeba ho pravidelně manuálně vyprazdňovat. Při pohybu spinální chůzí občas tzv. courá zadní nohy, a vznikají mu tak na nich odřeniny a záněty, které musíme průběžně léčit.\n\nStejně jako ostatní naši současní azyloví pejsci i Dafík u nás má zajištěn svůj domov a bezpečný přístav navždy.",
+      "gender": "sameček",
+      "color": "bílý",
+      "name": "Dafy",
+      "breed": "kříženec",
+      "id": "07",
+      "image": "/images/uploads/dafík-foto.jpg",
+      "species": "pes",
+      "ageCategory": "Dospělý",
+      "category": "trvali-obyvatele"
     }
   ]
 }
