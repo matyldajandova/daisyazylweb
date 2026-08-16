@@ -1,7 +1,8 @@
 {
   "animals": [
     {
-      "shortDescription": "Arya je překrásná černá holčička, která se narodila mamince Noemi. Její kožíšek je neuvěřitelně hebký na dotek a z jemňoučkého obličejíku na vás koukají velká, bystrá a oddaná očka.  Jméno dostala po houževnaté a neohrožené hrdince ze seriálu Hra o trůny. Z malé černé kuličky vyrostla úžasná, zdravá a společenská kočička s velice milou povahou. Povahově je spíše rozvážnější a klidnější, ale rozhodně to není žádný bojínek.\n\nNyní si plnými doušky užívá bezstarostné dětství v dočasné péči. Ráda objevuje okolí a hraje si.  Je to zvídavá, čiperná a hodná kočička, která teď vyhlíží ten svůj milující domov, kde z ní bude ta nejvěrnější chlupatá společnice.",
+      "shortDescription": "Koťátko k adopci ",
+      "longDescription": "Arya je překrásná černá holčička, která se narodila mamince Noemi. Její kožíšek je neuvěřitelně hebký na dotek a z jemňoučkého obličejíku na vás koukají velká, bystrá a oddaná očka.  Jméno dostala po houževnaté a neohrožené hrdince ze seriálu Hra o trůny. Z malé černé kuličky vyrostla úžasná, zdravá a společenská kočička s velice milou povahou. Povahově je spíše rozvážnější a klidnější, ale rozhodně to není žádný bojínek.\n\n\n\nNyní si plnými doušky užívá bezstarostné dětství v dočasné péči. Ráda objevuje okolí a hraje si.  Je to zvídavá, čiperná a hodná kočička, která teď vyhlíží ten svůj milující domov, kde z ní bude ta nejvěrnější chlupatá společnice.",
       "gender": "samička",
       "color": "černá",
       "suitableWithDogs": true,
@@ -25,10 +26,12 @@
       "id": "01",
       "image": "/images/uploads/arya-ě.jpeg",
       "species": "kočka",
-      "ageCategory": "Kotě"
+      "ageCategory": "Kotě",
+      "category": "hledaji-domov"
     },
     {
-      "shortDescription": "Kiara je další z koťátek maminky Noemi. Má černo-bílý kožíšek a pozornost poutá svým neodolatelným vzhledem – má rozkošně špičatý čumáček, který jí dává šibalský a rošťácký kukuč.\n\nA jak jí z očí kouká rošťárna, taková je i ve skutečnosti! Kiara je zvídavá, hravá a živá holčička, přesně jak se na správné kotě sluší a patří. Žádná kotěcí hra, šplhání nebo divočení se sourozenci se neobejde bez její přítomnosti.\n\nJe to také velká mazlivka: Postupem času čím dál více vyhledává lidskou společnost a projevuje svou něžnou stránku.\n\nJak se jí daří nyní? V dočasné péči roste do krásy i do vymazlenosti. Když zrovna neprohání své kočičí kamarády a nevymýšlí nové lumpárny, nejraději vyhledává teplo lidské náruče.\n\nRáda se přitiskne těsně k člověku, slastně vrní a spokojeně usne. Z rošťácké kuličky se tak stává dokonalá společnice, která je připravená přinést do nového domova spoustu radosti, smíchu i lásky.",
+      "shortDescription": "Koťátko k adopci",
+      "longDescription": "Kiara je další z koťátek maminky Noemi. Má černo-bílý kožíšek a pozornost poutá svým neodolatelným vzhledem – má rozkošně špičatý čumáček, který jí dává šibalský a rošťácký kukuč.\n\n\n\nA jak jí z očí kouká rošťárna, taková je i ve skutečnosti! Kiara je zvídavá, hravá a živá holčička, přesně jak se na správné kotě sluší a patří. Žádná kotěcí hra, šplhání nebo divočení se sourozenci se neobejde bez její přítomnosti.\n\n\n\nJe to také velká mazlivka: Postupem času čím dál více vyhledává lidskou společnost a projevuje svou něžnou stránku.\n\n\n\nJak se jí daří nyní? V dočasné péči roste do krásy i do vymazlenosti. Když zrovna neprohání své kočičí kamarády a nevymýšlí nové lumpárny, nejraději vyhledává teplo lidské náruče.\n\n\n\nRáda se přitiskne těsně k člověku, slastně vrní a spokojeně usne. Z rošťácké kuličky se tak stává dokonalá společnice, která je připravená přinést do nového domova spoustu radosti, smíchu i lásky.",
       "gender": "samička",
       "color": "bílo-černá",
       "suitableWithDogs": true,
@@ -53,10 +56,13 @@
       "id": "02",
       "image": "/images/uploads/whatsapp-image-2026-08-10-at-17.03.30.jpeg",
       "species": "kočka",
-      "ageCategory": "Kotě"
+      "ageCategory": "Kotě",
+      "category": "hledaji-domov"
     },
     {
+      "panleukopeniaTest": "Negativní",
       "shortDescription": "Noemi k nám přišla jako toulavá, březí kočička z Hlízova u Kutné Hory. I když byla sama ještě téměř odrostlé kotě, přivedla na svět hned čtyři nádherná, zdravá černo-bílá koťátka. Role maminky se zhostila na sto procent. O svá čtyřčata se vzorně starala, kojila je a poskytla jim ten nejlepší start do života.\n\nNoeminka je extrémně hodná, nenáročná, tichá, klidná a něžná kočička. Ze všeho nejraději má dvě věci – hlazení na hlavičce a dobré jídlo! Představuje absolutního přeborníka v loudění dobrot. Jakmile se někde mihne jídlo (pro kočky, ale i to lidské) Noemi je během vteřiny na místě a nasazuje svůj neodolatelný hypnotizující pohled.\n\nZ droboučké toulavé maminky je dnes úžasná, mazlivá dáma, která je připravená psát další kapitolu svého života a vyhlíží adoptivní rodinu.",
+      "longDescription": "Mladá klidná kočička k adopci",
       "gender": "samička",
       "color": "černá",
       "suitableWithDogs": true,
@@ -79,10 +85,12 @@
       "image": "/images/uploads/whatsapp-image-2026-08-10-at-16.58.05.jpeg",
       "felvTest": "Negativní",
       "species": "kočka",
-      "ageCategory": "Mladý"
+      "ageCategory": "Mladý",
+      "category": "hledaji-domov"
     },
     {
-      "shortDescription": "Příběh malé Bee začal SOS voláním spolku Kočičí oči Kolín. Koťátko zůstalo na světě úplně samo – bez maminky i sourozenců se přitoulala k hodným nálezcům. Ti jí poskytli dočasný azyl a aktivně hledali pomoc. \n\nBee si nás v azylu okamžitě omotala kolem své sametové pacinky. Dlouho jsme nezažily tak neuvěřitelně mazlivé, veselé a zvídavé kotě. Bee je ztělesněním roztomilosti. Je neustále v pohybu, akční, obratná a ze všeho nejraději si hraje na schovávanou nebo šplhá. Jakmile uvidí člověka, okamžitě se promění v uvrněné, láskyplné klubíčko. Je bezprostřední, nebojácná a lidskou společnost zbožňuje.\n\nSrší zdravím a energií a rozdává úsměvy na všechny strany.\n\n\nBee hledá bezpečný domov výhradně uvnitř (v bytě nebo v domě se zasíťovanými okny, balkónem či bezpečnou voliérou). Je to ideální rodinná společnice, která díky své přátelské a hravé povaze skvěle zapadne i k dětem. Pokud hledáte malého, neúnavného mazlíčka a parťáka pro každou kulišárnu, Bee je ta pravá!",
+      "shortDescription": "Hravé a mazlivé kotě k adopci",
+      "longDescription": "Příběh malé Bee začal SOS voláním spolku Kočičí oči Kolín. Koťátko zůstalo na světě úplně samo – bez maminky i sourozenců se přitoulala k hodným nálezcům. Ti jí poskytli dočasný azyl a aktivně hledali pomoc. \n\n\n\nBee si nás v azylu okamžitě omotala kolem své sametové pacinky. Dlouho jsme nezažily tak neuvěřitelně mazlivé, veselé a zvídavé kotě. Bee je ztělesněním roztomilosti. Je neustále v pohybu, akční, obratná a ze všeho nejraději si hraje na schovávanou nebo šplhá. Jakmile uvidí člověka, okamžitě se promění v uvrněné, láskyplné klubíčko. Je bezprostřední, nebojácná a lidskou společnost zbožňuje.\n\n\n\nSrší zdravím a energií a rozdává úsměvy na všechny strany.\n\n\n\n\n\nBee hledá bezpečný domov výhradně uvnitř (v bytě nebo v domě se zasíťovanými okny, balkónem či bezpečnou voliérou). Je to ideální rodinná společnice, která díky své přátelské a hravé povaze skvěle zapadne i k dětem. Pokud hledáte malého, neúnavného mazlíčka a parťáka pro každou kulišárnu, Bee je ta pravá!",
       "gender": "samička",
       "color": "mourovatá",
       "suitableWithDogs": true,
@@ -102,10 +110,12 @@
       "image": "/images/uploads/whatsapp-image-2026-07-27-at-20.58.50.jpeg",
       "felvTest": "Negativní",
       "species": "kočka",
-      "ageCategory": "Kotě"
+      "ageCategory": "Kotě",
+      "category": "hledaji-domov"
     },
     {
       "shortDescription": "Enýsek si prošel doslova peklem. Žil na ulici v obci Encovany, kde ho srazilo auto. Enýska převzal do péče spolek SozLit (Spolek na ochranu zvířat Litoměřicko) a následně náš azyl Daisy, protože naše Terka má bohaté zkušenosti s ošetřováním těžce hendikepovaných zvířat a Enýska bylo potřeba manuálně vyprazdňovat. \n\nEnýsek trpěl obrovskými bolestmi a bránil se ošetřování zuby nehty. Kromě zlomené pánve měl odumřelý ocásek a hluboké rány na zádech, kde tkáň také nekrotizovala. Absolvoval náročnou amputaci ocásku a rozsáhlou revizi tkání.\n\nPo operaci čelil dalším komplikacím – dalšímu šíření agresivní nekrózy a prasklému hlubokému abscesu. \n\nEnýsek však předvedl neuvěřitelnou vůli žít! Rána na zádech se krásně zahojila, stejně tak pahýlek po ocásku a zlomenina pánve. A co je neméně důležité - vyměšování se už v průběhu rekonvalescence upravilo do normálu a Enýsek tak může žít (kromě toho, že nemá ocásek) plnohodnotný život jako každá jiná kočička. \n\nZ  maroda se stal krásný miloučký kocourek, který vyhlíží nový domov. ",
+      "longDescription": "Milý a mazlivý kocourek k adopci",
       "gender": "sameček",
       "color": "mourovatý s bílými znaky",
       "suitableWithDogs": true,
@@ -126,11 +136,13 @@
       "image": "/images/uploads/whatsapp-image-2026-08-10-at-21.45.29-1-.jpeg",
       "felvTest": "Negativní",
       "species": "kočka",
-      "ageCategory": "Mladý"
+      "ageCategory": "Mladý",
+      "category": "hledaji-domov"
     },
     {
       "panleukopeniaTest": "Negativní",
       "shortDescription": "Adámek byl toulavý kocour v Úvalech, kde ho několik měsíců krmila nálezkyně, od které jsme ho převzaly. Byl velmi plachý, ale zvykl si na pravidelný režim a kolem poledne, přesně jako hodinky, se obezřetně plížil pro svou porci masíčka a kapsičky. Nálezkyně se snažila získat jeho důvěru. Když ji Adámek konečně pustil na vzdálenost pár metrů, naskytl se jí smutný pohled –  vypadal zbědovaně a bylo znát, že každé sousto přijímá s velkou námahou. Poté, co neúspěšně žádala o pomoc několik institucí, obrátila se na nás. Stačilo vidět fotografii a neváhaly jsme ani vteřinu.\n\nDen, kdy jsme se domluvily na odchytu, přinesl něco naprosto nečekaného. Adámek chodil na krmení vždy jen v čase oběda. Tentokrát se ale objevil podruhé, zcela mimo svůj harmonogram. Jako by vycítil, že pomoc je na cestě a on už chce být konečně v bezpečí.\n\nA tak se k nám Adámek dostal. A všechny tyto podrobnosti víme proto, že nálezkyní byla Pavla, která je nyní součástí našeho týmu :) Naše osudy se díky Adámkovi protnuly.\n\nAdámkův stav byl po přijetí kritický. Ačkoliv je to konstitucí robustní kocour (naše paní doktorka Eliška v něm vidí geny mainské mývalí kočky), byl strašlivě vyhublý. Diagnózy se na nás sypaly jedna za druhou: zánět slinivky a močového měchýře, tlamička plná vyhnilých zubů, silná rýma, ušní svrab a bolavá, rudá kůže na olysalém krku a uších. Nejvíc šokující byl ale tento nález: O špičáky přišel pravděpodobně úrazem, který odpovídal brutálnímu nakopnutí člověkem.\n\nByl to běh na velmi dlouhou trať, ale Adámek byl od začátku úžasný. Přes svůj drsný vzhled se nám po odchytu úplně poddal. Během dlouhého léčení se neuvěřitelně upnul na naši Terku. Ta mu s láskou přezdívala „klíšťák“ pro jeho přítulnost a „krocan“ kvůli jeho zarudlému krku. Všechny jeho zdravotní neduhy jsou nyní pod kontrolou. Podstoupil extrakci zubů. Zůstává trvale na speciální dietě citlivé vůči močovému ústrojí kočiček. Olysalé místo na krku mu již nezarostlo, ale jinak je to krásný extrémně mazlivý macíček. Je hodný k lidem i ostatním kočičkám v azylu. Prostě Adámka nelze než milovat :)",
+      "longDescription": "Náš azylový gentleman",
       "gender": "sameček",
       "neutered": true,
       "color": "bílo-hnědý",
@@ -148,7 +160,8 @@
       "id": "06",
       "image": "/images/uploads/adámek-4.jpeg",
       "felvTest": "Negativní",
-      "species": "kočka"
+      "species": "kočka",
+      "category": "trvali-obyvatele"
     }
   ]
 }
