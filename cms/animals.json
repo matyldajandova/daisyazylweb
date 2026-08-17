@@ -203,6 +203,23 @@
       "species": "pes",
       "ageCategory": "Dospělý",
       "category": "trvali-obyvatele"
+    },
+    {
+      "shortDescription": "Vitální psí bábinka",
+      "longDescription": "Nelinka je dvanáctiletá fenka německého ovčáka, kterou jsme převzali od paní majitelky, která se v rámci životních peripetií musela přestěhovat do menšího bydlení bez možnosti výběhu pro Nelinku, což pro ni, jakožto velkého psa zvyklého na volnost, byla obrovská katastrofa. Rozhodly jsme tedy, že pomůžeme a Nelinka najde svůj bezpečný přístav s výběhem na širé moře v našem azylu.\n\nNelinka si se zdravím bohužel užila své od útlého věku. Už jako malé štěně měla vážné problémy se zadníma nohama, kvůli kterým musela strávit rok a půl v klidovém režimu v uzavřeném prostoru. Možná proto později byla tolik nešťastná, když se uzdravila, konečně mohla pořádně ven a potom přišla ta rána se stěhováním do bytu. \n\nV roce 2025 ji potkala další nepříjemnost – přetržený kolenní vaz. Nelinka musela podstoupit operaci, která se mohla uskutečnit i díky vám - našim dárcům a jejíž průběh jste mohli sledovat u nás na Facebooku. Dopadlo to fantasticky! Dnes, i přes svůj věk, běhá Neli jako drak a na svůj „důchodový“ věk se rozhodně necítí a ni byste jí to nehádali.\n\nNeli chce být pořád venku. Má k dispozici zateplenou boudu a kotec, kam si může zalézt, když chce být sama a rozjímat :)\n\nJedinou komplikací je její vztah k ostatním fenkám. Nelinka se bohužel nesnese s žádnou jinou psí holkou v azylu. Obzvlášť s Daisy si jdou tvrdě po krku, takže venčení musíme pečlivě plánovat a střídat, aby nedošlo k žádnému konfliktu. \n\nNelinka je u nás velmi spokojená a my jsme rádi, že jí můžeme dopřát důstojné a aktivní stáří. Stejně jako ostatní pejsci, i ona u nás zůstává na dožití.",
+      "gender": "samička",
+      "name": "Nelinka",
+      "gallery": [
+        "/images/uploads/nelinka-foto-4.jpg",
+        "/images/uploads/nelinka-foto-3.jpg",
+        "/images/uploads/nelinka-foto.jpg"
+      ],
+      "breed": "německý ovčák",
+      "id": "10",
+      "image": "/images/uploads/nelinka-foto-2.jpg",
+      "species": "pes",
+      "ageCategory": "Senior",
+      "category": "trvali-obyvatele"
     }
   ]
 }
