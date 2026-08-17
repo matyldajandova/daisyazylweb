@@ -182,6 +182,12 @@
       "gender": "samička",
       "color": "hnědé",
       "name": "Daisy",
+      "gallery": [
+        "/images/uploads/daisy-2.jfif",
+        "/images/uploads/daisy-3.jfif",
+        "/images/uploads/daisy-5.jfif",
+        "/images/uploads/daisy-4.jfif"
+      ],
       "breed": "rhodéský ridgeback",
       "id": "08",
       "image": "/images/uploads/daisy-foto.jpg",
