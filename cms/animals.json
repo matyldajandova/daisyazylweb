@@ -220,6 +220,22 @@
       "species": "pes",
       "ageCategory": "Senior",
       "category": "trvali-obyvatele"
+    },
+    {
+      "shortDescription": "Náš vysmátý méďa",
+      "longDescription": "​Taruška je nádherná chundelatá fenka samojeda, která do našeho života vnesla neuvěřitelné množství světla a optimismu.  Právě ona byla tím hlavním impulsem, který naši Terku dovedl od cesty dočaskování k založení azylu a byla tedy doslova jednou ze zakládajících členek Daisy azylu. \n\nTaru jako devítiměsíční štěně srazilo auto. Kvůli nedostatku včasné veterinární péče zůstala po nehodě ochrnutá na zadní nohy. Do naší péče se dostala zhruba ve dvou a půl letech. K Terce si vytvořila velmi silné pouto, není tedy určena k adopci, ale má v azylu zajištěn trvalý a milující domov navždy.\n\nTaruška je nejpozitivnější pes, jakého si dokážete představit. I přes svůj handicap si užívá života naplno. Je to typický samojed – „ukecaný medvídek“, který miluje lidi, drbání a mazlení. Samojedi jsou v psím světě známí díky svému charakteristickému výrazu, kterému se oficiálně říká „úsměv samojeda“. Hlavním důvodem je specifický tvar jejich tlamy. Koutky úst samojedů jsou mírně zvednuté nahoru. V kombinaci s tmavýma očima, které mají často „veselý“ mandlový tvar, to vytváří dojem permanentně dobré nálady. Ale nejen to! Oni tu dobrou náladu skutečně pořád mají! Jsou extrémně společenští, hraví a přátelští. A to všechno platí pro Taru na 100 %. \n\nKvůli ochrnutí Taruška vyžaduje specifickou celodenní péči, která zahrnuje její pravidelné manuální vyprazdňování a zvýšenou péči o její bohatou bílou srst. \n\n​Taruška je symbol toho, že i handicapované zvíře může prožít šťastný a naplněný život.",
+      "gender": "samička",
+      "name": "Tara",
+      "gallery": [
+        "/images/uploads/tara-foto.jpg",
+        "/images/uploads/whatsapp-image-2026-08-17-at-17.47.30.jpeg"
+      ],
+      "breed": "samojed",
+      "id": "11",
+      "image": "/images/uploads/tara-foto-2.jpg",
+      "species": "pes",
+      "ageCategory": "Dospělý",
+      "category": "trvali-obyvatele"
     }
   ]
 }
