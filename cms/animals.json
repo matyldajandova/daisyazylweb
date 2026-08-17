@@ -152,13 +152,13 @@
       "secondVaccination": true,
       "gallery": [
         "/images/uploads/adámek-2.jpeg",
-        "/images/uploads/adámek-3.jpeg",
+        "/images/uploads/adámek-4.jpeg",
         "/images/uploads/adámek.jpeg"
       ],
       "breed": "kočka evropská",
       "firstVaccination": true,
       "id": "06",
-      "image": "/images/uploads/adámek-4.jpeg",
+      "image": "/images/uploads/adámek-3.jpeg",
       "felvTest": "Negativní",
       "species": "kočka",
       "category": "trvali-obyvatele"
