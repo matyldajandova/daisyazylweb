@@ -416,6 +416,29 @@
       "species": "kočka",
       "ageCategory": "Dospělý",
       "category": "trvali-obyvatele"
+    },
+    {
+      "panleukopeniaTest": "Negativní",
+      "shortDescription": "Tichá pozorovatelka vyhlíží klidný domov.",
+      "longDescription": "Borůvka k nám přišla ze spřáteleného spolku z Prahy. Původně byla nalezena, jak se toulá na ulici v oblasti Vysočan. Přestože byla její poloha nahlašována a majitelé aktivně hledáni, nikdo se o ni nepřihlásil, a tak zakotvila u nás v azylu.\n\nBorůvka je zatím velmi opatrná a bázlivá, ale dělá pokroky. Potřebuje čas: Je to velká snaživka, ale k lidem je stále nedůvěřivá a bázlivá. Je mladá, takže věříme, že se podaří ji dovymazlit, ale v azylu je hodně zvířátek a málo rukou.  Dělá pokroky,  pokud se k ní člověk přibližuje pomalu a bez prudkých pohybů, už se nechá i pohladit. Věříme, že jen potřebuje trochu více času a trpělivosti, aby se s lidmi cítila stoprocentně bezpečně. \n\nKdo by chtěl dát domov kočičce, která mu ihned neskočí kolem krku, kdo by chtěl pomoci kočičce, která se cítí lépe v klidnějším prostředí s méně zvířaty, pro něho je Borůvka ta pravá.",
+      "gender": "samička",
+      "neutered": true,
+      "color": "mourovatá",
+      "fivTest": "Negativní",
+      "name": "Borůvka",
+      "secondVaccination": true,
+      "gallery": [
+        "/images/uploads/borůvka-foto.jfif",
+        "/images/uploads/borůvka-2.jfif"
+      ],
+      "breed": "kočka evropská",
+      "firstVaccination": true,
+      "id": "20",
+      "image": "/images/uploads/borůvka-3.jfif",
+      "felvTest": "Negativní",
+      "species": "kočka",
+      "ageCategory": "Dospělý",
+      "category": "hledaji-domov"
     }
   ]
 }
