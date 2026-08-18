@@ -439,6 +439,50 @@
       "species": "kočka",
       "ageCategory": "Dospělý",
       "category": "hledaji-domov"
+    },
+    {
+      "panleukopeniaTest": "Negativní",
+      "longDescription": "Čertíkův příběh začal velkou lidskou bezohledností. Jako mlaďounký, sametový kocourek s nádhernýma očima a neuvěřitelně oddanou povahou doplatil na nezodpovědnost svých původních majitelů. Po těžkém úrazu mu špatně srostla zlomenina nožičky a zůstal částečně inkontinentní. Namísto péče se ho však jeho „rodina“ rozhodla zbavit – přinesli ho na veterinu s chladným požadavkem na utracení. Pro náš azyl ale bylo nemyslitelné nechat vyhasnout mladý, vitální život kocourka, který měl obrovskou chuť žít.\n\nPo přijetí k nám se Čertík rychle sžil s prostorem i ostatními zvířecími parťáky. Přestože má trvalé zdravotní následky, nenechá se ve své životní energii ničím omezovat. Špatně srostlá nožička pro něj není žádnou překážkou – skáče na parapety, šplhá po škrabadlech a s přehledem prozkoumává každý kout.\n\nKontrolované močení se mu po úrazu bohužel nevrátilo, je potřeba ho přes den pravidelně hlídat a manuálně mu vymačkávat močový měchýř.\n\nJak se mu daří nyní? Čertík je v pokoji Pajduláčků doslova k neudržení a své jméno nese naprosto zaslouženě! Je to čiperný rarášek, který vymýšlí jednu lumpárnu za druhou. Když jde o jídlo, dokáže si u misek sjednat pořádek nekompromisně a hlasitě.\n\nMezi svými čertovskými kousky ale umí i nádherně roztát – přijde, podívá se těma svýma kouzelnýma očičkama a s bezmeznou důvěrou se dožaduje mazlení a pusinkování. Jsme nesmírně vděčné, že jsme mu mohly dát šanci a že z odsouzeného maroda vyrostl spokojený, plnohodnotný a milovaný obyvatel našeho azylu.",
+      "gender": "sameček",
+      "neutered": true,
+      "color": "černý",
+      "fivTest": "Negativní",
+      "name": "Čertík",
+      "secondVaccination": true,
+      "gallery": [
+        "/images/uploads/čertík.jpg"
+      ],
+      "breed": "kočka evropská",
+      "firstVaccination": true,
+      "id": "21",
+      "image": "/images/uploads/čertík-2.jfif",
+      "felvTest": "Negativní",
+      "species": "kočka",
+      "ageCategory": "Mladý",
+      "category": "trvali-obyvatele"
+    },
+    {
+      "panleukopeniaTest": "Negativní",
+      "shortDescription": "Příběh nezlomné kočičí babičky má šťastný konec :)",
+      "longDescription": "Eliščin životní příběh je plný zvratů, lidského selhání a neskutečné zrady, ale také nezdolné vůle žít. Většinu ze svých deseti let prožila v nehostinných podmínkách romské kolonie v Novém Bydžově. Dlouhé roky tam vedla těžký život pouliční kočky a donekonečna rodila koťata. Světélkem naděje pro ni byly obětavé paní krmičky v čele s paní Magdou, které ji přes kastrační program Feliti nechaly vykastrovat, pravidelně ji krmily a odčervovaly.\n\nPůvodní majitelé se časem odstěhovali a Elišku nechali napospas osudu. Když už to vypadalo na šťastný konec u nových nájemníků, kteří si ji oblíbili, přišla rána – původní majitelka se zničehonic vrátila a Elišku si odvezla na druhý konec města. Po sedmi měsících se ale stal neuvěřitelný zázrak. Vychrtlá a zbídačená Eliška dokázala najít cestu zpět na krmné místo paní Magdy! Na původním místě už ale vládl divoký pes dalších nájemníků, a tak Elišce nezbylo než složit hlavičku na venkovních schodech.\n\nV červenci 2026 jsme Elišku přijaly k nám do azylu. Z ulice dorazila stará, unavená dáma, která ze všeho nejvíc potřebovala bezpečí. Jako rozumná kočičí babička okamžitě ocenila klid, stále plnou mističku a vědomí, že už ji nikdo nikam nevyhodí. Je to milá, klidná a nesmírně vděčná kočičí seniorka, která miluje lidskou přítomnost a pohlazení.\n\nEliška si u nás užila zasloužený odpočinek a po letech strádání na ulici nabrala síly. Po letech strádání a hladovění má citlivá zvětšená játra a musí pravidelně jíst, i jeden den bez jídla by mohl pro její játra znamenat velký problém. \n\nA jak se jí daří nyní? Je v adopci u paní Elišky :))) Ta jí dopřává ten nejkrásnější a nejklidnější kočičí důchod. Zde může v bezpečí a lásce dožít po boku svého milovaného člověka. Paní",
+      "gender": "samička",
+      "color": "trikolora",
+      "fivTest": "Negativní",
+      "name": "Eliška",
+      "gallery": [
+        "/images/uploads/eliška.jfif",
+        "/images/uploads/eliška-v-adopci-4.jpg",
+        "/images/uploads/eliška-v-adopci.jpg",
+        "/images/uploads/eliška-v-adopci-2.jfif"
+      ],
+      "breed": "kočka evropská",
+      "firstVaccination": true,
+      "id": "22",
+      "image": "/images/uploads/eliška-v-adopci-3.jpg",
+      "felvTest": "Negativní",
+      "species": "kočka",
+      "ageCategory": "Senior",
+      "category": "nasli-domov"
     }
   ]
 }
