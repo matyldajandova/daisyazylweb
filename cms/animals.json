@@ -328,6 +328,29 @@
       "species": "kočka",
       "ageCategory": "Dospělý",
       "category": "trvali-obyvatele"
+    },
+    {
+      "panleukopeniaTest": "Negativní",
+      "shortDescription": "Mazlivý černý panter :)",
+      "longDescription": "Příběh Bobíška a jeho brášky Mikeše začal na nečekaném místě – byli nalezeni jako opuštěná koťátka na židovském hřbitově ve Svitavách. Do našeho azylu se dostali ještě jako malí kluci.\n\nDnes jsou z nich už dospělí, silní a zdraví kocouři, kteří mají v azylu speciální a nesmírně důležitou roli. Jsou to potenciální dárci krve. \n\nJací jsou kluci v soukromí? Povahově jsou to naprostí pohodáři. Jsou na sobě citově závislí a tvoří stabilní dvojku. V soukromí milují kontakt, ale k cizím návštěvám jsou zpočátku opatrnější. Jakmile dorazí někdo cizí, bleskově se schovají se do svých oblíbených skrýší ve skříních. My už ale přesně víme, ve které poličce kterého z nich najdeme.\n\nMikeš a Bobíšek jsou důkazem, že i kočičky z ulice mohou jednou zachraňovat životy ostatních. Jsme moc rády, že tyto bezproblémové kluky v azylu máme.",
+      "gender": "sameček",
+      "neutered": true,
+      "color": "černý",
+      "fivTest": "Negativní",
+      "name": "Bobíšek",
+      "secondVaccination": true,
+      "gallery": [
+        "/images/uploads/bobíšek-foto-2.jpeg",
+        "/images/uploads/mikeš-a-bobíšek.jpeg"
+      ],
+      "breed": "kočka evropská",
+      "firstVaccination": true,
+      "id": "16",
+      "image": "/images/uploads/bobíšek-foto.jpeg",
+      "felvTest": "Negativní",
+      "species": "kočka",
+      "ageCategory": "Dospělý",
+      "category": "trvali-obyvatele"
     }
   ]
 }
