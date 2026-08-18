@@ -308,8 +308,26 @@
       "category": "trvali-obyvatele"
     },
     {
+      "panleukopeniaTest": "Negativní",
+      "shortDescription": "Mourovatý pohodář. ",
+      "longDescription": "Bertíka jsme převzaly od nálezce a o jeho minulosti bohužel nic nevíme. \n\nJe to obrovský mazel a svou vděčnost dává najevo při každé příležitosti. Jakmile si v kuchyni sednete, vemte jed na to, že Bertík bude jedním z těch, kteří se vám okamžitě budou snažit vlézt na klín.  V kolektivu ostatních zvířat je naprosto bezproblémový.\n\nBertík se potýká s problémy se zadními nožičkami. Právě kvůli tomuto hendikepu jsme se rozhodly, že u nás zůstane natrvalo. Je u nás zvyklý, má rád svoji kočičí partu a my mu chceme dopřát klidný život plný lásky a pozornosti.",
+      "gender": "sameček",
+      "neutered": true,
+      "color": "mourovatý",
+      "fivTest": "Negativní",
+      "name": "Bertík",
+      "secondVaccination": true,
+      "gallery": [
+        "/images/uploads/bertík-foto.jfif"
+      ],
+      "breed": "kočka evropská",
+      "firstVaccination": true,
+      "id": "15",
+      "image": "/images/uploads/bertík-foto-2.jpeg",
+      "felvTest": "Negativní",
       "species": "kočka",
-      "category": "nove-prijati"
+      "ageCategory": "Dospělý",
+      "category": "trvali-obyvatele"
     }
   ]
 }
