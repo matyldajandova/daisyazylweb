@@ -559,8 +559,28 @@
       "category": "trvali-obyvatele"
     },
     {
+      "panleukopeniaTest": "Negativní",
+      "shortDescription": "Smutná kočička s mrtvými plody v bříšku :(",
+      "longDescription": "Johanky u nás v azylu máme dvě.  Tuto Johanku jsme převzaly od nálezkyně, která ji objevila v kravíně. Kočička byla v zuboženém stavu – apatická, s obrovským břichem a doslova na pokraji smrti. Okamžitě jsme ji převezly na veterinu do Mnichovic, kde musela podstoupit akutní operaci. Ukázalo se, že v sobě nosila sedm mrtvých koťat. Jedno z nich bylo vzpříčené v porodních cestách, nemohlo ven a za ním ani sourozenci, takže bohužel všechna koťátka zemřela. Johance v bříšku už probíhal hnilobný proces, měla těžkou sepsi celého organismu a nikdo nevěděl, jestli to vůbec přežije.\n\nRány na těle se Johance nakonec zhojily, ale psychicky ji prožitá traumata pravděpodobně poznamenala natrvalo a asi se s tím už nedá nic víc dělat. Po zdravotní stránce je už naštěstí v pořádku, ale ty zážitky v ní zkrátka zůstaly. Johanka je povahově velmi plachá. Protože dříve žila venku, zkusily jsme i variantu s jejím vypuštěním ven. Některé od narození venkovní kočky, často se jim v našem oboru všeobecně říká \"plašanky\", o lidskou společnost nestojí, jsou jí naopak vystresované a touží po životě venku. Když jsme po jejím uzdravení viděly, že si ani k nám ani k ostatním kočkám nenašla cestu, zkusily jsme ji vypustit ven, ale Johanka se překvapivě držela poblíž domu a nechtěla se vzdálit. A nám se vlastně ulevilo. S čistým svědomím, že to Johanka chce, jsme ji vzaly zpět do domu. Johanka o nás nejeví zájem a téměř nesnese přímý fyzický kontakt. Ale chce být s námi, vyžaduje přítomnost člověka. Je tichý pozorovatel. Má své oblíbené místo na škrabadle, odkud má přehled o dění. Stačí jí prostě jen být tady a sledovat ostatní. Nekamarádí se ani s ostatními kočkami. Vůbec si jich nevšímá, nedruží se s nimi a nezapojuje se do žádných her.\n\nAle my jsme moc rády, že takové zlomené dušičce můžeme poskytnout klid, který v životě potřebuje.",
+      "gender": "samička",
+      "neutered": true,
+      "color": "trikolora",
+      "fivTest": "Negativní",
+      "name": "Johanka",
+      "secondVaccination": true,
+      "gallery": [
+        "/images/uploads/whatsapp-image-2026-08-19-at-13.45.17.jpeg",
+        "/images/uploads/467985654_122141744276347213_1760127094364036120_n.jpg",
+        "/images/uploads/468078392_122141743952347213_7705052742648557938_n.jpg"
+      ],
+      "breed": "kočka evropská",
+      "firstVaccination": true,
+      "id": "26",
+      "image": "/images/uploads/whatsapp-image-2026-08-19-at-13.45.28.jpeg",
+      "felvTest": "Negativní",
       "species": "kočka",
-      "category": "nove-prijati"
+      "ageCategory": "Dospělý",
+      "category": "trvali-obyvatele"
     }
   ]
 }
