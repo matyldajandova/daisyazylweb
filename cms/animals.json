@@ -505,6 +505,33 @@
       "species": "kočka",
       "ageCategory": "Dospělý",
       "category": "nasli-domov"
+    },
+    {
+      "panleukopeniaTest": "Negativní",
+      "shortDescription": "Kocour, kterého chtěli utratit. ",
+      "longDescription": "Simbův příběh mohl mít velmi krátký a tragický konec. Jako teprve devítiměsíční kotě ho srazilo auto. Přežil, ale utrpěl zlomeninu čelisti. Místo toho, aby mu jeho tehdejší majitel poskytl pomoc a péči, přivezl ho na veterinární kliniku s jediným požadavkem – utratit ho. Paní doktorka MVDr. Eliška Singerová však odmítla mladý život jen tak zhasnout, uvědomila náš azyl a Simba dostal šanci bojovat.\n\nPo podpisu darovací smlouvy bývalým majitelem následoval okamžitý transport na kliniku v Hradci Králové. Náraz auta způsobil zranění, která vyžadovala intenzivní péči. Simba musel podstoupit náročnou operaci a fixaci čelisti pomocí cerkláže („drátků“). Náraz zanechal stopy v podobě krvácení v uchu (sraženinu museli na veterině odstranit), dočasně zhoršeného zraku a pomalejších obranných reakcí.\n\nPřes obrovskou bolest Simba ukázal neuvěřitelnou vůli k životu. Krátce po operaci začal sám krásně baštit, s chutí si hrál a s vděčností si užíval každou chvilku v bezpečí a teple.\n\nJak se mu daří nyní? Simba zažil ten nejkrásnější happy end! Jeho silný příběh zasáhl paní Haničku, která se rozhodla otevřít mu své srdce i domov. Simba tak odjel do nového prostředí, kde se okamžitě zabydlel, užívá si mazlení na gauči a stal se milovaným členem rodiny.\n\nI když ho ještě čekal finální zákrok v podobě vyndání drátků z hojící se čelisti, takže jejich začátky s Haničkou nebyly úplně bezproblémové, z těžce zraněného kocourka určeného k eutanazii je dnes šťastný, spokojený, veliký kocour.",
+      "gender": "sameček",
+      "neutered": true,
+      "color": "zrzavý",
+      "fivTest": "Negativní",
+      "name": "Simba",
+      "secondVaccination": true,
+      "gallery": [
+        "/images/uploads/668097305_2400230930426473_4050223300235687986_n.jpg",
+        "/images/uploads/663975570_1276443827252110_8354621122635925742_n.jpg",
+        "/images/uploads/image-2504295813352649.jfif",
+        "/images/uploads/665995224_925562640087566_6360070523029686255_n.jpg",
+        "/images/uploads/image-2097331794523140.webp",
+        "/images/uploads/whatsapp-image-2026-03-18-at-12.00.50-2-.jpeg"
+      ],
+      "breed": "kočka evropská",
+      "firstVaccination": true,
+      "id": "24",
+      "image": "/images/uploads/741963389_1823194491981882_5919038816508456185_n.webp",
+      "felvTest": "Negativní",
+      "species": "kočka",
+      "ageCategory": "Dospělý",
+      "category": "nasli-domov"
     }
   ]
 }
