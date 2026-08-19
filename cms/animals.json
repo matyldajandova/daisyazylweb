@@ -483,6 +483,28 @@
       "species": "kočka",
       "ageCategory": "Senior",
       "category": "nasli-domov"
+    },
+    {
+      "panleukopeniaTest": "Negativní",
+      "shortDescription": "Oranžová lištička našla svůj domov. ",
+      "longDescription": "Mandarinka dostala své jméno v azylu díky hřejivě meruňkovo-oranžovému nádechu srsti, připomínajícímu zmenšeninu divoké lištičky. Za sebou má minimálně tři roky tvrdého života na ulici v Novém Bydžově. Kromě neustálého boje s mrazem i vedrem u rušné silnice musela čelit lidské krutosti – lidé z okolí jí vědomě ničili provizorní boudičky i misky s vodou. Do azylu přišla v kritickém stavu: se spálenými oušky od slunce, silně dehydrovaná a začínající apatická.\n\nJakmile se však ocitla v bezpečí a chládku, vyklubal se z ní ten nejvděčnější kočičí poklad. Z dřívějšího života na ulici si nenesla žádnou zahořklost, naopak překvapila svou mazlivou povahou. I takovou nepříjemnost, jako jsou zdravotní prohlídky a odběry krve zvládala bez držení a naprosto bez problémů. Je to tichá, hodná a nekonfliktní kočička, která ze všeho nejvíce touží po lidském doteku. V azylu spala každou noc přitisknutá v posteli u Terky.\n\nJak se jí daří nyní? Mandarinka našla ten úplně nejkrásnější, přímo vysněný domov! I přes skepsi některých lidí, že kočka z ulice nezvládne život výhradně uvnitř, odjela k úžasné paní Marušce do domova pro seniory.\n\nV malém bytě se zaskleným balkonem se z nich staly nerozlučné parťačky, které si navzájem dělají společnost a naplňují si vzájemně dny láskou. Mandarinka má nyní péči, bezpečí a náruč plnou hlazení, což si po letech strádání tolik zasloužila.",
+      "gender": "samička",
+      "color": "mourovatá",
+      "fivTest": "Negativní",
+      "name": "Mandarinka",
+      "gallery": [
+        "/images/uploads/whatsapp-image-2026-05-26-at-17.35.02.jpeg",
+        "/images/uploads/whatsapp-image-2026-07-08-at-19.48.36-3-.jpeg",
+        "/images/uploads/whatsapp-image-2026-07-08-at-19.48.36-1-.jpeg"
+      ],
+      "breed": "kočka evropská",
+      "firstVaccination": true,
+      "id": "23",
+      "image": "/images/uploads/whatsapp-image-2026-06-29-at-18.42.05.jpeg",
+      "felvTest": "Negativní",
+      "species": "kočka",
+      "ageCategory": "Dospělý",
+      "category": "nasli-domov"
     }
   ]
 }
