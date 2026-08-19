@@ -603,6 +603,30 @@
       "felvTest": "Negativní",
       "species": "kočka",
       "category": "trvali-obyvatele"
+    },
+    {
+      "panleukopeniaTest": "Negativní",
+      "shortDescription": "Kočka, které osud nadělil hodně ran.",
+      "longDescription": "Příběh Rozárky začal naléhavou zprávou od paní Petry, která nás upozornila na kočičí dušičku přežívající v areálu v Novém Bydžově. Rozárka tam venku živořila delší dobu a i když jí občas někdo nakrmil. Ale mrazy, které přišly, se na ní začaly drsně podepisovat. Byla plachá, zpomalená a viditelně nemocná. Bylo jasné, že v takovém stavu by další mrazivou noc už nemusela zvládnout.\n\nHned při převzetí bylo vidět, že si toho v životě vytrpěla víc než dost. Přišla k nám s tlamkou téměř bez zubů a ve velmi špatném celkovém stavu. Největší záhadou však byla její chybějící přední tlapka. Rána je starší a dokonale zahojená. Při podrobnějším vyšetření bylo v lokti jasně nahmatatelný čistý řez – nešlo o žádný úraz, ale o odborné operativní odstranění. Nabízí se tedy smutná otázka: Jak se kočička, o kterou se kdysi někdo natolik staral, že jí zaplatil drahou operaci, ocitla opuštěná v mrazech na ulici?\n\nJeden z nejvážnějších problémů, které Rozárku trápily, byly její oči. Trpěla podobnou vadou jako naše Jasmínka – spodní víčka se jí stáčela dovnitř a neustále dráždila rohovku. K tomu se přidaly nepříjemné výrůstky (odborně protruze spojivky), kvůli kterým měla oči prakticky pořád bolestivě zavřené.\n\nRozárka v únoru 2026 podstoupila náročnou operaci, plastiku víček. Lékaři upravili víčka tak, aby už oko nedráždila. Dále byly při operaci odstraněny všechny výrůstky. Rozdíl po operaci je neuvěřitelný. Poprvé jsme Rozárku viděli s krásně otevřenýma očima.\n\nBohužel tím si Rozárka všechnu smůlu nevybrala. V srpnu 2026 musela podstoupit další operaci, a to odstranění obou uším, kvůli nádorovým výrůstkům, které se jí během léta na ouškách udělaly. \n\nRozárka je spíše plachá a nedůvěřivá kočička, což přisuzujeme venkovnímu životu a částečné slepotě. Počítáme s tím, že u nás v azylu zůstane.",
+      "gender": "samička",
+      "neutered": true,
+      "color": "bílo-rezavá",
+      "fivTest": "Negativní",
+      "name": "Rozárka",
+      "secondVaccination": true,
+      "gallery": [
+        "/images/uploads/639266588_122203141844347213_7473974307785351157_n.jpg",
+        "/images/uploads/666090765_122206999376347213_2252234845160856396_n.jpg",
+        "/images/uploads/whatsapp-image-2026-08-19-at-14.31.28.jpeg"
+      ],
+      "breed": "kočka evropská",
+      "firstVaccination": true,
+      "id": "28",
+      "image": "/images/uploads/rozárka-foto.jfif",
+      "felvTest": "Negativní",
+      "species": "kočka",
+      "ageCategory": "Dospělý",
+      "category": "trvali-obyvatele"
     }
   ]
 }
