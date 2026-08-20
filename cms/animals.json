@@ -651,6 +651,32 @@
       "species": "kočka",
       "ageCategory": "Mladý",
       "category": "trvali-obyvatele"
+    },
+    {
+      "panleukopeniaTest": "Negativní",
+      "shortDescription": "Náš hluchý ufonek :)",
+      "longDescription": "Štěpánka byla nalezena v zuboženém stavu v Nehvizdech, kde se potulovala u úřadu. Podle svědectví místních tam byla údajně vyhozena dědici po úmrtí jejího původního majitele. Byla vyhublá, špinavá a měla poraněnou pacičku. Kromě svrabu v ouškách a hromady všenek v kožíšku měla pokročilou stomatitidu, která jí pro velkou bolestivost znemožňovala kousání. Dalším problémem byla zhoršená koordinace pohybu, zřejmě po srážce autem v minulosti. Zadní nožky měla nepřirozeně do X. \n\nPřijaly jsme ji a snažily se ji dát dohromady, ale brzy se objevil fatální problém. Štěpánka najednou začala být apatická a schoulená v rohu. Okamžité vyšetření sonem odhalilo tekutinu v dutině břišní – praskl jí žaludeční vřed. Tento stav končí u koček v drtivé většině případů smrtí. Následovala okamžitá operace na klinice v Krči, kde Štěpánka s pomocí lékařů včetně naší paní veterinářky Elišky vybojovala svůj život. Vřed byl ukrytý na místě, kam ani nejlepší přístroje nedohlédnou. Nikdo ho nemohl při všech předchozích vyšetřeních vidět. Nosila tuhle časovanou bombu v sobě. Až do chvíle, kdy praskl. \n\nŠtěpánka je dnes stabilizovaná, ale její stav vyžaduje speciální péči:\\\nMusí doživotně brát léky na ochranu žaludeční sliznice a střev.\\\nPotřebuje přísně vyváženou stravu.\\\nBohužel má i další handicapy, je úplně hluchá a má zhoršený zrak.\n\nV létě 2026 absolvovala ještě revizi zoubků, což byl poslední restík z jejího původního zuboženého stavu.\n\nŠtěpánka je naše \"zlatá holčička\". Je to neuvěřitelně pohodové, klidné a vděčné stvoření, které si u nás užívá zasloužený klid a bezpečí. Přestože nás neslyší a vidí nás jen v určitých obrysech a stínech, přesně ví, kde jsme a vždycky si přijde pro pomazlení. A když spinká, můžou kolem ní ostatní kočičky rozjet třeba rodeo a ona dál spí spánkem spravedlivých :) Je to takový náš mimoněk :)\n\nKvůli jejímu zdravotnímu stavu a potřebě neustálého dohledu u nás zůstane už navždy.",
+      "gender": "samička",
+      "neutered": true,
+      "color": "bílo-šedohnědá",
+      "fivTest": "Negativní",
+      "name": "Štěpánka",
+      "secondVaccination": true,
+      "gallery": [
+        "/images/uploads/štěpánka-foto-5.jfif",
+        "/images/uploads/whatsapp-image-2026-05-23-at-17.18.49.jpeg",
+        "/images/uploads/whatsapp-image-2026-05-23-at-17.18.31.jpeg",
+        "/images/uploads/štěpánka-foto-3.jpg",
+        "/images/uploads/štěpánka-foto-2.jpg"
+      ],
+      "breed": "kočka evropská",
+      "firstVaccination": true,
+      "id": "30",
+      "image": "/images/uploads/štěpánka-foto.jfif",
+      "felvTest": "Negativní",
+      "species": "kočka",
+      "ageCategory": "Dospělý",
+      "category": "trvali-obyvatele"
     }
   ]
 }
