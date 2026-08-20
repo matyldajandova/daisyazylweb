@@ -677,6 +677,28 @@
       "species": "kočka",
       "ageCategory": "Dospělý",
       "category": "trvali-obyvatele"
+    },
+    {
+      "panleukopeniaTest": "Negativní",
+      "shortDescription": "Postřelený mazel, který neztratil víru v lidi.",
+      "longDescription": "Uhlíkův příběh začal tragicky. Nálezkyně ho objevila u lesa a pole v kaluži krve – pohled to byl prý strašný. Původně se zdálo, že ho napadlo jiné zvíře, ale rentgen odhalil krutou pravdu: Uhlík byl postřelen. Střela se roztříštila v oblasti lopatky a její úlomky poškodily míchu i tkáň kolem plic. Tento bezcitný čin, vzhledem k místu nálezu bohužel pravděpodobně způsoben myslivcem, zanechal kocourka zmrzačeného a odkázaného na pomoc druhých.\n\nUjala se ho obětavá paní, která ho vypiplala z nejhoršího, ale kvůli Uhlíkově ochrnutí a potřebě speciální péče – především mechanického vymačkávání – mu nemohla poskytnout domov natrvalo. Osud tomu chtěl, že nás kontaktovala paní doktorka z veteriny v Hrusicích, kam jsme dříve jezdily. Slovo dalo slovo a Uhlík se stal součástí naší rodiny.\n\nI přes všechno utrpení, kterým si prošel, je Uhlík neuvěřitelný mazel. Říkáme mu „pan kocourek“ nebo „milovník“, protože jeho povaha je prostě úžasná.\n\nZkoušely jsme vše možné, ale citlivost v nožkách se bohužel nevrátila. Uhlík už nikdy normálně chodit nebude, ale nevzdáváme se a pomocí fyzioterapie se snažíme o tzv. spinální chůzi.\n\nKromě ochrnutí a nutnosti pomáhat mu s vyprazdňováním se Uhlíkovi v těle objevila i volná tekutina, což mu komplikuje dýchání.\n\nVyžaduje neustálý dohled, vymačkávání a specifický přístup kléčbě jeho zažívání.\n\nUhlík u nás našel bezpečný přístav, kde ho už nikdo neohrozí. Je příkladem toho, že i přes lidskou krutost dokáže zvíře znovu důvěřovat a rozdávat lásku.",
+      "gender": "sameček",
+      "neutered": true,
+      "color": "černý",
+      "fivTest": "Negativní",
+      "name": "Uhlík",
+      "secondVaccination": true,
+      "gallery": [
+        "/images/uploads/whatsapp-image-2026-03-31-at-19.31.36-1-.jpeg"
+      ],
+      "breed": "kočka evropská",
+      "firstVaccination": true,
+      "id": "31",
+      "image": "/images/uploads/uhlík-foto.jfif",
+      "felvTest": "Negativní",
+      "species": "kočka",
+      "ageCategory": "Dospělý",
+      "category": "trvali-obyvatele"
     }
   ]
 }
