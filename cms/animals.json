@@ -744,6 +744,27 @@
       "species": "kočka",
       "ageCategory": "Dospělý",
       "category": "v-nasich-srdcich"
+    },
+    {
+      "shortDescription": "Drobná mazlivá princezna.",
+      "longDescription": "Majdalenčin příběh se začal psát přímo v azylu, kde přišla na svět jako jedno ze čtyř koťátek mladé maminky Noemi. Hned od prvního okamžiku okouzlila naše dlouholeté přátele a milovníky zvířat Radka a Jitušku. Ti si ji vyhlídli prakticky hned po narození a dali jí jméno Majdalenka, které jí okamžitě zůstalo i u nás. Pro azyl to byla ta nejkrásnější zpráva – věděly jsme, že malá princezna půjde do těch nejlepších rukou.\n\nMajdalenka od prvních dnů vynikala svou jemností. Je to černo-bílá kočička s mimořádně něžným výrazem i povahou, zkrátka drobný a mazlivý miláček. Svým vzhledem i povahou si dokáže okamžitě získat srdce každého, kdo ji potká. Prostě jak ji vidíte, hned byste ji mazlili :) A co jinak ráda dělá? No, hopsá, šplhá, objevuje všechny kouty a dělá přesně ty roztomilé rošťárny, které k jejímu věku patří.\n\nA mimochodem, Majdalenka v adopci opravdu nesmutní:  Radek s Jituškou se rozhodli, že si k Majdalence přiberou i jejího brášku Mauglího (Matýska). Takže má parťáka na takové to kotěcí dovádění. A pokud bude chtít hodit nějakou vážnou kočičí řeč, nebo se dozvědět více o životě, může se zeptat jednoho z již dospělých kočičích kamarádů, které už Jituška s Ráďou mají :)\n\nTakže nyní si Majdalenka užívá ten nejkrásnější kotěcí život v novém domově. Z malé něžné kuličky roste zdravá, spokojená kočička, která má vedle sebe jak skvělé lidské rodiče, tak svého brášku a spoustu kočičích kámošů.",
+      "gender": "samička",
+      "color": "bílo-černá",
+      "name": "Majdalenka",
+      "gallery": [
+        "/images/uploads/whatsapp-image-2026-08-21-at-18.38.19.jpeg",
+        "/images/uploads/whatsapp-image-2026-08-21-at-18.37.15.jpeg",
+        "/images/uploads/whatsapp-image-2026-06-02-at-18.09.34-1-.jpeg",
+        "/images/uploads/whatsapp-image-2026-05-23-at-18.24.37.jpeg",
+        "/images/uploads/majdalenka-3.png"
+      ],
+      "breed": "kočka evropská",
+      "firstVaccination": true,
+      "id": "34",
+      "image": "/images/uploads/whatsapp-image-2026-08-21-at-18.39.23.jpeg",
+      "species": "kočka",
+      "ageCategory": "Kotě",
+      "category": "nasli-domov"
     }
   ]
 }
