@@ -853,8 +853,23 @@
       "category": "felv"
     },
     {
+      "panleukopeniaTest": "Negativní",
+      "shortDescription": "Jeden z největších azylových mazlů. ",
+      "longDescription": "Býval to toulavý kocour, na kterém se podepsal tvrdý život bez domova i zdravotní handicap. Jeho odchyt nebyl vůbec jednoduchý, Oliver byl i přes zjevně špatný zdravotní stav velmi plachý a několik dní se schovával. Ale už ve chvíli, kdy pocítil bezpečí odchytové klece, se uklidnil a krásně spolupracoval. Velmi brzy se z něj stal ten nejmazlivější kocourek pod sluncem. Pochopil, že už se nemusí bát a že lidská ruka může i hladit, nejen ho odhánět.\n\nBohužel mu byla diagnostikována nemoc FeLV, což komplikovalo jeho umístění, protože FeLV je mezi kočkami přenosná. Takováto kočička tedy může žít pouze jako jedináček, nebo s jinou kočkou se stejnou diagnózou.  Oliverek nějaký čas strávil v dočasné péči u hodných lidí a mezitím se hledaly možnosti, kam by mohl jít nastálo.  Právě v tu chvíli se jeho osud spojil s námi. V Daisy azylu máme jeden pokojík vyhrazený právě pro kočičky s FeLV. Přestože jsme se v té době potýkaly s následky požáru části naší budovy, nemohly jsme tohoto kluka odmítnout.\n\nV únoru 2026 podstoupil náročnou operaci očí u specialistů v Pardubicích. Narodil se totiž s tzv. kolobomem víček, což znamená, že mu chyběly části horních víček. Chybějící tkáň způsobovala, že mu srst neustále dráždila oči, což pro něj znamenalo chronickou bolest a záněty. Pan doktor provedl plastiku technikou „lip to lid“, kdy chybějící víčka nahradil tkání z Oliverkovy tlamičky. Díky tomuto preciznímu zákroku už Oliverek konečně vidí svět bez bolesti. \n\nOliverek je důkazem toho, že zázraky se dějí a že i za kočičky s diagnózou FeLV stojí za to bojovat.\n\n❤️ Diagnóza FeLV (kočičí leukémie) není rozsudek smrti, ale vyžaduje specifický režim, aby kočičky mohly prožít kvalitní život bez bolesti. Když přispějete na naše FeLV bojovníky, vaše dary pomáhají hradit:\n\n🛡️ Podporu imunity: Virus FeLV napadá obranyschopnost, proto kočičky denně dostávají doplňky jako colostrum, čistý taurin, betaglukany, L-lysin nebo speciální virostatika, která pomáhají tělu bojovat s viry, Hepatial na podporu činnosti jater apod. \n\n🦷 Dentální péči a operace: Tento virus velmi často způsobuje agresivní záněty dásní.\n\n🥩 Prémiovou a vysokokalorickou stravu: Imunitně oslabené kočky mají sklon k hubnutí a ztrátě svalů. Potřebují proto tu nejkvalitnější stravu bohatou na živiny a ty s bolavou tlamou i měkké masité paštiky.\n\n🩺 Častý veterinární monitoring: I banální rýma může být pro FeLV kočku fatální. Vaše příspěvky hradí častější krevní testy, sledování hladiny červených krvinek (kvůli riziku anémie), hlídání rizika nízkého počtu bílých krvinek a okamžitou péči při prvních náznacích problému.\n\n💊 Léčbu přidružených potíží: Často řešíme chronické záněty očí nebo dýchacích cest, které vyžadují dlouhodobou aplikaci speciálních léků a kapek.",
+      "gender": "sameček",
+      "neutered": true,
+      "color": "bílo-černý",
+      "fivTest": "Negativní",
+      "name": "Oliver",
+      "secondVaccination": true,
+      "breed": "kočka evropská",
+      "firstVaccination": true,
+      "id": "39",
+      "image": "/images/uploads/olíček.jpeg",
+      "felvTest": "Pozitivní",
       "species": "kočka",
-      "category": "nove-prijati"
+      "ageCategory": "Dospělý",
+      "category": "felv"
     }
   ]
 }
