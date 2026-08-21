@@ -783,6 +783,29 @@
       "species": "kočka",
       "ageCategory": "Kotě",
       "category": "nasli-domov"
+    },
+    {
+      "panleukopeniaTest": "Negativní",
+      "shortDescription": "Hravá trikolorní kráska. ",
+      "longDescription": "Příběh Valentýnky se začal psát v obci Strančice, se kterou náš azyl dlouhodobě spolupracuje. Valentýnka se narodila kolem května 2025 jako jedno ze dvou koťátek, která zůstala opuštěná venku. Společně se svým černým bráškou Tadeáškem byla zachráněna a přijata do naší péče ve věku přibližně pěti měsíců.\n\nHledání bezpečí a lásky mělo pro Valentýnku rychlý a radostný spád. Nejdříve našla úžasné zázemí v dočasné péči u paní Moniky v Pardubicích. Už druhý den po příjezdu se tam cítila jako doma – užívala si nekonečné mazlení a našla si i novou kočičí kamarádku, která už v domácnosti bydlela. Holky si na sebe opravdu perfektně zvykly. Valentýnka členům rodiny tak přirostla k srdci, že se rozhodli ji adoptovat. \n\nA tak se z dočasky stal trvalý domov :)",
+      "gender": "samička",
+      "neutered": true,
+      "color": "trikolora",
+      "fivTest": "Negativní",
+      "name": "Valentýnka",
+      "secondVaccination": true,
+      "gallery": [
+        "/images/uploads/valentýnka-3.jpg",
+        "/images/uploads/valentýnka-2.jpg"
+      ],
+      "breed": "kočka evropská",
+      "firstVaccination": true,
+      "id": "36",
+      "image": "/images/uploads/valentýnka-4.jpg",
+      "felvTest": "Negativní",
+      "species": "kočka",
+      "ageCategory": "Dospělý",
+      "category": "nasli-domov"
     }
   ]
 }
