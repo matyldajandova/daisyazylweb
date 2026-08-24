@@ -377,14 +377,16 @@ currentPage: sverenec-detail
                     {% if forloop.index0 < 2 %}
                     <img
                       src="{{ photo.image }}"
-                      alt="{{ animal.name }} – fotografie {{ loop.index }}"
+                      {% if photo.imageSrcset %}srcset="{{ photo.imageSrcset }}" sizes="{{ photo.imageSizes | default: '(max-width: 767px) 100vw, 50vw' }}"{% endif %}
+                      alt="{{ animal.name }} – fotografie {{ forloop.index }}"
                       loading="lazy"
                       class="gallery-masonry_image"
                     >
                     {% else %}
                     <img
                       data-src="{{ photo.image }}"
-                      alt="{{ animal.name }} – fotografie {{ loop.index }}"
+                      {% if photo.imageSrcset %}data-srcset="{{ photo.imageSrcset }}" data-sizes="{{ photo.imageSizes | default: '(max-width: 767px) 100vw, 50vw' }}"{% endif %}
+                      alt="{{ animal.name }} – fotografie {{ forloop.index }}"
                       class="gallery-masonry_image"
                     >
                     {% endif %}

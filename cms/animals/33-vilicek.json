@@ -1,0 +1,19 @@
+{
+  "shortDescription": "Kocourek, pro kterého záchrana přišla příliš pozdě :(",
+  "longDescription": "Vilíčkův příběh je mementem lidské nevšímavosti a obrovského utrpení, které muselo trvat celé týdny. V červenci ho k nám do azylu přivezli pánové z Technických služeb Městec Králové. Terka okamžitě poznala, že jde o vteřiny – zubožený kocourek byl na kost vyhublý, podchlazený, zablešený a z jeho shnilého ouška, kde se už vylíhly larvy much, se šířil hnilobný zápach. Následoval okamžitý převoz na kliniku Vetino v Hradci Králové a boj o jeho život.\n\nNa klinice lékaři nasadili intenzivní léčbu, vyčistili rány a stabilizovali podchlazené tělíčko. Vilíček bojoval celé tři dny. Kromě úrazu zadní nožky se ukázalo, že ho masivní napadení parazity a dlouhodobé hladovění dovedlo k těžké anémii a selhávání ledvin.\n\nPřes veškerou péči a podávaná léčiva jeho vyčerpaný organismus už nedokázal na léčbu zareagovat a krevní hodnoty se dále nezlepšovaly. Nedokázal sám udržet teplotu. Terka za ním jela na kliniku, aby v posledních chvílích nebyl sám – naposledy ho pohladila, vyprovodila ho za duhový most a ujistila ho, že je milován.\n\nI když Vilíček nestačil poznat život přímo u nás v azylu, v posledních chvílích byl obklopen péčí, láskou a podporou stovek lidí, kterým jeho osud nebyl lhostejný. Odpočívej v pokoji, Vilíčku. Nezapomeneme.",
+  "gender": "sameček",
+  "color": "bílo-šedý",
+  "name": "Vilíček",
+  "gallery": [
+    "/images/uploads/vilík-4.jfif",
+    "/images/uploads/vilík-2.jfif",
+    "/images/uploads/vilík-3.jfif",
+    "/images/uploads/vilík.jfif"
+  ],
+  "breed": "kočka evropská",
+  "id": "33",
+  "image": "/images/uploads/vilíček-rip.jfif",
+  "species": "kočka",
+  "ageCategory": "Dospělý",
+  "category": "v-nasich-srdcich"
+}

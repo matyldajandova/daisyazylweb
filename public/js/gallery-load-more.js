@@ -26,11 +26,21 @@
           var img = item.querySelector("img");
           if (img) {
             var src = img.getAttribute("data-src");
+            var srcset = img.getAttribute("data-srcset");
+            var sizes = img.getAttribute("data-sizes");
             if (src) {
               img.setAttribute("src", src);
               img.removeAttribute("data-src");
-              img.setAttribute("loading", "lazy");
             }
+            if (srcset) {
+              img.setAttribute("srcset", srcset);
+              img.removeAttribute("data-srcset");
+            }
+            if (sizes) {
+              img.setAttribute("sizes", sizes);
+              img.removeAttribute("data-sizes");
+            }
+            img.setAttribute("loading", "lazy");
           }
           item.hidden = false;
         });

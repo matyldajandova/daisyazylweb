@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="cs">
   <head>
     <meta charset="utf-8" />
     <title>Daisy Azyl – Admin</title>
@@ -9,6 +9,19 @@
   <body>
     <!-- Decap CMS will mount into this div -->
     <div id="nc-root"></div>
-    <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
+    <script src="/admin/optimize-uploads.js"></script>
+    <script src="https://unpkg.com/decap-cms@3.15.1/dist/decap-cms.js"></script>
+    <script>
+      CMS.registerEventListener({
+        name: "preSave",
+        handler: function (event) {
+          var data = event.entry.get("data");
+          if (data.get("species") && !data.get("id")) {
+            return data.set("id", String(Date.now()));
+          }
+          return data;
+        },
+      });
+    </script>
   </body>
 </html>

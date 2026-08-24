@@ -1,0 +1,21 @@
+{
+  "shortDescription": "Nenapravitelný plašánek.",
+  "longDescription": "Felix je nádherný majestátní dlouhosrstý kocour, pravděpodobně kříženec Mainské mývalí kočky. Jeho cesta k nám začala na ulici v Nupakách u Prahy. Tam se delší dobu potuloval, až na něj upozornila jedna všímavá paní, které chodil na zahradu.  \n\nPo odchytu jsme okamžitě kontaktovaly obec a vyvěsily inzeráty s nadějí, že se o tohoto krasavce někdo přihlásí. Bohužel se nikdo neozval, a tak Felix zůstal v naší péči.\n\nFelix je v podstatě zdravý kocour, i když jsme zpočátku trochu bojovaly s jeho zažíváním. To se nám naštěstí podařilo srovnat a teď je po fyzické stránce v pořádku.\n\nJeho největší výzvou je však psychika, je to velký plašan. Felix má rád spíš klid a s ostatními kromě Borůvky se moc nekamarádí. Zkoušely jsme tedy i dočasnou péči, ale byl velmi vystresovaný ze změny prostředí a přistoupily jsme tedy k návratu do azylu. Zde je zvyklý a stabilizovaný.",
+  "gender": "sameček",
+  "neutered": true,
+  "color": "bílo-černý",
+  "fivTest": "Negativní",
+  "name": "Velký Felix",
+  "secondVaccination": true,
+  "gallery": [
+    "/images/uploads/velký-felix-2.jpg"
+  ],
+  "breed": "kočka evropská",
+  "firstVaccination": true,
+  "id": "37",
+  "image": "/images/uploads/velký-felix-foto.jpg",
+  "felvTest": "Negativní",
+  "species": "kočka",
+  "ageCategory": "Dospělý",
+  "category": "trvali-obyvatele"
+}

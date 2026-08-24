@@ -23,7 +23,79 @@ function animalSlug(animal) {
   return name ? `${species}-${name}` : species || animal.id || "detail";
 }
 
+function compareAnimalIds(a, b) {
+  const na = Number(a && a.id);
+  const nb = Number(b && b.id);
+  if (Number.isFinite(na) && Number.isFinite(nb) && na !== nb) return na - nb;
+  return String(a && a.id != null ? a.id : "").localeCompare(
+    String(b && b.id != null ? b.id : ""),
+    "cs",
+  );
+}
+
+/** Keep species-name when unique; append id on collision so Eleventy permalinks never clash. */
+function assignUniqueSlugs(animals) {
+  const taken = new Set();
+  return animals.map((animal) => {
+    const base = animalSlug(animal) || String(animal.id || "detail");
+    let slug = base;
+    if (taken.has(slug)) {
+      const suffix = animal.id != null && String(animal.id) !== "" ? String(animal.id) : "dup";
+      slug = `${base}-${suffix}`;
+    }
+    if (taken.has(slug)) {
+      slug = `${slug}-${taken.size}`;
+    }
+    taken.add(slug);
+    return { ...animal, slug };
+  });
+}
+
+function assertUniqueSlugs(animals) {
+  const idsBySlug = new Map();
+  for (const animal of animals) {
+    const slug = animal.slug || "";
+    const ids = idsBySlug.get(slug) || [];
+    ids.push(animal.id ?? "?");
+    idsBySlug.set(slug, ids);
+  }
+  for (const [slug, ids] of idsBySlug) {
+    if (ids.length > 1) {
+      throw new Error(`Duplicate animal slug "${slug}" (ids ${ids.join(", ")})`);
+    }
+  }
+}
+
+function loadAnimals() {
+  const dir = path.join(__dirname, "..", "cms", "animals");
+  if (!fs.existsSync(dir)) return [];
+
+  const files = fs.readdirSync(dir).filter((name) => name.endsWith(".json"));
+  const data = [];
+  for (const file of files) {
+    try {
+      const parsed = JSON.parse(fs.readFileSync(path.join(dir, file), "utf8"));
+      if (parsed && typeof parsed === "object" && !Array.isArray(parsed)) {
+        data.push(parsed);
+      }
+    } catch {
+      // Skip unreadable CMS files rather than failing the whole site build.
+    }
+  }
+  data.sort(compareAnimalIds);
+  return data;
+}
+
 const FALLBACK_IMAGE = "images/cat-illustration.svg";
+
+const IMAGE_OPTIONS = {
+  widths: [400, 800, 1200],
+  formats: ["webp"],
+  // Write directly into the Eleventy output folder. Writing into public/ races
+  // with Eleventy 3's parallel passthrough copy and can leave 404s in deploys.
+  outputDir: "./_site/images/animals/",
+  urlPath: "/images/animals/",
+};
 
 const SPECIES = [
   {
@@ -163,68 +235,65 @@ function categoriesForSpecies(speciesKey) {
   return CATEGORIES.filter((c) => !(c.catsOnly && speciesKey !== "kočka"));
 }
 
+async function processImage(imageUrl) {
+  if (!imageUrl) return null;
+
+  const projectRoot = path.join(__dirname, "..");
+  const imagePath = String(imageUrl).replace(/^\//, "");
+  const src = path.join(projectRoot, imagePath);
+
+  try {
+    const stats = fs.statSync(src);
+    if (!stats.isFile()) return null;
+  } catch {
+    return null;
+  }
+
+  try {
+    const metadata = await Image(src, IMAGE_OPTIONS);
+    const webpVariants = metadata.webp || [];
+    if (!webpVariants.length) return null;
+    const srcset = webpVariants.map((entry) => `${entry.url} ${entry.width}w`).join(", ");
+    const largest = webpVariants[webpVariants.length - 1];
+    return {
+      url: largest.url,
+      srcset,
+    };
+  } catch {
+    return null;
+  }
+}
+
 async function enrichAnimalImage(animal) {
   if (!animal || !animal.image) {
     return animal;
   }
 
-  const projectRoot = path.join(__dirname, "..");
-  const imagePath = animal.image.replace(/^\//, "");
-  const src = path.join(projectRoot, imagePath);
-
-  try {
-    const stats = fs.statSync(src);
-    if (!stats.isFile()) {
-      return {
-        ...animal,
-        image: FALLBACK_IMAGE,
-      };
-    }
-  } catch {
-    // Source image does not exist locally – fall back to a safe placeholder
+  const processed = await processImage(animal.image);
+  if (!processed) {
     return {
       ...animal,
       image: FALLBACK_IMAGE,
     };
   }
-
-  const slug = animal.slug || animalSlug(animal) || animal.id || "detail";
-
-  let metadata;
-  try {
-    // Write directly into the Eleventy output folder. Writing into public/ races
-    // with Eleventy 3's parallel passthrough copy and can leave 404s in deploys.
-    metadata = await Image(src, {
-      widths: [400, 800, 1200],
-      formats: ["webp"],
-      outputDir: "./_site/images/animals/",
-      urlPath: "/images/animals/",
-    });
-  } catch {
-    // If processing fails, keep the original image (or placeholder) without srcset
-    return {
-      ...animal,
-      image: FALLBACK_IMAGE,
-    };
-  }
-
-  const webpVariants = metadata.webp || [];
-  if (!webpVariants.length) {
-    return animal;
-  }
-
-  const srcset = webpVariants
-    .map((entry) => `${entry.url} ${entry.width}w`)
-    .join(", ");
-
-  const largest = webpVariants[webpVariants.length - 1];
 
   return {
     ...animal,
-    slug,
-    image: largest.url,
-    imageSrcset: srcset,
+    image: processed.url,
+    imageSrcset: processed.srcset,
     imageSizes: animal.imageSizes || "(max-width: 533px) 100vw, 533px",
+  };
+}
+
+async function enrichGalleryItem(item) {
+  if (!item || !item.image) return item;
+  const processed = await processImage(item.image);
+  if (!processed) return item;
+  return {
+    ...item,
+    image: processed.url,
+    imageSrcset: processed.srcset,
+    imageSizes: "(max-width: 767px) 100vw, 50vw",
   };
 }
 
@@ -311,19 +380,9 @@ function buildHub(animalsEnriched) {
 }
 
 module.exports = async function () {
-  const jsonPath = path.join(__dirname, "..", "cms", "animals.json");
-  let data = [];
-  try {
-    const raw = fs.readFileSync(jsonPath, "utf8");
-    data = JSON.parse(raw);
-  } catch {
-    data = [];
-  }
-  if (!Array.isArray(data)) {
-    data = data.animals || [];
-  }
+  const data = loadAnimals();
 
-  const animalsWithSlug = data.map((a) => {
+  const animalsPrepared = data.map((a) => {
     const category = resolveCategory(a);
     const speciesMeta = SPECIES_BY_KEY[a.species] || null;
     const tags = Array.isArray(a.tags) ? [...a.tags] : [];
@@ -340,14 +399,22 @@ module.exports = async function () {
         ? `/nasi-sverenci/${speciesMeta.slug}/${category}/`
         : "/nasi-sverenci/",
       inShelter: !OUT_OF_SHELTER.has(category),
-      slug: animalSlug(a) || a.id || "detail",
       gallery: normalizeGallery(a.gallery),
       tags,
     };
   });
 
+  const animalsWithSlug = assignUniqueSlugs(animalsPrepared);
+  assertUniqueSlugs(animalsWithSlug);
+
   const animalsEnriched = await Promise.all(
-    animalsWithSlug.map((animal) => enrichAnimalImage(animal)),
+    animalsWithSlug.map(async (animal) => {
+      const withHero = await enrichAnimalImage(animal);
+      const gallery = await Promise.all(
+        (withHero.gallery || []).map((item) => enrichGalleryItem(item)),
+      );
+      return { ...withHero, gallery };
+    }),
   );
 
   const inShelterEnriched = animalsEnriched.filter((a) => a.inShelter);

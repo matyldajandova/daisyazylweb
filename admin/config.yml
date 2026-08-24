@@ -9,179 +9,205 @@ backend:
 media_folder: "images/uploads"
 public_folder: "/images/uploads"
 
+slug:
+  encoding: "ascii"
+  clean_accents: true
+  sanitize_replacement: "-"
+
 local_backend: true
 
 collections:
   - name: "animals"
-    label: "Zvířata k adopci"
+    label: "Zvířata"
     label_singular: "Zvíře"
+    description: "Jedno zvíře = jeden záznam. Filtrujte a seskupujte podle kategorie nebo druhu."
+    folder: "cms/animals"
+    create: true
+    extension: "json"
     format: "json"
+    identifier_field: name
+    slug: "{{fields.id}}-{{slug}}"
+    summary: "{{name}} — {{category}}"
+    sortable_fields: ["name", "category", "species", "id"]
+    view_filters:
+      - { label: "Kočky", field: species, pattern: "kočka" }
+      - { label: "Psi", field: species, pattern: "pes" }
+      - { label: "Nově přijatí", field: category, pattern: "nove-prijati" }
+      - { label: "Hledají domov", field: category, pattern: "hledaji-domov" }
+      - { label: "Trvalí obyvatelé", field: category, pattern: "trvali-obyvatele" }
+      - { label: "FeLV+", field: category, pattern: "felv" }
+      - { label: "Našli domov", field: category, pattern: "nasli-domov" }
+      - { label: "V našich srdcích", field: category, pattern: "v-nasich-srdcich" }
+    view_groups:
+      - { label: "Kategorie", field: category }
+      - { label: "Druh", field: species }
     editor:
       preview: false
-    files:
-      - name: "animals-data"
-        label: "Seznam zvířat"
-        file: "cms/animals.json"
-        fields:
-          - label: "Zvířata"
-            name: "animals"
-            widget: "list"
-            summary: "{{fields.name}}"
-            fields:
-              - label: "ID"
-                name: "id"
-                widget: "string"
-              - label: "Jméno"
-                name: "name"
-                widget: "string"
-              - label: "Druh"
-                name: "species"
-                widget: "select"
-                options:
-                  - { label: "Kočka", value: "kočka" }
-                  - { label: "Pes", value: "pes" }
-                default: "kočka"
-              - label: "Věk (text)"
-                name: "ageText"
-                widget: "string"
-                required: false
-              - label: "Štítky"
-                name: "tags"
-                widget: "list"
-                required: false
-              - label: "Hlavní obrázek"
-                name: "image"
-                widget: "image"
-              - label: "Stručný popis"
-                name: "shortDescription"
-                widget: "text"
-                hint: "Krátký text na kartě a v SEO popisu (meta description)."
-              - label: "Podrobný popis"
-                name: "longDescription"
-                widget: "markdown"
-                hint: "Celý příběh na detailní stránce zvířete. Odstavce oddělujte prázdným řádkem; formátování (tučné, seznamy) je podporováno."
-              - label: "Kategorie"
-                name: "category"
-                widget: "select"
-                options:
-                  - { label: "Nově přijatí", value: "nove-prijati" }
-                  - { label: "Hledají domov", value: "hledaji-domov" }
-                  - { label: "Trvalí obyvatelé azylu (možnost virtuální adopce)", value: "trvali-obyvatele" }
-                  - { label: "FeLV+", value: "felv" }
-                  - { label: "Našli domov", value: "nasli-domov" }
-                  - { label: "V našich srdcích", value: "v-nasich-srdcich" }
-                default: "nove-prijati"
-              - label: "Evidenční číslo"
-                name: "evidenceNumber"
-                widget: "string"
-                required: false
-              - label: "Datum narození"
-                name: "birthDate"
-                widget: "datetime"
-                format: "DD.MM.YYYY"
-                date_format: "DD.MM.YYYY"
-                time_format: false
-                required: false
-              - label: "Věková kategorie"
-                name: "ageCategory"
-                widget: "select"
-                options:
-                  - { label: "Kotě", value: "Kotě" }
-                  - { label: "Mladý", value: "Mladý" }
-                  - { label: "Dospělý", value: "Dospělý" }
-                  - { label: "Senior", value: "Senior" }
-                required: false
-              - label: "Pohlaví"
-                name: "gender"
-                widget: "select"
-                options:
-                  - { label: "Samička", value: "samička" }
-                  - { label: "Sameček", value: "sameček" }
-                required: false
-              - label: "Plemeno"
-                name: "breed"
-                widget: "string"
-                required: false
-              - label: "Zbarvení"
-                name: "color"
-                widget: "string"
-                required: false
-              - label: "Opatrovník"
-                name: "guardian"
-                widget: "string"
-                required: false
-              - label: "Datum nálezu"
-                name: "foundDate"
-                widget: "datetime"
-                format: "DD.MM.YYYY"
-                date_format: "DD.MM.YYYY"
-                time_format: false
-                required: false
-              - label: "Původ příjmu"
-                name: "origin"
-                widget: "text"
-                required: false
-              - label: "Vhodné ven"
-                name: "suitableOutdoor"
-                widget: "boolean"
-                required: false
-              - label: "Vhodné k dalším kočkám"
-                name: "suitableWithCats"
-                widget: "boolean"
-                required: false
-              - label: "Vhodné k psům"
-                name: "suitableWithDogs"
-                widget: "boolean"
-                required: false
-              - label: "Vhodné k dětem"
-                name: "suitableWithChildren"
-                widget: "boolean"
-                required: false
-              - label: "Vhodné k odrostlejším dětem"
-                name: "suitableWithOlderChildren"
-                widget: "boolean"
-                required: false
-              - label: "Test na panleukopenii"
-                name: "panleukopeniaTest"
-                widget: "select"
-                options:
-                  - { label: "Negativní", value: "Negativní" }
-                  - { label: "Pozitivní", value: "Pozitivní" }
-                required: false
-              - label: "Test na FeLV"
-                name: "felvTest"
-                widget: "select"
-                options:
-                  - { label: "Negativní", value: "Negativní" }
-                  - { label: "Pozitivní", value: "Pozitivní" }
-                required: false
-              - label: "Test na FIV"
-                name: "fivTest"
-                widget: "select"
-                options:
-                  - { label: "Negativní", value: "Negativní" }
-                  - { label: "Pozitivní", value: "Pozitivní" }
-                required: false
-              - label: "Kastrovaný"
-                name: "neutered"
-                widget: "boolean"
-                required: false
-              - label: "První vakcinace"
-                name: "firstVaccination"
-                widget: "boolean"
-                required: false
-              - label: "Druhá vakcinace"
-                name: "secondVaccination"
-                widget: "boolean"
-                required: false
-              - label: "Galerie"
-                name: "gallery"
-                widget: "list"
-                required: false
-                field:
-                  label: "Obrázek"
-                  name: "image"
-                  widget: "image"
+    fields:
+      - label: "ID"
+        name: "id"
+        widget: "string"
+        hint: "Unikátní číslo zvířete. Pokud ho nevyplníte, doplní se automaticky při uložení."
+      - label: "Jméno"
+        name: "name"
+        widget: "string"
+      - label: "Druh"
+        name: "species"
+        widget: "select"
+        options:
+          - { label: "Kočka", value: "kočka" }
+          - { label: "Pes", value: "pes" }
+        default: "kočka"
+      - label: "Věk (text)"
+        name: "ageText"
+        widget: "string"
+        required: false
+      - label: "Štítky"
+        name: "tags"
+        widget: "list"
+        required: false
+      - label: "Hlavní obrázek"
+        name: "image"
+        widget: "image"
+        hint: "Fotka se automaticky zmenší (max. 1920 px) a uloží jako WebP."
+        media_library:
+          config:
+            max_file_size: 20000000
+      - label: "Stručný popis"
+        name: "shortDescription"
+        widget: "text"
+        hint: "Krátký text na kartě a v SEO popisu (meta description)."
+      - label: "Podrobný popis"
+        name: "longDescription"
+        widget: "markdown"
+        hint: "Celý příběh na detailní stránce zvířete. Odstavce oddělujte prázdným řádkem; formátování (tučné, seznamy) je podporováno."
+      - label: "Kategorie"
+        name: "category"
+        widget: "select"
+        hint: "FeLV+ používejte jen u koček."
+        options:
+          - { label: "Nově přijatí", value: "nove-prijati" }
+          - { label: "Hledají domov", value: "hledaji-domov" }
+          - { label: "Trvalí obyvatelé azylu (možnost virtuální adopce)", value: "trvali-obyvatele" }
+          - { label: "FeLV+", value: "felv" }
+          - { label: "Našli domov", value: "nasli-domov" }
+          - { label: "V našich srdcích", value: "v-nasich-srdcich" }
+        default: "nove-prijati"
+      - label: "Evidenční číslo"
+        name: "evidenceNumber"
+        widget: "string"
+        required: false
+      - label: "Datum narození"
+        name: "birthDate"
+        widget: "datetime"
+        format: "DD.MM.YYYY"
+        date_format: "DD.MM.YYYY"
+        time_format: false
+        required: false
+      - label: "Věková kategorie"
+        name: "ageCategory"
+        widget: "select"
+        options:
+          - { label: "Kotě", value: "Kotě" }
+          - { label: "Mladý", value: "Mladý" }
+          - { label: "Dospělý", value: "Dospělý" }
+          - { label: "Senior", value: "Senior" }
+        required: false
+      - label: "Pohlaví"
+        name: "gender"
+        widget: "select"
+        options:
+          - { label: "Samička", value: "samička" }
+          - { label: "Sameček", value: "sameček" }
+        required: false
+      - label: "Plemeno"
+        name: "breed"
+        widget: "string"
+        required: false
+      - label: "Zbarvení"
+        name: "color"
+        widget: "string"
+        required: false
+      - label: "Opatrovník"
+        name: "guardian"
+        widget: "string"
+        required: false
+      - label: "Datum nálezu"
+        name: "foundDate"
+        widget: "datetime"
+        format: "DD.MM.YYYY"
+        date_format: "DD.MM.YYYY"
+        time_format: false
+        required: false
+      - label: "Původ příjmu"
+        name: "origin"
+        widget: "text"
+        required: false
+      - label: "Vhodné ven"
+        name: "suitableOutdoor"
+        widget: "boolean"
+        required: false
+      - label: "Vhodné k dalším kočkám"
+        name: "suitableWithCats"
+        widget: "boolean"
+        required: false
+      - label: "Vhodné k psům"
+        name: "suitableWithDogs"
+        widget: "boolean"
+        required: false
+      - label: "Vhodné k dětem"
+        name: "suitableWithChildren"
+        widget: "boolean"
+        required: false
+      - label: "Vhodné k odrostlejším dětem"
+        name: "suitableWithOlderChildren"
+        widget: "boolean"
+        required: false
+      - label: "Test na panleukopenii"
+        name: "panleukopeniaTest"
+        widget: "select"
+        options:
+          - { label: "Negativní", value: "Negativní" }
+          - { label: "Pozitivní", value: "Pozitivní" }
+        required: false
+      - label: "Test na FeLV"
+        name: "felvTest"
+        widget: "select"
+        options:
+          - { label: "Negativní", value: "Negativní" }
+          - { label: "Pozitivní", value: "Pozitivní" }
+        required: false
+      - label: "Test na FIV"
+        name: "fivTest"
+        widget: "select"
+        options:
+          - { label: "Negativní", value: "Negativní" }
+          - { label: "Pozitivní", value: "Pozitivní" }
+        required: false
+      - label: "Kastrovaný"
+        name: "neutered"
+        widget: "boolean"
+        required: false
+      - label: "První vakcinace"
+        name: "firstVaccination"
+        widget: "boolean"
+        required: false
+      - label: "Druhá vakcinace"
+        name: "secondVaccination"
+        widget: "boolean"
+        required: false
+      - label: "Galerie"
+        name: "gallery"
+        widget: "list"
+        required: false
+        field:
+          label: "Obrázek"
+          name: "image"
+          widget: "image"
+          hint: "Fotka se automaticky zmenší (max. 1920 px) a uloží jako WebP."
+          media_library:
+            config:
+              max_file_size: 20000000
 
   - name: "partners"
     label: "Partneři"
@@ -205,6 +231,9 @@ collections:
               - label: "Logo"
                 name: "logo"
                 widget: "image"
+                media_library:
+                  config:
+                    max_file_size: 20000000
               - label: "URL"
                 name: "url"
                 widget: "string"
@@ -234,4 +263,3 @@ collections:
                 widget: "file"
                 media_folder: "/public/documents"
                 public_folder: "/documents"
-

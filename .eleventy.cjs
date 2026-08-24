@@ -38,6 +38,7 @@ module.exports = function (eleventyConfig) {
   // Prepared by scripts/prepare-cms-config.js (injects production base_url for GitHub OAuth).
   // Decap loads /config.yml because admin/index.html sets <base href="/">.
   eleventyConfig.addPassthroughCopy({ ".cms-config/config.yml": "config.yml" });
+  eleventyConfig.addPassthroughCopy("admin/optimize-uploads.js");
   eleventyConfig.addPassthroughCopy({ public: "." });
   eleventyConfig.addPassthroughCopy("images");
 

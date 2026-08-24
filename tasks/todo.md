@@ -1,27 +1,25 @@
-# Sverenci design audit fixes
+# Admin categorization, missing FeLV cats, Failed to fetch
 
 ## Plan
 
-- [x] Restyle hub cards + filter bar with site design tokens in global-styles.njk
-- [x] Hub: visitor copy, hide empty categories, clean empty-species state
-- [x] Filter: remove Rozcestník link, hide zero-count options
-- [x] Human per-category intros in `_data/animals.js`
-- [x] Browser-verify desktop + mobile
+- [x] Unique detail slugs (append id on name collision) + assert uniqueness
+- [x] Migrate `cms/animals.json` → `cms/animals/*.json`; folder collection with filters/groups
+- [x] Persist hardening: ASCII media slugs, pin Decap, preSave auto-id, browser WebP+resize, gallery eleventy-img
+- [x] Browser-verify FeLV listing, both Johanka URLs, CMS list/filter/new-entry, large-image upload
 
 ## Review
 
-### Design
-- Hub cards use `--_primitives---colors--green` + site radius (same language as `event16_item`).
-- Badges match `.tag` (yellow token, 3px radius, dark text).
-- Filter is an unboxed dark-green toolbar (no light panel).
+Local `npm run build` succeeds. Two Johankas no longer share a permalink: original stays at `/sverenec/kocka-johanka/`, FeLV Johanka is `/sverenec/kocka-johanka-42/`. Duplicate slug now throws a clear error from `_data/animals.js` instead of Eleventy’s opaque permalink crash.
 
-### UX
-- Visitor intro on hub; empty categories hidden; Psi empty card has no dead links/button.
-- Filter: no “← Rozcestník”; category select only lists non-empty options (+ current).
-- Category intros e.g. “Tyto kočičky právě hledají svůj nový domov.”
+Animals are one JSON file per cat under `cms/animals/` (44 files). Admin is a folder collection with filters (FeLV+, species, public categories) and groups (Kategorie / Druh). **＋ Zvíře** is on the collection index. Opening Jasmínka goes to `/admin/#/collections/animals/entries/43-jasminka`.
 
-### Verified
-- `/nasi-sverenci/`: green cards, only “Hledají domov (5)” under Kočky, Psi empty note only.
-- `/nasi-sverenci/kocky/hledaji-domov/`: human intro; filter options = Všechny + Hledají domov (5).
-- `/nasi-sverenci/psi/`: empty message; detail `/sverenec/kocka-arya/` still has “Zpět: Hledají domov”.
-- Mobile a11y tree for hub confirms stacked single-column structure.
+Browser (desktop, `http://localhost:8082/`):
+
+- `/nasi-sverenci/kocky/felv/` lists **7** cats including Jasmínka, Filípek, and both Johankas
+- Filípek gallery uses `/images/animals/…webp` srcset (400/800/1200), not raw uploads
+- CMS: list + FeLV+ filter + group by category; New Zvíře form; throwaway `9999-cms-test-kocka.json` loaded then deleted via local backend
+- Image pick: 3200×2400 JPEG → blob preview **1920×1440** WebP named `cms-test-large.webp` without refresh
+
+Decap’s markdown widget does not take programmatic fill (Publish stayed blocked with “Podrobný popis is required” until a real typed value is in the store). A human editor typing the story is unaffected.
+
+Production updates only after this lands on `main` and Vercel builds green. Not pushed.
