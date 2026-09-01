@@ -6,11 +6,13 @@
   "color": "bílo-hnědomourovatá",
   "fivTest": "Negativní",
   "name": "Klea",
-  "gallery": [],
+  "gallery": [
+    "/images/uploads/whatsapp-image-2026-09-01-at-18.26.01.webp"
+  ],
   "breed": "kočka evropská",
   "firstVaccination": true,
   "id": "54",
-  "image": "/images/uploads/whatsapp-image-2026-09-01-at-18.41.49.webp",
+  "image": "/images/uploads/klea-2.webp",
   "felvTest": "Negativní",
   "species": "kočka",
   "ageCategory": "Dospělý",
