@@ -7,11 +7,14 @@
   "color": "bílo-mourovatá",
   "fivTest": "Negativní",
   "name": "Ari ",
-  "gallery": [],
+  "gallery": [
+    "/images/uploads/whatsapp-image-2026-08-29-at-17.33.58-3-.webp",
+    "/images/uploads/ari-2.webp"
+  ],
   "breed": "kočka evropská",
   "firstVaccination": true,
   "id": "51",
-  "image": "/images/uploads/whatsapp-image-2026-08-29-at-17.33.58-3-.webp",
+  "image": "/images/uploads/ari-3.webp",
   "felvTest": "Negativní",
   "species": "kočka",
   "ageCategory": "Mladý",
