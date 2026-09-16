@@ -7,7 +7,10 @@
   "color": "černá",
   "fivTest": "Negativní",
   "name": "Freya ",
-  "gallery": [],
+  "gallery": [
+    "/images/uploads/freyuska-slunecnice.webp",
+    "/images/uploads/whatsapp-image-2026-09-02-at-10.26.03.webp"
+  ],
   "breed": "kočka evropská",
   "firstVaccination": true,
   "id": "52",
