@@ -346,6 +346,75 @@
         align-items: center;
       }
 
+      .support-widgets-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-column-gap: 1.25rem;
+        grid-row-gap: 1.25rem;
+        align-items: stretch;
+      }
+
+      .support-widget-card {
+        grid-template-columns: 1fr;
+        overflow: hidden;
+      }
+
+      .cta39_card-content.support-widget-content {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        width: 100%;
+        height: 100%;
+        padding: 2rem;
+      }
+
+      .support-widget-link {
+        color: inherit;
+        text-decoration: underline;
+        text-underline-offset: 0.15em;
+        font-weight: 600;
+      }
+
+      .support-widget-link:hover,
+      .support-widget-link:focus-visible {
+        color: var(--_primitives---colors--dark-green);
+      }
+
+      .support-widget-embed {
+        margin-top: 1.25rem;
+        background-color: #fff;
+        border-radius: 10px;
+        padding: 1rem;
+        flex: 1 1 auto;
+        min-width: 0;
+      }
+
+      .support-widget-embed--darujme {
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        min-height: 270px;
+      }
+
+      .support-widget-embed--darujme [data-darujme-widget-token] {
+        width: 270px;
+        max-width: 100%;
+      }
+
+      .support-widget-embed--donio {
+        padding: 0.5rem;
+      }
+
+      .support-widget-embed--donio iframe {
+        display: block;
+        width: 100%;
+        max-width: 100%;
+        height: 600px;
+        border: 0;
+        border-radius: 8px;
+      }
+
       .support-methods-grid {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
@@ -457,6 +526,14 @@
           grid-template-columns: repeat(2, 1fr);
         }
 
+        .support-widgets-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .cta39_card-content.support-widget-content {
+          padding: 1.5rem;
+        }
+
         .support-account-card {
           max-width: 100%;
         }
@@ -487,6 +564,10 @@
       @media screen and (max-width: 479px) {
         .support-methods-grid {
           grid-template-columns: 1fr;
+        }
+
+        .cta39_card-content.support-widget-content {
+          padding: 1.25rem;
         }
 
         .support-method-card {
