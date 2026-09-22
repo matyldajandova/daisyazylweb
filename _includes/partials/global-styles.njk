@@ -502,9 +502,11 @@
       }
 
       /* On mobile the card collapses to 1 column — take the illustration out of
-         absolute positioning so it flows naturally below the text content */
+         absolute positioning so it flows naturally below the text content.
+         Do not pad every .cta39_card-content: the extra right inset was for
+         the illustration overlap and leaves widget/account cards uneven. */
       @media screen and (max-width: 991px) {
-        .cta39_card-content {
+        .cta39_card:has(.cta-illustration) .cta39_card-content {
           padding-right: 2.75rem !important;
         }
 
@@ -532,6 +534,20 @@
 
         .cta39_card-content.support-widget-content {
           padding: 1.5rem;
+        }
+
+        .support-widget-embed {
+          padding: 0.5rem;
+        }
+
+        .support-widget-embed--darujme {
+          justify-content: stretch;
+        }
+
+        .support-widget-embed--darujme [data-darujme-widget-token],
+        .support-widget-embed--darujme iframe {
+          width: 100% !important;
+          max-width: 100%;
         }
 
         .support-account-card {

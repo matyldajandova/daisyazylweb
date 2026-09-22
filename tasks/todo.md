@@ -1,19 +1,15 @@
-# Darujme + Donio widgets in Podpořte nás
+# Mobile widget card alignment
 
 ## Plan
 
-- [x] Add two self-contained cream cards in `#podpora` (after the bank-account card)
-- [x] Embed Darujme widget with the provided token/script
-- [x] Embed Donio iframe (`widget2/43522`)
-- [x] Style the pair to match existing `cta39_card` support cards
-- [x] Browser-verify both widgets on desktop and a mobile viewport
+- [x] Stop leftover `padding-right: 2.75rem !important` from indenting support cards on mobile
+- [x] Stretch Darujme iframe to the card embed width below 991px
+- [x] Browser-verify even padding and full-width widgets on a 390px viewport
 
 ## Review
 
-Added Darujme.cz and Donio as a two-column pair of cream `cta39_card`s in `_includes/partials/support-section.njk`, directly under the transparent-account card. Shared styles live in `_includes/partials/global-styles.njk`. The partial is already included on homepage, listings, and animal details.
+Cause: under 991px every `.cta39_card-content` got `padding-right: 2.75rem !important` (illustration overlap leftover). Widget cards measured 20px left / 44px right; Darujme iframe stayed 270px in a ~300px embed.
 
-Browser (Eleventy `http://localhost:8080/#podpora`):
+Fix in `_includes/partials/global-styles.njk`: scope the extra right pad to `.cta39_card:has(.cta-illustration)`, and at ≤991px force Darujme token/iframe `width: 100%`.
 
-- Mobile 390px: cards stack; Darujme iframe rendered (270×515) with amounts + **Darovat**; Donio iframe loaded campaign **Šance na nový život pro kočky** (157 270 Kč)
-- Desktop 1440px: equal 630×789 cards side by side, corner graphic matches the account card
-- `/nasi-sverenci/#podpora` also shows both headings and campaign links
+Browser 390px: padding even 20px; Darujme iframe 291px in 307px embed; Donio iframe 291px. Desktop 1440px unchanged (2×630 cards, Darujme still 270px).

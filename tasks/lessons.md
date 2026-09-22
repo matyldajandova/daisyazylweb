@@ -31,3 +31,8 @@
 - Global data (e.g. `_data/animals.js`) runs during template generation. If `@11ty/eleventy-img` writes into `public/images/animals/`, files created after the copier passes never reach `_site/` → intermittent 404s on main images (desktop vs mobile can differ because they pick different `srcset` widths).
 - Always set `outputDir: "./_site/images/animals/"` (with matching `urlPath: "/images/animals/"`). Do not commit generated WebPs under `public/images/animals/`.
 - After builds, verify every `/images/animals/*.webp` referenced in HTML exists on disk under `_site/`.
+
+## CTA card mobile padding must stay scoped
+
+- A leftover `.cta39_card-content { padding-right: 2.75rem !important; }` under 991px was meant for an illustration overlap. It still applied after the illustration left the markup, so support widget cards got 20px left / 44px right padding and the Darujme iframe stayed 270px instead of filling the card.
+- Scope that inset with `:has(.cta-illustration)` (or a dedicated class). Never put `padding-right !important` on every `cta39` content block.
