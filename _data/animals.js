@@ -1,46 +1,88 @@
-const fs = require("fs");
-const path = require("path");
-const Image = require("@11ty/eleventy-img");
+const fs = require('fs');
+const path = require('path');
+const Image = require('@11ty/eleventy-img');
 
 function slugifyCzech(str) {
-  if (str == null || typeof str !== "string") return "";
+  if (str == null || typeof str !== 'string') return '';
   const map = {
-    á: "a", č: "c", ď: "d", é: "e", ě: "e", í: "i", ň: "n", ó: "o",
-    ř: "r", š: "s", ť: "t", ú: "u", ů: "u", ý: "y", ž: "z",
-    Á: "a", Č: "c", Ď: "d", É: "e", Ě: "e", Í: "i", Ň: "n", Ó: "o",
-    Ř: "r", Š: "s", Ť: "t", Ú: "u", Ů: "u", Ý: "y", Ž: "z",
+    á: 'a',
+    č: 'c',
+    ď: 'd',
+    é: 'e',
+    ě: 'e',
+    í: 'i',
+    ň: 'n',
+    ó: 'o',
+    ř: 'r',
+    š: 's',
+    ť: 't',
+    ú: 'u',
+    ů: 'u',
+    ý: 'y',
+    ž: 'z',
+    Á: 'a',
+    Č: 'c',
+    Ď: 'd',
+    É: 'e',
+    Ě: 'e',
+    Í: 'i',
+    Ň: 'n',
+    Ó: 'o',
+    Ř: 'r',
+    Š: 's',
+    Ť: 't',
+    Ú: 'u',
+    Ů: 'u',
+    Ý: 'y',
+    Ž: 'z',
   };
   let s = str.trim().toLowerCase();
   s = s.replace(/[áčďéěíňóřšťúůýžÁČĎÉĚÍŇÓŘŠŤÚŮÝŽ]/g, (c) => map[c] ?? c);
-  s = s.replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
+  s = s.replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
   return s;
 }
 
 function animalSlug(animal) {
-  if (!animal || typeof animal !== "object") return "";
-  const species = slugifyCzech(animal.species ?? "");
-  const name = slugifyCzech(animal.name ?? animal.id ?? "");
-  return name ? `${species}-${name}` : species || animal.id || "detail";
+  if (!animal || typeof animal !== 'object') return '';
+  const species = slugifyCzech(animal.species ?? '');
+  const name = slugifyCzech(animal.name ?? animal.id ?? '');
+  return name ? `${species}-${name}` : species || animal.id || 'detail';
 }
 
 function compareAnimalIds(a, b) {
   const na = Number(a && a.id);
   const nb = Number(b && b.id);
   if (Number.isFinite(na) && Number.isFinite(nb) && na !== nb) return na - nb;
-  return String(a && a.id != null ? a.id : "").localeCompare(
-    String(b && b.id != null ? b.id : ""),
-    "cs",
+  return String(a && a.id != null ? a.id : '').localeCompare(
+    String(b && b.id != null ? b.id : ''),
+    'cs'
   );
+}
+
+/** Lower sortOrder shows first. Empty stays after numbered animals, then by id. */
+function sortRank(animal) {
+  if (animal == null || animal.sortOrder == null || animal.sortOrder === '') {
+    return Number.POSITIVE_INFINITY;
+  }
+  const n = Number(animal.sortOrder);
+  return Number.isFinite(n) ? n : Number.POSITIVE_INFINITY;
+}
+
+function compareWithinCategory(a, b) {
+  const ra = sortRank(a);
+  const rb = sortRank(b);
+  if (ra !== rb) return ra - rb;
+  return compareAnimalIds(a, b);
 }
 
 /** Keep species-name when unique; append id on collision so Eleventy permalinks never clash. */
 function assignUniqueSlugs(animals) {
   const taken = new Set();
   return animals.map((animal) => {
-    const base = animalSlug(animal) || String(animal.id || "detail");
+    const base = animalSlug(animal) || String(animal.id || 'detail');
     let slug = base;
     if (taken.has(slug)) {
-      const suffix = animal.id != null && String(animal.id) !== "" ? String(animal.id) : "dup";
+      const suffix = animal.id != null && String(animal.id) !== '' ? String(animal.id) : 'dup';
       slug = `${base}-${suffix}`;
     }
     if (taken.has(slug)) {
@@ -54,28 +96,28 @@ function assignUniqueSlugs(animals) {
 function assertUniqueSlugs(animals) {
   const idsBySlug = new Map();
   for (const animal of animals) {
-    const slug = animal.slug || "";
+    const slug = animal.slug || '';
     const ids = idsBySlug.get(slug) || [];
-    ids.push(animal.id ?? "?");
+    ids.push(animal.id ?? '?');
     idsBySlug.set(slug, ids);
   }
   for (const [slug, ids] of idsBySlug) {
     if (ids.length > 1) {
-      throw new Error(`Duplicate animal slug "${slug}" (ids ${ids.join(", ")})`);
+      throw new Error(`Duplicate animal slug "${slug}" (ids ${ids.join(', ')})`);
     }
   }
 }
 
 function loadAnimals() {
-  const dir = path.join(__dirname, "..", "cms", "animals");
+  const dir = path.join(__dirname, '..', 'cms', 'animals');
   if (!fs.existsSync(dir)) return [];
 
-  const files = fs.readdirSync(dir).filter((name) => name.endsWith(".json"));
+  const files = fs.readdirSync(dir).filter((name) => name.endsWith('.json'));
   const data = [];
   for (const file of files) {
     try {
-      const parsed = JSON.parse(fs.readFileSync(path.join(dir, file), "utf8"));
-      if (parsed && typeof parsed === "object" && !Array.isArray(parsed)) {
+      const parsed = JSON.parse(fs.readFileSync(path.join(dir, file), 'utf8'));
+      if (parsed && typeof parsed === 'object' && !Array.isArray(parsed)) {
         data.push(parsed);
       }
     } catch {
@@ -86,129 +128,141 @@ function loadAnimals() {
   return data;
 }
 
-const FALLBACK_IMAGE = "images/cat-illustration.svg";
+const FALLBACK_IMAGE = 'images/cat-illustration.svg';
 
 const IMAGE_OPTIONS = {
   widths: [400, 800, 1200],
-  formats: ["webp"],
+  formats: ['webp'],
   // Write directly into the Eleventy output folder. Writing into public/ races
   // with Eleventy 3's parallel passthrough copy and can leave 404s in deploys.
-  outputDir: "./_site/images/animals/",
-  urlPath: "/images/animals/",
+  outputDir: './_site/images/animals/',
+  urlPath: '/images/animals/',
 };
 
 const SPECIES = [
   {
-    key: "kočka",
-    slug: "kocky",
-    label: "Kočky",
-    singular: "kočka",
+    key: 'kočka',
+    slug: 'kocky',
+    label: 'Kočky',
+    singular: 'kočka',
   },
   {
-    key: "pes",
-    slug: "psi",
-    label: "Psi",
-    singular: "pes",
+    key: 'pes',
+    slug: 'psi',
+    label: 'Psi',
+    singular: 'pes',
   },
 ];
 
 const CATEGORIES = [
   {
-    slug: "nove-prijati",
-    label: "Nově přijatí",
-    labelBySpecies: { kočka: "Nově přijaté", pes: "Nově přijatí" },
+    slug: 'nove-prijati',
+    label: 'Nově přijatí',
+    labelBySpecies: { kočka: 'Nově přijaté', pes: 'Nově přijatí' },
   },
   {
-    slug: "hledaji-domov",
-    label: "Hledají domov",
-    labelBySpecies: { kočka: "Hledají domov", pes: "Hledají domov" },
+    slug: 'hledaji-domov',
+    label: 'Hledají domov',
+    labelBySpecies: { kočka: 'Hledají domov', pes: 'Hledají domov' },
   },
   {
-    slug: "trvali-obyvatele",
-    label: "Trvalí obyvatelé azylu (možnost virtuální adopce)",
+    slug: 'trvali-obyvatele',
+    label: 'Trvalí obyvatelé azylu (možnost virtuální adopce)',
     labelBySpecies: {
-      kočka: "Trvalí obyvatelé azylu (možnost virtuální adopce)",
-      pes: "Trvalí obyvatelé azylu (možnost virtuální adopce)",
+      kočka: 'Trvalí obyvatelé azylu (možnost virtuální adopce)',
+      pes: 'Trvalí obyvatelé azylu (možnost virtuální adopce)',
     },
   },
   {
-    slug: "felv",
-    label: "FeLV+",
-    labelBySpecies: { kočka: "FeLV+", pes: "FeLV+" },
+    slug: 'felv',
+    label: 'FeLV+',
+    labelBySpecies: { kočka: 'FeLV+', pes: 'FeLV+' },
     catsOnly: true,
   },
   {
-    slug: "nasli-domov",
-    label: "Našli domov",
-    labelBySpecies: { kočka: "Našli domov", pes: "Našli domov" },
+    slug: 'nasli-domov',
+    label: 'Našli domov',
+    labelBySpecies: { kočka: 'Našli domov', pes: 'Našli domov' },
   },
   {
-    slug: "v-nasich-srdcich",
-    label: "V našich srdcích",
-    labelBySpecies: { kočka: "V našich srdcích", pes: "V našich srdcích" },
+    slug: 'v-nasich-srdcich',
+    label: 'V našich srdcích',
+    labelBySpecies: { kočka: 'V našich srdcích', pes: 'V našich srdcích' },
   },
 ];
 
 const CATEGORY_BY_SLUG = Object.fromEntries(CATEGORIES.map((c) => [c.slug, c]));
+
+function categoryIndex(slug) {
+  const index = CATEGORIES.findIndex((c) => c.slug === slug);
+  return index === -1 ? CATEGORIES.length : index;
+}
+
+function compareForSpeciesListing(a, b) {
+  const ca = categoryIndex(a.category);
+  const cb = categoryIndex(b.category);
+  if (ca !== cb) return ca - cb;
+  return compareWithinCategory(a, b);
+}
 const SPECIES_BY_KEY = Object.fromEntries(SPECIES.map((s) => [s.key, s]));
 const SPECIES_BY_SLUG = Object.fromEntries(SPECIES.map((s) => [s.slug, s]));
 
 /** Legacy Decap field → new category slug. */
 const ADOPTION_STATUS_TO_CATEGORY = {
-  permanent: "trvali-obyvatele",
-  available: "hledaji-domov",
-  reserved: "hledaji-domov",
-  adopted: "nasli-domov",
+  permanent: 'trvali-obyvatele',
+  available: 'hledaji-domov',
+  reserved: 'hledaji-domov',
+  adopted: 'nasli-domov',
 };
 
-const OUT_OF_SHELTER = new Set(["nasli-domov", "v-nasich-srdcich"]);
+const OUT_OF_SHELTER = new Set(['nasli-domov', 'v-nasich-srdcich']);
 
 /** Visitor-facing listing intros (cat / dog variants). */
 const CATEGORY_INTROS = {
-  "nove-prijati": {
-    kočka: "Nedávno k nám přišly a zvykají si na azyl.",
-    pes: "Nedávno k nám přišli a zvykají si na azyl.",
+  'nove-prijati': {
+    kočka: 'Nedávno k nám přišly a zvykají si na azyl.',
+    pes: 'Nedávno k nám přišli a zvykají si na azyl.',
   },
-  "hledaji-domov": {
-    kočka: "Tyto kočičky právě hledají svůj nový domov.",
-    pes: "Tito pejsci právě hledají svůj nový domov.",
+  'hledaji-domov': {
+    kočka: 'Tyto kočičky právě hledají svůj nový domov.',
+    pes: 'Tito pejsci právě hledají svůj nový domov.',
   },
-  "trvali-obyvatele": {
-    kočka: "Zůstávají v naší péči natrvalo – můžete je podpořit virtuální adopcí.",
-    pes: "Zůstávají v naší péči natrvalo – můžete je podpořit virtuální adopcí.",
+  'trvali-obyvatele': {
+    kočka: 'Zůstávají v naší péči natrvalo – můžete je podpořit virtuální adopcí.',
+    pes: 'Zůstávají v naší péči natrvalo – můžete je podpořit virtuální adopcí.',
   },
   felv: {
-    kočka: "Kočičky s FeLV, které potřebují speciální domov.",
-    pes: "Kočičky s FeLV, které potřebují speciální domov.",
+    kočka: 'Kočičky s FeLV, které potřebují speciální domov.',
+    pes: 'Kočičky s FeLV, které potřebují speciální domov.',
   },
-  "nasli-domov": {
-    kočka: "Šťastné konce – tyto kočičky už domov našly.",
-    pes: "Šťastné konce – tito pejsci už domov našli.",
+  'nasli-domov': {
+    kočka: 'Šťastné konce – tyto kočičky už domov našly.',
+    pes: 'Šťastné konce – tito pejsci už domov našli.',
   },
-  "v-nasich-srdcich": {
-    kočka: "Vzpomínáme na svěřence, kteří už nejsou mezi námi.",
-    pes: "Vzpomínáme na svěřence, kteří už nejsou mezi námi.",
+  'v-nasich-srdcich': {
+    kočka: 'Vzpomínáme na svěřence, kteří už nejsou mezi námi.',
+    pes: 'Vzpomínáme na svěřence, kteří už nejsou mezi námi.',
   },
 };
 
 function listingIntroFor(speciesKey, categorySlug) {
   if (!categorySlug) {
-    return speciesKey === "kočka"
-      ? "Podívejte se na kočičky, které momentálně máme v péči."
-      : "Podívejte se na pejsky, které momentálně máme v péči.";
+    return speciesKey === 'kočka'
+      ? 'Podívejte se na kočičky, které momentálně máme v péči.'
+      : 'Podívejte se na pejsky, které momentálně máme v péči.';
   }
   const bySpecies = CATEGORY_INTROS[categorySlug];
   if (bySpecies && bySpecies[speciesKey]) return bySpecies[speciesKey];
-  return bySpecies?.kočka || "";
+  return bySpecies?.kočka || '';
 }
 
 function normalizeGallery(gallery) {
   if (!Array.isArray(gallery)) return [];
   return gallery.map((item) => {
-    if (typeof item === "string") {
+    if (typeof item === 'string') {
       return { image: item };
     }
-    if (item && typeof item === "object" && item.image) {
+    if (item && typeof item === 'object' && item.image) {
       return item;
     }
     return item;
@@ -222,7 +276,7 @@ function resolveCategory(animal) {
   if (animal.adoptionStatus && ADOPTION_STATUS_TO_CATEGORY[animal.adoptionStatus]) {
     return ADOPTION_STATUS_TO_CATEGORY[animal.adoptionStatus];
   }
-  return "nove-prijati";
+  return 'nove-prijati';
 }
 
 function categoryLabel(categorySlug, speciesKey) {
@@ -232,14 +286,14 @@ function categoryLabel(categorySlug, speciesKey) {
 }
 
 function categoriesForSpecies(speciesKey) {
-  return CATEGORIES.filter((c) => !(c.catsOnly && speciesKey !== "kočka"));
+  return CATEGORIES.filter((c) => !(c.catsOnly && speciesKey !== 'kočka'));
 }
 
 async function processImage(imageUrl) {
   if (!imageUrl) return null;
 
-  const projectRoot = path.join(__dirname, "..");
-  const imagePath = String(imageUrl).replace(/^\//, "");
+  const projectRoot = path.join(__dirname, '..');
+  const imagePath = String(imageUrl).replace(/^\//, '');
   const src = path.join(projectRoot, imagePath);
 
   try {
@@ -253,7 +307,7 @@ async function processImage(imageUrl) {
     const metadata = await Image(src, IMAGE_OPTIONS);
     const webpVariants = metadata.webp || [];
     if (!webpVariants.length) return null;
-    const srcset = webpVariants.map((entry) => `${entry.url} ${entry.width}w`).join(", ");
+    const srcset = webpVariants.map((entry) => `${entry.url} ${entry.width}w`).join(', ');
     const largest = webpVariants[webpVariants.length - 1];
     return {
       url: largest.url,
@@ -281,7 +335,7 @@ async function enrichAnimalImage(animal) {
     ...animal,
     image: processed.url,
     imageSrcset: processed.srcset,
-    imageSizes: animal.imageSizes || "(max-width: 533px) 100vw, 533px",
+    imageSizes: animal.imageSizes || '(max-width: 533px) 100vw, 533px',
   };
 }
 
@@ -293,7 +347,7 @@ async function enrichGalleryItem(item) {
     ...item,
     image: processed.url,
     imageSrcset: processed.srcset,
-    imageSizes: "(max-width: 767px) 100vw, 50vw",
+    imageSizes: '(max-width: 767px) 100vw, 50vw',
   };
 }
 
@@ -301,7 +355,9 @@ function buildListingPages(animalsEnriched) {
   const pages = [];
 
   for (const species of SPECIES) {
-    const speciesAnimals = animalsEnriched.filter((a) => a.species === species.key);
+    const speciesAnimals = animalsEnriched
+      .filter((a) => a.species === species.key)
+      .sort(compareForSpeciesListing);
     const speciesCategories = categoriesForSpecies(species.key);
 
     pages.push({
@@ -315,9 +371,9 @@ function buildListingPages(animalsEnriched) {
       title: `${species.label} | Naši svěřenci | Daisy Azyl`,
       description: `${species.label} v péči azylu Daisy Azyl.`,
       listingHeading: species.label,
-      listingTagline: "Naši svěřenci",
+      listingTagline: 'Naši svěřenci',
       listingIntro: listingIntroFor(species.key, null),
-      listingEmpty: `Momentálně tu nejsou žádní ${species.key === "kočka" ? "kočičí" : "psí"} svěřenci.`,
+      listingEmpty: `Momentálně tu nejsou žádní ${species.key === 'kočka' ? 'kočičí' : 'psí'} svěřenci.`,
       animals: speciesAnimals,
       filterCategories: speciesCategories.map((c) => ({
         slug: c.slug,
@@ -328,7 +384,9 @@ function buildListingPages(animalsEnriched) {
     });
 
     for (const category of speciesCategories) {
-      const animals = speciesAnimals.filter((a) => a.category === category.slug);
+      const animals = speciesAnimals
+        .filter((a) => a.category === category.slug)
+        .sort(compareWithinCategory);
       const label = categoryLabel(category.slug, species.key);
       pages.push({
         id: `${species.slug}-${category.slug}`,
@@ -343,7 +401,7 @@ function buildListingPages(animalsEnriched) {
         listingHeading: label,
         listingTagline: species.label,
         listingIntro: listingIntroFor(species.key, category.slug),
-        listingEmpty: `V kategorii „${label}“ momentálně nejsou žádní ${species.key === "kočka" ? "kočičí" : "psí"} svěřenci.`,
+        listingEmpty: `V kategorii „${label}“ momentálně nejsou žádní ${species.key === 'kočka' ? 'kočičí' : 'psí'} svěřenci.`,
         animals,
         filterCategories: speciesCategories.map((c) => ({
           slug: c.slug,
@@ -387,8 +445,8 @@ module.exports = async function () {
     const speciesMeta = SPECIES_BY_KEY[a.species] || null;
     const tags = Array.isArray(a.tags) ? [...a.tags] : [];
     // Preserve reserved visibility when migrating from legacy adoptionStatus.
-    if (a.adoptionStatus === "reserved" && !tags.includes("Rezervováno")) {
-      tags.push("Rezervováno");
+    if (a.adoptionStatus === 'reserved' && !tags.includes('Rezervováno')) {
+      tags.push('Rezervováno');
     }
     return {
       ...a,
@@ -397,7 +455,7 @@ module.exports = async function () {
       speciesSlug: speciesMeta ? speciesMeta.slug : slugifyCzech(a.species),
       listingHref: speciesMeta
         ? `/nasi-sverenci/${speciesMeta.slug}/${category}/`
-        : "/nasi-sverenci/",
+        : '/nasi-sverenci/',
       inShelter: !OUT_OF_SHELTER.has(category),
       gallery: normalizeGallery(a.gallery),
       tags,
@@ -411,16 +469,14 @@ module.exports = async function () {
     animalsWithSlug.map(async (animal) => {
       const withHero = await enrichAnimalImage(animal);
       const gallery = await Promise.all(
-        (withHero.gallery || []).map((item) => enrichGalleryItem(item)),
+        (withHero.gallery || []).map((item) => enrichGalleryItem(item))
       );
       return { ...withHero, gallery };
-    }),
+    })
   );
 
   const inShelterEnriched = animalsEnriched.filter((a) => a.inShelter);
-  const adoptedEnriched = animalsEnriched.filter(
-    (a) => a.category === "nasli-domov",
-  );
+  const adoptedEnriched = animalsEnriched.filter((a) => a.category === 'nasli-domov');
 
   const listingPages = buildListingPages(animalsEnriched);
   const hub = buildHub(animalsEnriched);

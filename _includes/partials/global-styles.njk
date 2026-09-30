@@ -402,17 +402,57 @@
         max-width: 100%;
       }
 
-      .support-widget-embed--donio {
-        padding: 0.5rem;
+      .support-widget-embed--znesnaze {
+        color: var(--_primitives---colors--dark-green);
+        display: flex;
+        flex-direction: column;
+        gap: 0.35rem;
+        padding: 1.25rem 1.25rem 1.5rem;
       }
 
-      .support-widget-embed--donio iframe {
+      .support-widget-embed--znesnaze p {
+        color: var(--_primitives---colors--dark-green);
+      }
+
+      .znesnaze-raised {
+        margin: 0;
+        font-size: 1.35rem;
+        line-height: 1.3;
+        font-weight: 700;
+      }
+
+      .znesnaze-goal,
+      .znesnaze-meta {
+        margin: 0;
+        font-size: 0.95rem;
+        line-height: 1.4;
+      }
+
+      .znesnaze-meta {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.35rem 0.85rem;
+        margin-top: 0.35rem;
+      }
+
+      .znesnaze-bar {
+        margin-top: 0.65rem;
+        height: 0.7rem;
+        border-radius: 999px;
+        background: rgba(22, 56, 44, 0.12);
+        overflow: hidden;
+      }
+
+      .znesnaze-bar span {
         display: block;
-        width: 100%;
-        max-width: 100%;
-        height: 600px;
-        border: 0;
-        border-radius: 8px;
+        height: 100%;
+        border-radius: inherit;
+        background: var(--_primitives---colors--yellow);
+      }
+
+      .znesnaze-donate {
+        margin-top: 1rem;
+        align-self: flex-start;
       }
 
       .support-methods-grid {

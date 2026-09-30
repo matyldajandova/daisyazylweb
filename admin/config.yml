@@ -20,7 +20,7 @@ collections:
   - name: "animals"
     label: "Zvířata"
     label_singular: "Zvíře"
-    description: "Jedno zvíře = jeden záznam. Filtrujte a seskupujte podle kategorie nebo druhu."
+    description: "Jedno zvíře = jeden záznam. Pořadí na webu nastavte polem Pořadí v kategorii (menší číslo = výš). Přetahování v tomto seznamu pořadí na webu nemění."
     folder: "cms/animals"
     create: true
     extension: "json"
@@ -28,7 +28,7 @@ collections:
     identifier_field: name
     slug: "{{fields.id}}-{{slug}}"
     summary: "{{name}} — {{category}}"
-    sortable_fields: ["name", "category", "species", "id"]
+    sortable_fields: ["sortOrder", "name", "category", "species", "id"]
     view_filters:
       - { label: "Kočky", field: species, pattern: "kočka" }
       - { label: "Psi", field: species, pattern: "pes" }
@@ -93,6 +93,13 @@ collections:
           - { label: "Našli domov", value: "nasli-domov" }
           - { label: "V našich srdcích", value: "v-nasich-srdcich" }
         default: "nove-prijati"
+      - label: "Pořadí v kategorii"
+        name: "sortOrder"
+        widget: "number"
+        value_type: "int"
+        min: 1
+        required: false
+        hint: "Čím menší číslo, tím výš se zvíře zobrazí v této kategorii. 1 = první. Prázdné = za zvířaty, která číslo mají, seřazené podle ID. U koček v Hledají domov tedy dejte 1 té, která má být první."
       - label: "Evidenční číslo"
         name: "evidenceNumber"
         widget: "string"

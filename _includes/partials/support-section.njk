@@ -15,7 +15,7 @@
           <!-- Lead-in -->
           <div class="margin-bottom margin-xlarge">
             <p class="text-size-medium">
-              Veškeré příspěvky používáme výhradně na <span class="text-color-yellow">přímou pomoc</span> našim svěřencům a každodenní péči o&nbsp;ně.
+              Vaše podpora nám pomáhá zajistit péči o&nbsp;naše svěřence a&nbsp;vše potřebné pro bezpečný a&nbsp;každodenní <span class="text-color-yellow">chod azylu</span>. Každý příspěvek nám pomáhá vytvářet podmínky, ve&nbsp;kterých můžeme zvířatům poskytovat pomoc, kterou potřebují.
             </p>
           </div>
 
@@ -68,14 +68,67 @@
               <div class="cta39_card support-widget-card">
                 <div class="cta39_card-content support-widget-content">
                   <div class="margin-bottom margin-xsmall">
-                    <h3 class="heading-style-h4">Donio</h3>
+                    <h3 class="heading-style-h4">Znesnáze21</h3>
                   </div>
                   <p class="text-size-medium text-color-green">
-                    Přispějte na sbírku <a href="https://donio.cz/sance-na-novy-zivot-pro-kocky" target="_blank" rel="noopener noreferrer" class="support-widget-link">Šance na nový život pro kočky</a>.
+                    Přispějte na sbírku <a href="https://www.znesnaze21.cz/sbirka/specialni-krmivo-pro-marody-z-daisy-azylu" target="_blank" rel="noopener noreferrer" class="support-widget-link">Speciální krmivo pro marody z Daisy azylu</a>.
                   </p>
-                  <div class="support-widget-embed support-widget-embed--donio">
-                    <iframe src="https://donio.cz/widget2/43522" width="100%" height="600" frameborder="0" title="Sbírka Daisy Azyl na Donio" loading="lazy"></iframe>
+                  <div class="support-widget-embed support-widget-embed--znesnaze" data-znesnaze-widget>
+                    <div class="znesnaze-stats"{% if not znesnaze %} hidden{% endif %}>
+                      <p class="znesnaze-raised" data-znesnaze="raised">{% if znesnaze %}{{ znesnaze.raisedLabel }}{% endif %}</p>
+                      <p class="znesnaze-goal">
+                        <span data-znesnaze="goal">{% if znesnaze %}{{ znesnaze.goalLabel }}{% endif %}</span>
+                        <span data-znesnaze="percent">{% if znesnaze and znesnaze.percent != none %} / {{ znesnaze.percent }}&nbsp;%{% endif %}</span>
+                      </p>
+                      <div
+                        class="znesnaze-bar"
+                        role="progressbar"
+                        aria-valuemin="0"
+                        aria-valuemax="100"
+                        aria-valuenow="{{ znesnaze.percent if znesnaze and znesnaze.percent != none else 0 }}"
+                        aria-label="Vybraná částka sbírky"
+                      >
+                        <span data-znesnaze="bar" style="width: {{ znesnaze.percent if znesnaze and znesnaze.percent != none else 0 }}%"></span>
+                      </div>
+                      <p class="znesnaze-meta">
+                        <span data-znesnaze="days">{% if znesnaze %}{{ znesnaze.daysLabel }}{% endif %}</span>
+                        <span data-znesnaze="donors">{% if znesnaze %}{{ znesnaze.donorsLabel }}{% endif %}</span>
+                      </p>
+                    </div>
+                    <a class="button w-button znesnaze-donate" href="https://www.znesnaze21.cz/sbirka/specialni-krmivo-pro-marody-z-daisy-azylu/darovat" target="_blank" rel="noopener noreferrer">Přispět</a>
                   </div>
+                  <script>
+                    (function () {
+                      var root = document.querySelector("[data-znesnaze-widget]");
+                      if (!root) return;
+                      function text(name, value) {
+                        var el = root.querySelector('[data-znesnaze="' + name + '"]');
+                        if (el) el.textContent = value || "";
+                      }
+                      fetch("/api/znesnaze")
+                        .then(function (res) {
+                          if (!res.ok) throw new Error("widget");
+                          return res.json();
+                        })
+                        .then(function (data) {
+                          if (!data || !data.raisedLabel) return;
+                          var stats = root.querySelector(".znesnaze-stats");
+                          if (stats) stats.hidden = false;
+                          text("raised", data.raisedLabel);
+                          text("goal", data.goalLabel);
+                          text("percent", data.percent != null ? " / " + data.percent + "\u00a0%" : "");
+                          text("days", data.daysLabel);
+                          text("donors", data.donorsLabel);
+                          var bar = root.querySelector("[data-znesnaze='bar']");
+                          var track = root.querySelector(".znesnaze-bar");
+                          var pct = Number(data.percent);
+                          if (!Number.isFinite(pct)) pct = 0;
+                          if (bar) bar.style.width = pct + "%";
+                          if (track) track.setAttribute("aria-valuenow", String(pct));
+                        })
+                        .catch(function () {});
+                    })();
+                  </script>
                 </div>
                 <img src="images/Subtract.svg" loading="lazy" alt="" class="cta-corner" />
               </div>
