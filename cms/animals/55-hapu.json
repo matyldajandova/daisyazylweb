@@ -1,0 +1,25 @@
+{
+  "panleukopeniaTest": "Negativní",
+  "shortDescription": "Bílo-hnědomourovaté koťátko k adopci.",
+  "longDescription": "Hapu je jedním z koťátek narozených na skládce ve Svémyslicích. Naštěstí se brzy po narození dostal se sourozenci k nám, takže mohl v bezpečí a teple vyrůstat. Jeho maminka Haty měla neustálý přísun kvalitních granulek a kapsiček pro kojící maminky, takže měla pro své tři kluky dost mlíčka a kocourci se měli čile k světu. Nyní je Hapu v dočasné péči a těší se na svůj budoucí trvalý domov.",
+  "gender": "sameček",
+  "color": "bílo-hnědomourek",
+  "suitableWithDogs": true,
+  "fivTest": "Negativní",
+  "suitableWithOlderChildren": true,
+  "suitableWithCats": true,
+  "name": "Hapu",
+  "suitableWithChildren": true,
+  "sortOrder": 1,
+  "gallery": [
+    "/images/uploads/hapu-a-nesi-2.webp"
+  ],
+  "breed": "kočka evropská",
+  "firstVaccination": true,
+  "id": "55",
+  "image": "/images/uploads/hapu.webp",
+  "felvTest": "Negativní",
+  "species": "kočka",
+  "ageCategory": "Kotě",
+  "category": "hledaji-domov"
+}
