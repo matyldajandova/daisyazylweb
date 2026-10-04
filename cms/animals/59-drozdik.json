@@ -1,0 +1,27 @@
+{
+  "panleukopeniaTest": "Negativní",
+  "shortDescription": "Mourovatý chlapeček k adopci.",
+  "longDescription": "Jedno ze čtyř mourovatých koťátek od Anežky. Drozdík je krásné, zdravé a čiperné koťátko, se kterým od samého začátku nebyl vůbec žádný problém. Je to zvědavé a hravé prtě. Nedávno byl spolu se svými sourozenci odstaven od maminky a celá čtveřice nyní čeká na své nové domovy v dočasné péči. Nenechte je čekat dlouho :)",
+  "gender": "sameček",
+  "color": "mourek",
+  "suitableWithDogs": true,
+  "fivTest": "Negativní",
+  "suitableWithOlderChildren": true,
+  "suitableWithCats": true,
+  "name": "Drozdík",
+  "suitableWithChildren": true,
+  "sortOrder": 4,
+  "gallery": [
+    "/images/uploads/drozdik-3.webp",
+    "/images/uploads/drozdik-2.webp",
+    "/images/uploads/drozdik-4.webp"
+  ],
+  "breed": "kočka evropská",
+  "firstVaccination": true,
+  "id": "59",
+  "image": "/images/uploads/drozdik.webp",
+  "felvTest": "Negativní",
+  "species": "kočka",
+  "ageCategory": "Kotě",
+  "category": "hledaji-domov"
+}
