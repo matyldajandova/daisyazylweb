@@ -1,0 +1,25 @@
+{
+  "panleukopeniaTest": "Negativní",
+  "shortDescription": "Mourovatá princezna k adopci. ",
+  "longDescription": "Jedno ze čtyř mourovatých koťátek od Anežky. Jiřička je krásné, zdravé a čiperné koťátko, se kterým od samého začátku nebyl vůbec žádný problém. Je to zvědavé a hravé prtě. Nedávno byla spolu se svými sourozenci odstavena od maminky a celá čtveřice nyní čeká na své nové domovy v dočasné péči. Nenechte je čekat dlouho :)",
+  "gender": "samička",
+  "color": "mourovatá",
+  "suitableWithDogs": true,
+  "fivTest": "Negativní",
+  "suitableWithOlderChildren": true,
+  "suitableWithCats": true,
+  "name": "Jiřička",
+  "suitableWithChildren": true,
+  "gallery": [
+    "/images/uploads/jiricka-1.webp",
+    "/images/uploads/jiricka-4.webp"
+  ],
+  "breed": "kočka evropská",
+  "firstVaccination": true,
+  "id": "60",
+  "image": "/images/uploads/jiricka-3.webp",
+  "felvTest": "Negativní",
+  "species": "kočka",
+  "ageCategory": "Kotě",
+  "category": "hledaji-domov"
+}
