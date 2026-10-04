@@ -12,12 +12,13 @@
   "suitableWithChildren": true,
   "sortOrder": 1,
   "gallery": [
-    "/images/uploads/hapu-a-nesi-2.webp"
+    "/images/uploads/hapu-a-nesi-2.webp",
+    "/images/uploads/hapu.webp"
   ],
   "breed": "kočka evropská",
   "firstVaccination": true,
   "id": "55",
-  "image": "/images/uploads/hapu.webp",
+  "image": "/images/uploads/hapu-2.webp",
   "felvTest": "Negativní",
   "species": "kočka",
   "ageCategory": "Kotě",
