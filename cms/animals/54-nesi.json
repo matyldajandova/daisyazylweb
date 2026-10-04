@@ -14,12 +14,12 @@
   "gallery": [
     "/images/uploads/hapu-a-nesi-2.webp",
     "/images/uploads/hapu-a-nesi.webp",
-    "/images/uploads/nesi-2.webp"
+    "/images/uploads/nesi.webp"
   ],
   "breed": "kočka evropská",
   "firstVaccination": true,
   "id": "54",
-  "image": "/images/uploads/nesi.webp",
+  "image": "/images/uploads/nesi-2.webp",
   "felvTest": "Negativní",
   "species": "kočka",
   "ageCategory": "Kotě",
