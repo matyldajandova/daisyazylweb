@@ -11,7 +11,9 @@
   "name": "Sýkorka ",
   "suitableWithChildren": true,
   "sortOrder": 3,
-  "gallery": [],
+  "gallery": [
+    "/images/uploads/sykorka-3.webp"
+  ],
   "breed": "kočka evropská",
   "firstVaccination": true,
   "id": "58",
