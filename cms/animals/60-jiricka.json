@@ -10,6 +10,7 @@
   "suitableWithCats": true,
   "name": "Jiřička",
   "suitableWithChildren": true,
+  "sortOrder": 7,
   "gallery": [
     "/images/uploads/jiricka-1.webp",
     "/images/uploads/jiricka-4.webp"
