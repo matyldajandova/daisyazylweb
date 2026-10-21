@@ -12,12 +12,16 @@
   "suitableWithChildren": true,
   "sortOrder": 3,
   "gallery": [
-    "/images/uploads/sykorka-3.webp"
+    "/images/uploads/sykorka-3.webp",
+    "/images/uploads/whatsapp-image-2026-10-21-at-12.32.40.webp",
+    "/images/uploads/whatsapp-image-2026-10-21-at-12.32.40-1-.webp",
+    "/images/uploads/whatsapp-image-2026-10-21-at-12.32.39-1-.webp",
+    "/images/uploads/sykorka.webp"
   ],
   "breed": "kočka evropská",
   "firstVaccination": true,
   "id": "58",
-  "image": "/images/uploads/sykorka.webp",
+  "image": "/images/uploads/whatsapp-image-2026-10-21-at-12.32.39.webp",
   "felvTest": "Negativní",
   "species": "kočka",
   "ageCategory": "Kotě",
