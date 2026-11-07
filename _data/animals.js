@@ -180,6 +180,12 @@ const CATEGORIES = [
     catsOnly: true,
   },
   {
+    slug: 'jine',
+    label: 'Jiné',
+    labelBySpecies: { kočka: 'Jiné', pes: 'Jiné' },
+    catsOnly: true,
+  },
+  {
     slug: 'nasli-domov',
     label: 'Našli domov',
     labelBySpecies: { kočka: 'Našli domov', pes: 'Našli domov' },
@@ -234,6 +240,10 @@ const CATEGORY_INTROS = {
   felv: {
     kočka: 'Kočičky s FeLV, které potřebují speciální domov.',
     pes: 'Kočičky s FeLV, které potřebují speciální domov.',
+  },
+  jine: {
+    kočka: 'Kočičky, které se nevejdou do ostatních kategorií.',
+    pes: 'Pejsci, kteří se nevejdou do ostatních kategorií.',
   },
   'nasli-domov': {
     kočka: 'Šťastné konce – tyto kočičky už domov našly.',

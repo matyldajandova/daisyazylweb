@@ -15,6 +15,11 @@
     {
       "name": "GIVT",
       "logo": "/images/uploads/logo-givt.svg"
+    },
+    {
+      "name": "Pomáhám krmit",
+      "logo": "/images/uploads/logo-pomaham-krmit.svg",
+      "url": "https://pomahamkrmit.cz/"
     }
   ]
 }

@@ -36,6 +36,7 @@ collections:
       - { label: "Hledají domov", field: category, pattern: "hledaji-domov" }
       - { label: "Trvalí obyvatelé", field: category, pattern: "trvali-obyvatele" }
       - { label: "FeLV+", field: category, pattern: "felv" }
+      - { label: "Jiné", field: category, pattern: "jine" }
       - { label: "Našli domov", field: category, pattern: "nasli-domov" }
       - { label: "V našich srdcích", field: category, pattern: "v-nasich-srdcich" }
     view_groups:
@@ -84,12 +85,13 @@ collections:
       - label: "Kategorie"
         name: "category"
         widget: "select"
-        hint: "FeLV+ používejte jen u koček."
+        hint: "FeLV+ a Jiné používejte jen u koček. Našli domov je u koček i u psů."
         options:
           - { label: "Nově přijatí", value: "nove-prijati" }
           - { label: "Hledají domov", value: "hledaji-domov" }
           - { label: "Trvalí obyvatelé azylu (možnost virtuální adopce)", value: "trvali-obyvatele" }
           - { label: "FeLV+", value: "felv" }
+          - { label: "Jiné", value: "jine" }
           - { label: "Našli domov", value: "nasli-domov" }
           - { label: "V našich srdcích", value: "v-nasich-srdcich" }
         default: "nove-prijati"

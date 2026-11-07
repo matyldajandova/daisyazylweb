@@ -39,6 +39,9 @@
     if (!speciesSelect || !categorySelect) return;
 
     var currentCategory = {% if listing.categorySlug %}"{{ listing.categorySlug }}"{% else %}null{% endif %};
+    var catsOnly = {
+      {% for category in animals.categories %}{% if category.catsOnly %}"{{ category.slug }}": true,{% endif %}{% endfor %}
+    };
 
     function go(url) {
       if (url && url !== window.location.pathname) {
@@ -51,8 +54,8 @@
       if (!speciesSlug) return;
       var allHref = "/nasi-sverenci/" + speciesSlug + "/";
       if (currentCategory) {
-        // FeLV+ is cats-only; fall back to species root for dogs.
-        if (currentCategory === "felv" && speciesSlug === "psi") {
+        // Cats-only categories (FeLV+, Jiné) have no dog listing.
+        if (catsOnly[currentCategory] && speciesSlug === "psi") {
           go(allHref);
           return;
         }
