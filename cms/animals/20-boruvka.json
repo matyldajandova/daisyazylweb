@@ -7,6 +7,7 @@
   "color": "mourovatá",
   "fivTest": "Negativní",
   "name": "Borůvka",
+  "sortOrder": 10,
   "secondVaccination": true,
   "gallery": [
     "/images/uploads/borůvka-foto.jfif",
