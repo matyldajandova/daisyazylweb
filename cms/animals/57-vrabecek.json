@@ -1,7 +1,7 @@
 {
   "panleukopeniaTest": "Negativní",
-  "shortDescription": "Jako malinký prodělal silnou kalicivirózu. A zvítězil nad ní! ",
-  "longDescription": "Vrabeček je jedním z koťátek kočičky Anežky ze Svémyslic. Narodil se ještě na skládce, ale brzy po narození byl spolu s maminkou a sourozenci zachráněn. Bohužel u něj po pár týdnech propukla silná kaliciviróza. Měl plnou tlamičku boláků a nemohl ani přijímat potravu. Na veterinární klinice Veplace nám ale Vrabečka doslova zachránili. Hodně mu pomohla laserová terapie. Velmi rychle se z kalicivirózy otřepal. \\\n\\\nNyní už je to krásný zdravý, plně očkovaný kocourek, který vyhlíží nový domov :)",
+  "shortDescription": "Jako malinký prodělal silnou kalicivirózu. A zvítězil nad ní! \nDomov hledá společně se svou sestřičkou Sýkorkou.",
+  "longDescription": "Vrabeček je jedním z koťátek kočičky Anežky ze Svémyslic. Narodil se ještě na skládce, ale brzy po narození byl spolu s maminkou a sourozenci zachráněn. Bohužel u něj po pár týdnech propukla silná kaliciviróza. Měl plnou tlamičku boláků a nemohl ani přijímat potravu. Na veterinární klinice Veplace nám ale Vrabečka doslova zachránili. Hodně mu pomohla laserová terapie. Velmi rychle se z kalicivirózy otřepal. \\\n\\\nNyní už je to krásný zdravý, plně očkovaný kocourek, který vyhlíží nový domov :) Hledáme pro něho rodinu, která by přijala koťátka dvě, Vrabečka i Sýkorku. Tihle dva jsou na sebe emocionálně fixovaní a tvoří skvěle sehranou dvojku.",
   "gender": "sameček",
   "color": "mourek",
   "fivTest": "Negativní",
@@ -9,7 +9,7 @@
   "suitableWithCats": true,
   "name": "Vrabeček ",
   "suitableWithChildren": true,
-  "sortOrder": 5,
+  "sortOrder": 1,
   "secondVaccination": false,
   "gallery": [
     "/images/uploads/vrabecek-1.webp",
