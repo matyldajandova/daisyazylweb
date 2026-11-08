@@ -1,7 +1,7 @@
 {
   "panleukopeniaTest": "Negativní",
-  "shortDescription": "Bílo-hnědomourovaté koťátko k adopci.",
-  "longDescription": "Hapu je jedním z koťátek narozených na skládce ve Svémyslicích. Naštěstí se brzy po narození dostal se sourozenci k nám, takže mohl v bezpečí a teple vyrůstat. Jeho maminka Haty měla neustálý přísun kvalitních granulek a kapsiček pro kojící maminky, takže měla pro své tři kluky dost mlíčka a kocourci se měli čile k světu. Nyní je Hapu v dočasné péči a těší se na svůj budoucí trvalý domov.",
+  "shortDescription": "Bílo-hnědomourovaté koťátko našlo domov kousek od nás - v Chlumci nad Cidlinou",
+  "longDescription": "Hapu je jedním z koťátek narozených na skládce ve Svémyslicích. Naštěstí se brzy po narození dostal se sourozenci k nám, takže mohl v bezpečí a teple vyrůstat. Jeho maminka Haty měla neustálý přísun kvalitních granulek a kapsiček pro kojící maminky, takže měla pro své tři kluky dost mlíčka a kocourci se měli čile k světu. Nyní je Hapu v dočasné péči a těší se na svůj budoucí trvalý domov.\\\n\\\nAKTUALIZACE 7.11.2026\\\nHodně štěstí do nového života, Hapu! Do nového domova jsi odjel z dočasky z Pardubic jen docela kousek  do Chlumce nad Cidlinou.",
   "gender": "sameček",
   "color": "bílo-hnědomourek",
   "suitableWithDogs": true,
@@ -10,7 +10,7 @@
   "suitableWithCats": true,
   "name": "Hapu",
   "suitableWithChildren": true,
-  "sortOrder": 10,
+  "sortOrder": 2,
   "gallery": [
     "/images/uploads/hapu-a-nesi-2.webp",
     "/images/uploads/hapu.webp",
@@ -24,5 +24,5 @@
   "felvTest": "Negativní",
   "species": "kočka",
   "ageCategory": "Kotě",
-  "category": "hledaji-domov"
+  "category": "nasli-domov"
 }
