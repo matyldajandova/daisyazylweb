@@ -5,9 +5,14 @@
   "color": "černá",
   "name": "Luna",
   "sortOrder": 10,
+  "gallery": [
+    "/images/uploads/whatsapp-image-2026-11-16-at-11.08.25-4-.webp",
+    "/images/uploads/whatsapp-image-2026-11-16-at-11.08.26.webp",
+    "/images/uploads/whatsapp-image-2026-11-16-at-11.08.25.webp"
+  ],
   "breed": "kočka evropská",
   "id": "68",
-  "image": "/images/uploads/whatsapp-image-2026-11-12-at-20.20.42-3-.webp",
+  "image": "/images/uploads/whatsapp-image-2026-11-16-at-11.08.25-2-.webp",
   "species": "kočka",
   "ageCategory": "Kotě",
   "category": "nove-prijati"
