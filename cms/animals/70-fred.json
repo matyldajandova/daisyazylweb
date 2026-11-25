@@ -8,7 +8,7 @@
   "suitableWithCats": true,
   "name": "Fred",
   "suitableWithChildren": true,
-  "sortOrder": 3,
+  "sortOrder": 5,
   "gallery": [
     "/images/uploads/fred-3.webp",
     "/images/uploads/fred-4.webp"
@@ -18,5 +18,5 @@
   "image": "/images/uploads/fred-2.webp",
   "species": "kočka",
   "ageCategory": "Kotě",
-  "category": "nove-prijati"
+  "category": "hledaji-domov"
 }
